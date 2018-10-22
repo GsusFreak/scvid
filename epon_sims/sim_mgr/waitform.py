@@ -27,6 +27,19 @@ class Ui_WaitForm(object):
         WaitForm.setObjectName(_fromUtf8("WaitForm"))
         WaitForm.resize(204, 121)
         self.waitLbl = QtGui.QLabel(WaitForm)
-        self.waitLbl.setGeometry(QtCore.QRect(50, 20, 90, 20))
+        self.waitLbl.setGeometry(QtCore.QRect(53, 30, 100, 20))
+        self.waitLbl.setAlignment(QtCore.Qt.AlignCenter)
         self.waitLbl.setWordWrap(False)
         self.waitLbl.setObjectName(_fromUtf8("waitLbl"))
+        self.waitProgressBar_2 = QtGui.QProgressBar(WaitForm)
+        self.waitProgressBar_2.setGeometry(QtCore.QRect(43, 50, 118, 23))
+        self.waitProgressBar_2.setProperty("value", 24)
+        self.waitProgressBar_2.setObjectName(_fromUtf8("waitProgressBar_2"))
+
+        self.retranslateUi(WaitForm)
+        QtCore.QMetaObject.connectSlotsByName(WaitForm)
+
+    def retranslateUi(self, WaitForm):
+        WaitForm.setWindowTitle(_translate("WaitForm", "Wait", None))
+        self.waitLbl.setText(_translate("WaitForm", "Please Wait", None))
+

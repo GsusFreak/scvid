@@ -13,6 +13,7 @@
 *.o
 *~
 *#
+*.bak
 
 # Files to ignore in eponsim
 eponsim/svtest
