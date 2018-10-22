@@ -1,0 +1,491 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SimMgr</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>SimMgr</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>694</width>
+            <height>482</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Simulation Manager</string>
+    </property>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>viewSimButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>430</y>
+                <width>86</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>View</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>newSimButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>430</y>
+                <width>86</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>New</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>consolidateBtn</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>240</x>
+                <y>430</y>
+                <width>87</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Consolidate</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>addSimButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>350</x>
+                <y>430</y>
+                <width>94</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Add</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>consolidateNameEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>460</x>
+                <y>20</y>
+                <width>108</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>quitButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>590</x>
+                <y>430</y>
+                <width>86</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>QUIT</string>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>removeDirCheckBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>300</x>
+                <y>400</y>
+                <width>140</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Remove Directory</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>haltButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>590</x>
+                <y>390</y>
+                <width>86</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Halt</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>removeSimButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>470</x>
+                <y>430</y>
+                <width>94</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Remove</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>openSimButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>470</x>
+                <y>390</y>
+                <width>94</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Open</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>titleLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>70</x>
+                <y>10</y>
+                <width>200</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>14</pointsize>
+            </font>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>Running Simulations</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>consolidateNameLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>320</x>
+                <y>20</y>
+                <width>136</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Consolidation Name</string>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>simListBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>70</y>
+                <width>310</width>
+                <height>310</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="selectionMode">
+            <enum>Extended</enum>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>startedNameLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>230</y>
+                <width>136</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Running</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>notStartedNameLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>50</y>
+                <width>136</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Waiting to Run</string>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>notStartedListBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>70</y>
+                <width>310</width>
+                <height>130</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="selectionMode">
+            <enum>Extended</enum>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>startedListBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>250</y>
+                <width>310</width>
+                <height>130</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="selectionMode">
+            <enum>Extended</enum>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>completedNameLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>50</y>
+                <width>136</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Finished</string>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>quitButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>quitButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>newSimButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>newSimButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>viewSimButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>viewSimButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>simListBox</sender>
+        <signal>doubleClicked(QListBoxItem*)</signal>
+        <receiver>SimMgr</receiver>
+        <slot>simListBox_doubleClicked(QListBoxItem*)</slot>
+    </connection>
+    <connection>
+        <sender>removeSimButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>removeSimButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>consolidateBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>consolidateBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>addSimButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>addSimButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>haltButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>haltSimBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>openSimButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimMgr</receiver>
+        <slot>openSimButton_pressed()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>consolidateNameEdit</tabstop>
+    <tabstop>removeDirCheckBox</tabstop>
+    <tabstop>newSimButton</tabstop>
+    <tabstop>viewSimButton</tabstop>
+    <tabstop>consolidateBtn</tabstop>
+    <tabstop>removeSimButton</tabstop>
+    <tabstop>quitButton</tabstop>
+    <tabstop>simListBox</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">simmgrform.ui.h</include>
+</includes>
+<slots>
+    <slot>quitButton_pressed()</slot>
+    <slot>newSimButton_pressed()</slot>
+    <slot>viewSimButton_pressed()</slot>
+    <slot>simListBox_doubleClicked( QListBoxItem * )</slot>
+    <slot>removeSimButton_pressed()</slot>
+    <slot>consolidateBtn_pressed()</slot>
+    <slot>addSimButton_pressed()</slot>
+    <slot>haltSimBtn_pressed()</slot>
+    <slot>openSimButton_pressed()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

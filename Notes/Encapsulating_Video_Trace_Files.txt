@@ -1,0 +1,9 @@
+To Encapsulate a Trace File:
+
+(Windows:)
+python pkttrace_sizescale.py -e=tcp -enet=on -ss=8 -g
+
+BluePlanet_Q_20.txt had an issue with adding s
+   before the % on the last line. The three
+   numbers (313 or 382) were also added to the
+   end of that line.

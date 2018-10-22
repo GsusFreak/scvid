@@ -1,0 +1,56 @@
+To Run a Simulation:
+
+ - Make sure the latest version of eponsim is 
+   compiled. 
+
+ - Open the terminal.
+   Navigate to \epon_sims\sim_mgr$
+   (type cd epon_sims/sim_mgr).
+   Run sim_mgr.py (type python sim_mgr.py).
+
+1. Login (password is probably ONSmart).
+
+2. Choose a Simulation ID using template
+   MovieName_Quantization_TypeOfPrediction
+   for example:
+   BluePlanet_Q20_PerfAcc
+
+    - Types of prediction include:
+      Poff (no prediction was used)
+      NAR (Collin's NAR system created the
+         prediction values.)
+      PerfAcc (The prediction values are
+         perfectly accurate.)
+      10Minus (The prediction values are
+         10% smaller than the actual size
+         of the next packet.)
+      10Plus (The prediction values are
+         10% larger than the actual size
+         of the next packet.)
+
+3. Video Traffic ==> ON
+
+    - Pick Trace (Should be in the 
+      *Home*\Video_Trace_Files directory).
+
+4. SET UNCHANGING PARAMETERS:
+   Data Traffic Type ==> Poisson
+   Grant Scheduling ==> IPACT-PSF
+   Grant Sizing (Data) ==> LIMITED
+   Grant Sizing (Video) ==> LIMITED
+   Frame Rate ==> 24.0 (Check trace)
+
+5. Predict Video Traffic ==> ON/OFF (Add Label)
+
+6. LAUNCH the simulation.
+
+7. Check if Simulation started using top command.
+   Stop process with: kill *ProcessID*
+
+
+
+When Running Multiple Simulations Back to Back:
+
+1. Change the Simulation ID.
+
+2. Change the Trace.

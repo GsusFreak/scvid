@@ -1,0 +1,63 @@
+Switching out a Working Simulator for a
+
+Simulator from Storage
+
+
+
+ - Pick an appropriate replacement
+
+   simulator.
+
+
+      Sc  - Scalable
+
+      St  - Standard, Stock
+
+      Wo  - Working (As far as we know)
+
+      Nwo - Not Working
+
+      Wip - Work in Progress
+
+
+
+1. Paste a copy of your simulator files
+
+   (eponsim folder, epon_sims folder, and
+
+   sim_ver.txt) in the Home directory.
+
+
+
+2. Edit the Makefile in eponsim.
+
+   There is one path entry at the top,
+
+   and four more down near the bottom.
+
+ 
+
+ - The folder csim should be in eponsim.
+
+
+
+3. Ensure eponsim has permission to
+
+   "Allow executing file as program"
+
+
+
+4. Compile eponsim.
+
+      --> cd eponsim
+
+      --> make eponsim
+
+
+
+5. Test the simulator.
+
+      --> cd epon_sims/sim_mgr
+
+      --> python sim_mgr.py
+

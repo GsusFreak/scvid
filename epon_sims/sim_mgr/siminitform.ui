@@ -1,0 +1,3201 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SimInitForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>SimInitForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>860</width>
+            <height>887</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Simulation Initialization</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>simIdLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>40</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Simulation ID</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>usernameEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>10</y>
+                <width>200</width>
+                <height>21</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>passwordLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>340</x>
+                <y>10</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Password</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>hostEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>410</x>
+                <y>40</y>
+                <width>230</width>
+                <height>23</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>loginBtn</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>650</x>
+                <y>10</y>
+                <width>70</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Login</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>logoutBtn</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>730</x>
+                <y>10</y>
+                <width>90</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Logout</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>passwordEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>410</x>
+                <y>10</y>
+                <width>230</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="echoMode">
+            <enum>Password</enum>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usernameLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>10</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Username</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>simIdEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>40</y>
+                <width>200</width>
+                <height>21</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hostLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>350</x>
+                <y>40</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>HOST</string>
+        </property>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>dbaParamsBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>570</x>
+                <y>190</y>
+                <width>260</width>
+                <height>90</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Grant Sizing Parameters</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>fixedGrantSizeLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>150</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>FIXED_GRANT_SIZE</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>maxGrantSizeLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>150</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>MAX_GRANT_SIZE</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>fixedGrantSizeEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>150</x>
+                    <y>20</y>
+                    <width>90</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>maxGrantSizeEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>150</x>
+                    <y>50</y>
+                    <width>90</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>schedulerParamsBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>290</y>
+                <width>480</width>
+                <height>110</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Grant Scheduling Parameters</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>starveThreshLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>130</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>STARVE_THRESH</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>acwLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>150</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>AVAIL_COST_WEIGHT</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>schedulerMaxWinChkBox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>20</y>
+                    <width>180</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>SCHEDULER_MAX_WIN</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>npoLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>80</y>
+                    <width>170</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>NUM_PREFERRED_ONU</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>npoEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>180</x>
+                    <y>80</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>acwEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>180</x>
+                    <y>50</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>starveThreshEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>180</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>schedulerNumSlotLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>270</x>
+                    <y>50</y>
+                    <width>180</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>SCHEDULER_NUM_SLOT</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>schedulerSlotSizeLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>270</x>
+                    <y>80</y>
+                    <width>180</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>SCHEDULER_SLOT_SIZE</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>schedulerSlotSizeEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>440</x>
+                    <y>80</y>
+                    <width>30</width>
+                    <height>23</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>schedulerNumSlotEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>440</x>
+                    <y>50</y>
+                    <width>30</width>
+                    <height>23</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>lambdaParamsBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>640</y>
+                <width>170</width>
+                <height>80</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Lambda Parameters</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>startLambdaLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>START_LAMBDA</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>endLambdaLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>110</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>END_LAMBDA</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>startLambdaEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>endLambdaEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>50</y>
+                    <width>40</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>ssParamsBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>450</y>
+                <width>170</width>
+                <height>80</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Self-Similar Parameters</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>numStrmsLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>94</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NUM_STREAMS</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>hurstParamLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>93</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>HURST_PARAM</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>hurstParamEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>numStrmsEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>50</y>
+                    <width>50</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>loadParamsBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>530</y>
+                <width>170</width>
+                <height>110</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Load Parameters</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>startLoadLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>START_LOAD</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>endLoadLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>END_LOAD</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>loadIncrLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>80</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LOAD_INCR</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>endLoadEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>50</y>
+                    <width>60</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>loadIncrEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>80</y>
+                    <width>60</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>startLoadEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>20</y>
+                    <width>60</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>FRateLbl</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>780</x>
+                <y>290</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Frame Rate</string>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>videoStartBox</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>290</y>
+                <width>270</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Random Video Start</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>timeShiftLbl</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>20</y>
+                    <width>101</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>Time Shift (ms):</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>vsOffBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>OFF</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>vsOnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ON</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>timeShiftEdit</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>0.0</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>videoTraceFileLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>390</y>
+                <width>100</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Video Trace File</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>changeTraceBtn</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>760</x>
+                <y>380</y>
+                <width>90</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Change Trace</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>videoTraceEdit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>410</y>
+                <width>350</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="readOnly">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup4_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>670</y>
+                <width>130</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>GET_TAIL</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>gtOffBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>OFF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>gtOnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ON</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup7</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>620</y>
+                <width>130</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>GRANT_TRACE</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>grtOffBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>60</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>OFF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>grtOnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ON</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>VideoDBABtnGroup</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>710</x>
+                <y>70</y>
+                <width>140</width>
+                <height>110</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Grant Sizing (Video)</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>dbaFixedVideoBtn</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>FIXED</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>dbaGatedVideoBtn</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>GATED</string>
+            </property>
+            <property name="checked">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>dbaLimitedVideoBtn</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>60</y>
+                    <width>80</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LIMITED</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>570</x>
+                <y>70</y>
+                <width>130</width>
+                <height>110</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Grant Sizing (Data)</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>dbaExcessBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>90</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>EXCESS</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>dbaGatedBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>GATED</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>dbaFixedBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>FIXED</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>dbaLimitedBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>60</y>
+                    <width>90</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LIMITED</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>570</y>
+                <width>130</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>TIME_TRACE</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>ttOffBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>OFF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>ttOnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ON</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>dataTrafficTypeBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>500</y>
+                <width>130</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Data Traffic Type</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>ssBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>40</y>
+                    <width>100</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Self-Similar</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>pnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Poisson</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>predictTrafficBox</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>340</y>
+                <width>250</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Predict Video Traffic</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>PredTypeLbl</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="text">
+                <string>Pred. Type:</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>pvtOffBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>OFF</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>PredTypeEdit</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>200</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>FFBI</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>pvtOnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ON</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>videoTrafficBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>450</y>
+                <width>130</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Video Traffic</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>vtOffBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>OFF</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>vtOnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ON</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>launchBtn</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>760</y>
+                <width>86</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>LAUNCH</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>cancelBtn</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>210</x>
+                <y>760</y>
+                <width>86</width>
+                <height>28</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>CANCEL</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>saveTimeButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>790</x>
+                <y>350</y>
+                <width>40</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>410</y>
+                <width>480</width>
+                <height>310</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Network Parameters</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>fpdValueLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>250</y>
+                    <width>150</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>PROP_DELAY_VALUE</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>runsEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>30</y>
+                    <width>100</width>
+                    <height>25</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>tuningTimeEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>130</y>
+                    <width>100</width>
+                    <height>23</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>grdTimeEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>160</y>
+                    <width>100</width>
+                    <height>23</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>numONUEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>190</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>numHvyONULbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>220</y>
+                    <width>130</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NUM_HEAVY_ONU</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>numHvyONUEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>220</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>heavyLoadEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>250</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>tuningTimeLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>130</y>
+                    <width>82</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>TUNING_TIME</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>grdTimeLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>160</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>GUARD_TIME</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>numONULbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>190</y>
+                    <width>63</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NUM_ONU</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>runsLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>30</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NUM_RUNS</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>heavyLoadLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>250</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>HEAVY_LOAD</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>numWdmONULbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>90</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NUM_WDM_ONU</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>numUhWdmONULbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>120</y>
+                    <width>150</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NUM_UH_WDM_ONU</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>numLhWdmONULbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>150</y>
+                    <width>150</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NUM_LH_WDM_ONU</string>
+            </property>
+        </widget>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>wdmTypeBtnGrp</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>20</y>
+                    <width>200</width>
+                    <height>60</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>WDM Type</string>
+            </property>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>fixedBtn</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>30</y>
+                        <width>100</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Fixed Array</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>tunableBtn</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>110</x>
+                        <y>30</y>
+                        <width>80</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Tunable</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>buttonGroup8</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>190</y>
+                    <width>180</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>FIXED_PROP_DELAY</string>
+            </property>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>fpdOnBtn</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>110</x>
+                        <y>20</y>
+                        <width>60</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>ON</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>fpdOffBtn</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>20</y>
+                        <width>60</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>OFF</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>numLhWdmONUEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>400</x>
+                    <y>150</y>
+                    <width>70</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>numUhWdmONUEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>400</x>
+                    <y>120</y>
+                    <width>70</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>numWdmONUEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>400</x>
+                    <y>90</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>fpdValueEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>390</x>
+                    <y>250</y>
+                    <width>80</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>maxPropDelayEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>390</x>
+                    <y>280</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>maxPropDelayLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>280</y>
+                    <width>140</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>MAX_PROP_DELAY</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>linkSpdLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>100</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LINK_SPEED</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>linkSpdEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>100</y>
+                    <width>100</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>simTimeLbl</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>60</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>SIM_TIME</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>simTimeEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>60</y>
+                    <width>100</width>
+                    <height>23</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>indexMaxIncreaseButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>450</x>
+                <y>730</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>+</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>indexMaxDecreaseButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>410</x>
+                <y>730</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>--</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>indexDecreaseButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>350</x>
+                <y>760</y>
+                <width>30</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;-</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>queueIndexSlotEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>390</x>
+                <y>760</y>
+                <width>30</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>1</string>
+        </property>
+        <property name="readOnly">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>frameRateEdit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>790</x>
+                <y>310</y>
+                <width>40</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>24.0</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>indexIncreaseButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>430</x>
+                <y>760</y>
+                <width>30</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>-&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>parallelSimsEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>790</x>
+                <y>780</y>
+                <width>40</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>1</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>parallelSimsLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>780</y>
+                <width>80</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Parallel Sims</string>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>svButtonGroup</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>720</y>
+                <width>170</width>
+                <height>160</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>SV Packet Dropping</string>
+        </property>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>svDropSensitivity</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>62</y>
+                    <width>40</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>1.0</string>
+            </property>
+            <property name="alignment">
+                <set>AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>svDropThresholdEdit</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>40</y>
+                    <width>40</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>4</string>
+            </property>
+            <property name="alignment">
+                <set>AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>svDropStepMinBound</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>80</x>
+                    <y>106</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>0.0005</string>
+            </property>
+            <property name="alignment">
+                <set>AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>svDropStep_NumMAValues</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>84</y>
+                    <width>40</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>5</string>
+            </property>
+            <property name="alignment">
+                <set>AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>svDropMinBoundLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>4</x>
+                    <y>107</y>
+                    <width>68</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Min Bound</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>svDropNone</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>90</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>None</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>svDropThreshold</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>40</y>
+                    <width>90</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Drop if &gt;</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>svDropDynamic</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>60</y>
+                    <width>90</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Dynamic</string>
+            </property>
+            <property name="checked">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>svDropStepThreshold</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>90</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Step</string>
+            </property>
+            <property name="checked">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>svDropMaxBoundLabel</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>4</x>
+                    <y>130</y>
+                    <width>71</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Max Bound</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>svDropStepMaxBound</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>80</x>
+                    <y>129</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="text">
+                <string>0.005</string>
+            </property>
+            <property name="alignment">
+                <set>AlignRight</set>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>oltTypeBtnGrp</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>70</y>
+                <width>550</width>
+                <height>210</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="title">
+            <string>Grant Scheduling</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>lfjlnfBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LFJ-LNF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>lfjsptBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>60</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LFJ-SPT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>intvlLfjlnfBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>80</y>
+                    <width>130</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>INTVL LFJ-LNF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>intvlLfjsptBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>60</y>
+                    <width>140</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>INTVL LFJ-SPT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>intvlLfjlptBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>40</y>
+                    <width>130</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>INTVL LFJ-LPT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitLfjsptBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>60</y>
+                    <width>112</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT LFJ-SPT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitLfjlptBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>40</y>
+                    <width>112</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT LFJ-LPT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>apsBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>140</y>
+                    <width>60</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>APS</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>lfjBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>120</y>
+                    <width>50</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LFJ</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>leastAssignedBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>100</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Least Assigned</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitTestBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>60</y>
+                    <width>90</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT TEST</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>300</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Online JIT</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel5</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>430</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Misc</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>20</y>
+                    <width>61</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Offline</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>lfjlptBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>40</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LFJ-LPT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>lpdBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>120</y>
+                    <width>112</width>
+                    <height>23</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>LPD</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>eafBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>140</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>EAF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>eaafBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>160</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>EAAF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>spdBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>100</y>
+                    <width>112</width>
+                    <height>23</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>SPD</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>spdLptBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>180</y>
+                    <width>100</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>SPD-LPT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitLfjlnfBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>80</y>
+                    <width>112</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT LFJ-LNF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitSpdBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>100</y>
+                    <width>111</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT SPD</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitEafBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>140</y>
+                    <width>121</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT EAF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>intvlEaafBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>160</y>
+                    <width>121</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>INTVL EAAF</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>150</x>
+                    <y>20</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Online Interval</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>nascBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>40</y>
+                    <width>60</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>NASC</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>ipactBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>IPACT</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitEaafBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>160</y>
+                    <width>121</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT EAAF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>intvlEafBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>140</y>
+                    <width>121</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>INTVL EAF</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>jitLpdBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>120</y>
+                    <width>111</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>JIT LPD</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>ipactpsfBtn</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>180</y>
+                    <width>100</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>IPACT-PSF</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>scalableVideoBox</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>720</y>
+                <width>130</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="title">
+            <string>Scalable Video</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>svOffBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>OFF</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>svOnBtn</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ON</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>AuxLabel1</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>800</y>
+                <width>340</width>
+                <height>63</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Please note:
+The "Drop if &gt;" option for scalable video assumes
+that the base layer is layer 1. Thus, if you "Drop if &gt; 1",
+you're dropping everything except the base layer.</string>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>cancelBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>cancelBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>launchBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>launchBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>loginBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>loginBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>logoutBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>logoutBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>vtOnBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>vtOnBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>vtOffBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>vtOffBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>changeTraceBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>changeTraceBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>vsOffBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>vsOffBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>vsOnBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>vsOnBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>pvtOffBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>pvtOffBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>pvtOnBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>pvtOnBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>saveTimeButton</sender>
+        <signal>released()</signal>
+        <receiver>dbaLimitedBtn</receiver>
+        <slot>toggle()</slot>
+    </connection>
+    <connection>
+        <sender>saveTimeButton</sender>
+        <signal>released()</signal>
+        <receiver>ipactpsfBtn</receiver>
+        <slot>toggle()</slot>
+    </connection>
+    <connection>
+        <sender>saveTimeButton</sender>
+        <signal>released()</signal>
+        <receiver>dbaLimitedVideoBtn</receiver>
+        <slot>toggle()</slot>
+    </connection>
+    <connection>
+        <sender>saveTimeButton</sender>
+        <signal>released()</signal>
+        <receiver>pnBtn</receiver>
+        <slot>toggle()</slot>
+    </connection>
+    <connection>
+        <sender>svOffBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>svOffBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>svOnBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>svOnBtn_checked()</slot>
+    </connection>
+    <connection>
+        <sender>indexMaxIncreaseButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>indexMaxIncreaseButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>indexMaxDecreaseButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>indexMaxDecreaseButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>indexIncreaseButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>indexIncreaseButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>indexDecreaseButton</sender>
+        <signal>pressed()</signal>
+        <receiver>SimInitForm</receiver>
+        <slot>indexDecreaseButton_pressed()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>passwordEdit</tabstop>
+    <tabstop>loginBtn</tabstop>
+    <tabstop>simIdEdit</tabstop>
+    <tabstop>hostEdit</tabstop>
+    <tabstop>lfjlptBtn</tabstop>
+    <tabstop>lfjsptBtn</tabstop>
+    <tabstop>lfjlnfBtn</tabstop>
+    <tabstop>eafBtn</tabstop>
+    <tabstop>eaafBtn</tabstop>
+    <tabstop>intvlLfjlptBtn</tabstop>
+    <tabstop>intvlLfjsptBtn</tabstop>
+    <tabstop>intvlLfjlnfBtn</tabstop>
+    <tabstop>intvlEafBtn</tabstop>
+    <tabstop>intvlEaafBtn</tabstop>
+    <tabstop>jitLfjlptBtn</tabstop>
+    <tabstop>jitLfjsptBtn</tabstop>
+    <tabstop>jitLfjlnfBtn</tabstop>
+    <tabstop>jitEafBtn</tabstop>
+    <tabstop>jitEaafBtn</tabstop>
+    <tabstop>nascBtn</tabstop>
+    <tabstop>jitTestBtn</tabstop>
+    <tabstop>ipactBtn</tabstop>
+    <tabstop>leastAssignedBtn</tabstop>
+    <tabstop>lfjBtn</tabstop>
+    <tabstop>apsBtn</tabstop>
+    <tabstop>starveThreshEdit</tabstop>
+    <tabstop>acwEdit</tabstop>
+    <tabstop>npoEdit</tabstop>
+    <tabstop>schedulerMaxWinChkBox</tabstop>
+    <tabstop>schedulerNumSlotEdit</tabstop>
+    <tabstop>schedulerSlotSizeEdit</tabstop>
+    <tabstop>dbaGatedBtn</tabstop>
+    <tabstop>dbaLimitedBtn</tabstop>
+    <tabstop>dbaFixedBtn</tabstop>
+    <tabstop>dbaExcessBtn</tabstop>
+    <tabstop>fixedGrantSizeEdit</tabstop>
+    <tabstop>maxGrantSizeEdit</tabstop>
+    <tabstop>linkSpdEdit</tabstop>
+    <tabstop>simTimeEdit</tabstop>
+    <tabstop>tuningTimeEdit</tabstop>
+    <tabstop>grdTimeEdit</tabstop>
+    <tabstop>numONUEdit</tabstop>
+    <tabstop>numHvyONUEdit</tabstop>
+    <tabstop>numWdmONUEdit</tabstop>
+    <tabstop>numUhWdmONUEdit</tabstop>
+    <tabstop>numLhWdmONUEdit</tabstop>
+    <tabstop>fixedBtn</tabstop>
+    <tabstop>tunableBtn</tabstop>
+    <tabstop>fpdOffBtn</tabstop>
+    <tabstop>fpdOnBtn</tabstop>
+    <tabstop>fpdValueEdit</tabstop>
+    <tabstop>maxPropDelayEdit</tabstop>
+    <tabstop>pnBtn</tabstop>
+    <tabstop>ssBtn</tabstop>
+    <tabstop>hurstParamEdit</tabstop>
+    <tabstop>numStrmsEdit</tabstop>
+    <tabstop>startLoadEdit</tabstop>
+    <tabstop>endLoadEdit</tabstop>
+    <tabstop>loadIncrEdit</tabstop>
+    <tabstop>startLambdaEdit</tabstop>
+    <tabstop>endLambdaEdit</tabstop>
+    <tabstop>ttOffBtn</tabstop>
+    <tabstop>ttOnBtn</tabstop>
+    <tabstop>grtOffBtn</tabstop>
+    <tabstop>grtOnBtn</tabstop>
+    <tabstop>gtOffBtn</tabstop>
+    <tabstop>gtOnBtn</tabstop>
+    <tabstop>launchBtn</tabstop>
+    <tabstop>cancelBtn</tabstop>
+    <tabstop>usernameEdit</tabstop>
+    <tabstop>lpdBtn</tabstop>
+    <tabstop>spdBtn</tabstop>
+    <tabstop>spdLptBtn</tabstop>
+    <tabstop>jitSpdBtn</tabstop>
+    <tabstop>jitLpdBtn</tabstop>
+    <tabstop>heavyLoadEdit</tabstop>
+    <tabstop>runsEdit</tabstop>
+    <tabstop>logoutBtn</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">siminitform.ui.h</include>
+</includes>
+<slots>
+    <slot>cancelBtn_pressed()</slot>
+    <slot>launchBtn_pressed()</slot>
+    <slot>loginBtn_pressed()</slot>
+    <slot>logoutBtn_pressed()</slot>
+    <slot>vtOnBtn_checked()</slot>
+    <slot>vtOffBtn_checked()</slot>
+    <slot>changeTraceBtn_pressed()</slot>
+    <slot>vsOffBtn_checked()</slot>
+    <slot>vsOnBtn_checked()</slot>
+    <slot>pvtOffBtn_checked()</slot>
+    <slot>pvtOnBtn_checked()</slot>
+    <slot>svOnBtn_checked()</slot>
+    <slot>svOffBtn_checked()</slot>
+    <slot>indexMaxIncreaseButton_pressed()</slot>
+    <slot>indexMaxDecreaseButton_pressed()</slot>
+    <slot>indexIncreaseButton_pressed()</slot>
+    <slot>indexDecreaseButton_pressed()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

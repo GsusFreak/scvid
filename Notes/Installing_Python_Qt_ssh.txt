@@ -1,0 +1,23 @@
+If you are using commandline use Root by typing in commandline: su root
+
+
+
+1- Make sure the that you install python first (from Software Center)
+
+
+2- Commandline: apt-get install qt3-dev-tools
+
+
+3- Commandline: apt-get install python-qt3
+
+
+4- Commandline: sudo apt-get install openssh-server
+
+
+5- Install fig2dev or transfig (from software center)
+
+
+6- Install gcc and g++ (from software center)
+
+
+7- Commandline: sudo apt-get install libc6-dev-i386

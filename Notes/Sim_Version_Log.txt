@@ -1,0 +1,57 @@
+This is a record of version changes of
+
+the eponsim and epon_sims set of files.
+
+
+
+1.x.x
+
+This is a non-scalable simulator.
+
+
+
+2.x.x
+
+This is a scalable simulator.
+
+
+
+x.0.x
+
+Each additional number denotes a 
+
+set of substantial changes.
+
+
+
+x.x.0
+
+Each additional number denotes a
+
+set of small changes, potentially
+
+bug fixes or additional comments.
+
+
+
+
+
+
+
+1.1.0
+
+In this version, ease-of-use features
+
+were added to the plotting portion
+
+of the python GUI. A button was added
+
+that automatically creates plot
+
+legends, and another feature allows
+
+you to change a graphing parameter
+
+for all result files at the same time.
+
+No changes were made to eponsim.

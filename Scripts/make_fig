@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo $1'.gp'
+
+gnuplot $1'.gp'
+fig2dev -L pdf $1'.fig' $1'.pdf'
+
+echo finished

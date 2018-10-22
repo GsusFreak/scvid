@@ -1,0 +1,7 @@
+Plotting a custom plot:
+First, move the generated .gp file to the same directory as the data. 
+Then, edit the .gp file to suit your taste.
+Finally, run the following commands:
+
+gnuplot Ghandi_Baselines_cost.gp
+fig2dev -L pdf Ghandi_Baselines_cost.fig Ghandi_Baselines_cost.pdf

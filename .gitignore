@@ -1,0 +1,29 @@
+# This is the git ignore file for the scalable video work
+
+# Ignore certain folders
+/epon_sims/*
+
+# Files and folders to preserve within epon_sims
+!/epon_sims/sim_mgr
+!/epon_sims/plot_settings_data
+!/epon_sims/sim_mgr_data
+
+# Specific file types to ignore
+*.pyc
+*.o
+*~
+*#
+
+# Files to ignore in eponsim
+eponsim/svtest
+eponsim/eponsim
+eponsim/eponsim_trc
+eponsim/eponsim_trc_lo
+eponsim/eponsim_trc_hi
+eponsim/testNewGen
+
+# Make sure to preserve the csim files
+!eponsim/csim
+!eponsim/csim/*
+
+

@@ -1,0 +1,5 @@
+To Set Up a New Simulator:
+
+ - Make sure to check the "Allow executing file as
+   program" box under the Permissions tab of the
+   properties of the eponsim executable file.

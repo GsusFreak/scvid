@@ -1,0 +1,12 @@
+To Compile a QT Designer File in Python:
+
+
+
+1. Navigate to the appropriate directory.
+
+
+
+2. Enter the following:
+
+   --> pyuic -o plotnameform.py plotnameform.ui
+

@@ -1,0 +1,3346 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>plotNameForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>plotNameForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>840</width>
+            <height>614</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Plot Naming</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file1Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>50</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file1</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>PlotLegendLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>370</x>
+                <y>20</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Plot Legend</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>50</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file7Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>350</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file7</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>470</x>
+                <y>20</y>
+                <width>60</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Plot Order</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>LineWidthLbl_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>750</x>
+                <y>20</y>
+                <width>60</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Line Color</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file5Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>250</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file5</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>300</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>150</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>100</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>PointSizeLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>650</x>
+                <y>10</y>
+                <width>40</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;p align="center"&gt;Point 
+Size&lt;/p&gt;</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox7</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>350</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>250</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file6Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>300</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file6</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>LineWidthLbl_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>10</y>
+                <width>38</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;p align="center"&gt;Line 
+Width&lt;/p&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>PointsLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>550</x>
+                <y>20</y>
+                <width>65</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Point Type</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>200</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>300</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>6</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder7</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>350</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>7</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>150</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>200</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>250</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>300</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file8Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>400</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file8</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file3Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>150</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file3</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>50</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>1</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>100</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>2</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>150</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>3</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>200</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>4</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>250</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>5</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>50</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>100</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>150</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>200</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>250</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>300</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox7</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>350</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>50</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>100</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>150</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>200</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>250</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>300</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox7</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>350</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file4Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>200</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file4</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file3Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>150</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file4Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>200</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file5Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>250</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file6Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>300</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>file2Lbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>100</y>
+                <width>290</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>file2</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file2Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>100</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox7</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>350</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file7Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>350</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file1Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>50</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>plotOrder8</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>400</y>
+                <width>20</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>8</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox8</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>400</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBox8</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>400</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBox8</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>400</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBox8</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>400</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>file8Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>400</y>
+                <width>160</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>50</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBox2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>100</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineWidthCBoxChangeAll</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>700</x>
+                <y>460</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>black</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>red</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>green</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>blue</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>purple</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>aqua</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>brown</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>orange</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Light Brown</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>lineColorCBoxChangeAll</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>740</x>
+                <y>460</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>y_axisPositionLbl</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>630</x>
+                <y>510</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>y-axis Position:</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>1.75</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.25</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2.5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointSizeCBoxChangeAll</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>640</x>
+                <y>460</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>No Points</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Plus</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Multiply</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image1</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Star</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image2</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image3</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Square</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image4</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image5</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Circle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image6</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Dotted Triangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image7</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Solid Trangle</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image8</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Dotted Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image9</pixmap>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>UsD Solid Tri.</string>
+            </property>
+            <property name="pixmap">
+                <pixmap>image10</pixmap>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>pointsCBoxChangeAll</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>460</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>cancelBtn</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>540</x>
+                <y>560</y>
+                <width>87</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Cancel</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>Default Position</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Customized Position</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>Remove Legend</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>legendCBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>280</x>
+                <y>510</y>
+                <width>140</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>LegendPositioningLbl</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>150</x>
+                <y>510</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Plot Legend Position:</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>x_axisEdit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>540</x>
+                <y>510</y>
+                <width>70</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>y_axisEdit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>720</x>
+                <y>510</y>
+                <width>70</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>x_axisPositionLbl</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>450</x>
+                <y>510</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>x-axis Position:</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>doneBtn</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>190</x>
+                <y>560</y>
+                <width>87</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Done</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>saveSettingsLbl</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>280</x>
+                <y>440</y>
+                <width>137</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Settings Management</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>SaveTimeButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>460</y>
+                <width>71</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Save Time</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>saveSettingsBtn</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>290</x>
+                <y>460</y>
+                <width>50</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Save</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>restoreSettingsBtn</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>350</x>
+                <y>460</y>
+                <width>60</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Restore</string>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="XPM.GZ" length="362">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade6523234550022230543251d2e25658564056503300071f540dc343000735101424859995642ca4800b7108d1d81cbdb08a15a6b2e005f7340c2</data>
+    </image>
+    <image name="image1">
+        <data format="XPM.GZ" length="473">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232b4500022230543251d2e25658564056503300071f540dc3430007331005854195944192e8a24ac0c17451286b0a0e6c284a134cc3608172609770348006e10c265caca08d391dc8be412026ab19a8bd50d58dd8bd56f58c3411935cc9451dc8b047088d65a730100f90c537c</data>
+    </image>
+    <image name="image2">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d030330171580859495812c080113027361182a046243104208c8030184595001a8204e21a84e244760330b8b8d98eec2e67a543fd65a7301009c81394a</data>
+    </image>
+    <image name="image3">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d0303301715e0145286012421a802b28494c9d5882e84e92e821eaab5e602006a573ae1</data>
+    </image>
+    <image name="image4">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d0303301715e014528681c12f44d043b5d65c00645838d1</data>
+    </image>
+    <image name="image5">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d0303301715208494d1859495410859481949214e219839caa842ca984268aa88331e9bbbb0b91ed98fb5d65c0095ff3b39</data>
+    </image>
+    <image name="image6">
+        <data format="XPM.GZ" length="398">789c8dceb10ac2301405d03d5ff168b620d6d48a88f80982a3200e2fc94bedd045eb20e2bfcb7d53a428de3b9d4b48523b3a1ef6e46a731b79ec23c50b5fc9a5fb303c4ee7ddd354be25dfd0867c3533955024bbd0809d728d8241c92898940905196c5a14ccca150a5a90972818c1e051700e668df223df17cb816db9c4242229164b1624174ba78bfc3c33bd67fad65f3f2c96d7d6bc01b4535580</data>
+    </image>
+    <image name="image7">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d0303301704949595f52000210446c842ca7a5885a0625021653d1c42100a22a48c6c1a4208ae0c2c04174112420064a722009142b5d65c006e143af7</data>
+    </image>
+    <image name="image8">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d0303301704949595f52000594819554819879032b290324e21658490321e21659890325142a88048a15a6b2e007034391e</data>
+    </image>
+    <image name="image9">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d03033017159024a48c007021b81a4c21658459ca088c2c04a5e0362ae310524675973256216574d7839c0916aab5e602007f183af7</data>
+    </image>
+    <image name="image10">
+        <data format="XPM.GZ" length="324">789cd3d7528808f055d0d2e72a2e492cc94c5648ce482c52d04a29cdcdad8c8eb5ade65232345530345630523054d2e152525648565036000310570fc44d03033017159024a48c00440921ccc223846c234e215477e11042773d5ca8d69a0b00ab3e391e</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>doneBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>doneBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>cancelBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>cancelBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>legendCBox</sender>
+        <signal>activated(int)</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>LegendPosition_selected()</slot>
+    </connection>
+    <connection>
+        <sender>SaveTimeButton</sender>
+        <signal>pressed()</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>SaveTimeButton_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>pointsCBoxChangeAll</sender>
+        <signal>activated(int)</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>pointsCBoxChangeAll_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>pointSizeCBoxChangeAll</sender>
+        <signal>activated(int)</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>pointSizeCBoxChangeAll_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>lineWidthCBoxChangeAll</sender>
+        <signal>activated(int)</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>lineWidthCBoxChangeAll_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>lineColorCBoxChangeAll</sender>
+        <signal>activated(int)</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>lineColorCBoxChangeAll_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>saveSettingsBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>saveSettingsBtn_pressed()</slot>
+    </connection>
+    <connection>
+        <sender>restoreSettingsBtn</sender>
+        <signal>pressed()</signal>
+        <receiver>plotNameForm</receiver>
+        <slot>restoreSettingsBtn_pressed()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>file1Edit</tabstop>
+    <tabstop>file2Edit</tabstop>
+    <tabstop>file3Edit</tabstop>
+    <tabstop>file4Edit</tabstop>
+    <tabstop>file5Edit</tabstop>
+    <tabstop>file6Edit</tabstop>
+    <tabstop>file7Edit</tabstop>
+    <tabstop>doneBtn</tabstop>
+    <tabstop>cancelBtn</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">plotnameform.ui.h</include>
+</includes>
+<slots>
+    <slot>doneBtn_pressed()</slot>
+    <slot>cancelBtn_pressed()</slot>
+    <slot>LegendPosition_selected()</slot>
+    <slot>SaveTimeButton_pressed()</slot>
+    <slot>pointsCBoxChangeAll_activated( int )</slot>
+    <slot>pointSizeCBoxChangeAll_activated( int )</slot>
+    <slot>lineWidthCBoxChangeAll_activated( int )</slot>
+    <slot>lineColorCBoxChangeAll_activated( int )</slot>
+    <slot>saveSettingsBtn_pressed()</slot>
+    <slot>restoreSettingsBtn_pressed()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,52 @@
+To Get Usable Data from Simulation
+Results:
+
+ - Designate a place to consolidate
+   the results in.
+
+1. Place all simlation result folders
+   in the same directory along with
+   Extract_Results.py.
+
+2. Run Extract_Results.py:
+
+   --> python Extract_Results.py
+
+
+
+
+
+
+Antiquated:
+
+For each simulation:
+
+1. Copy the following files to the
+   results folder:
+
+      od_pn_vid_ ...
+      vod_pn_vid_ ...
+      vods_pn_vid_ ...
+
+2. Embed a tag into the title of each
+   file.
+
+      od_pn_vid ------ _PerfAcc_ ...
+   +
+      _BP_Q_20
+   =
+      od_pn_vid_BP_Q_20_PerfAcc_ ...
+
+ - Make sure you get the first
+   od_pn_vid_ ...
+   instead of the second one which
+   has a _xl suffix.
+
+ - The od_ ... file is near the middle,
+   and the vod_ ... and vods_ ...
+   files are very near the bottom and
+   right next to each other.
+
+ - od_ ... is data delay
+   vod_ ... is video delay
+   vods_ ... is video delay jitter
