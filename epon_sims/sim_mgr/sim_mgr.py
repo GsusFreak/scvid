@@ -51,25 +51,30 @@ import time
 import string
 import pickle
 import stat
-from qt import *  		#Qt3
+#from qt import *  		#Qt3
 
-#from PyQt4.QtGui import * 	#Qt4
-#from PyQt4.QtCore import *	#Qt4
-#from PyQt4 import QtGui	#Qt4
+from PyQt4.QtGui import * 	#Qt4
+from PyQt4.QtCore import *	#Qt4
+from PyQt4 import QtGui	#Qt4
 
-from simmgrform import SimMgr
-from siminitform import SimInitForm
-from simviewform import SimViewForm
-from waitform import WaitForm
-from plotnameform import plotNameForm
+from simmgrform import Ui_SimMgr
+from siminitform import Ui_SimInitForm
+from simviewform import Ui_SimViewForm
+from waitform import Ui_WaitForm
+from plotnameform import Ui_plotNameForm
 
 #
 # To port this code, modify these variables
 # and create a form to input your simulation Parameters (siminitform.ui)
 #
 
-st = os.stat('/home/admin1/eponsim/eponsim')
-os.chmod('/home/admin1/eponsim/eponsim', st.st_mode | stat.S_IEXEC | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+# Modify the dirRoot variable as necessary
+
+dirRoot = '/home/admin1/scvid'
+dirLauncher = os.path.join(dirRoot, 'eponsim/eponsim')
+
+st = os.stat(dirLauncher)
+os.chmod(dirLauncher, st.st_mode | stat.S_IEXEC | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 # print st.st_mode
 
 path, empty = os.path.split(os.getcwd())
@@ -1102,9 +1107,9 @@ def launch_sim(simpassword):
 		time.sleep(0.1)
 
 
-class PlotNameWin (plotNameForm):
-	def __init__(self, parent = None, name = "Plot Name Form", modal = 0, fl = 0):
-		plotNameForm.__init__(self, parent, name, fl)
+class PlotNameWin (Ui_plotNameForm):
+	def setupUi(self, parent = None, name = "Plot Name Form", modal = 0, fl = 0):
+		Ui_plotNameForm.__init__(self)
 	
 	def saveSettingsBtn_pressed(self):
 		saveSettingsBtn_pressed2(self)
@@ -1486,13 +1491,17 @@ class PlotNameWin (plotNameForm):
 		os.chdir('..')
 		self.hide()
 
-class WaitWin (WaitForm):
-	def __init__(self, parent = None, name = "Wait Form", modal = 0, fl = 0):
-		WaitForm.__init__(self, parent, name, fl)
+class WaitWin (Ui_WaitForm):	
+	def __init__(self):
+		super(self.__class__, self).__init__()
+		self.setupUi(self)
 
-class SimViewWin (SimViewForm):
-	def __init__(self, parent = None, name = "Simulation View Form", modal = 0, fl = 0):
-		SimViewForm.__init__(self, parent, name, fl)
+class SimViewWin (Ui_SimViewForm):
+	#def __init__(self, parent = None, name = "Simulation View Form", modal = 0, fl = 0):
+		#Ui_SimViewForm.setupUi(self)
+	def __init__(self):
+		super(self.__class__, self).__init__()
+		self.setupUi(self)
 	
 	def pushButtonAutoName_pressed(self):
 		global fileList
@@ -1623,9 +1632,12 @@ class SimViewWin (SimViewForm):
 		sim_mgr_win.show()
 
 
-class SimInitWin (SimInitForm):
-	def __init__(self, parent = None, name = "Simulation Init Form", modal = 0, fl = 0):
-		SimInitForm.__init__(self, parent, name, fl)
+class SimInitWin (Ui_SimInitForm):
+	#def __init__(self, parent = None, name = "Simulation Init Form", modal = 0, fl = 0):
+		#Ui_SimInitForm.__init__(self)
+	def __init__(self):
+		super(self.__class__, self).__init__()
+		self.setupUi(self)
 		global simhostname
 		restore_parameters(self)
 		
@@ -2142,11 +2154,18 @@ class SimInitWin (SimInitForm):
 
 	
 
-class MainSimMgrWin (SimMgr):
-	def __init__(self, parent = None, name = "Simulation Manager", modal = 0, fl = 0):
-		SimMgr.__init__(self, parent, name, fl)
+class MainSimMgrWin (Ui_SimMgr):
+#	def __init__(self, parent = None, name = "Simulation Manager", modal = 0, fl = 0):
+#		Ui_SimMgr.__init__(self, parent, name, fl)
+	#def __init__(self):
+		#Ui_SimMgr.__init__(self)
+	def __init__(self):
+		super(self.__class__, self).__init__()
+		print dir(self)
+		self.setupUi(self)
+		
 	def languageChange(self):
-		SimMgr.languageChange(self)
+		Ui_SimMgr.languageChange(self)
 		self.simListBox.clear()
 		self.notStartedListBox.clear()
 		self.startedListBox.clear()
