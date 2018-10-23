@@ -1,18 +1,27 @@
 # To use:
 # Place this script in the home directory
 # and execute:
-# python Compile_PyQt.py
+# python Compile_PyQt_4.py
 
 
 import os
 
 
-os.chdir('/home/admin1/epon_sims/sim_mgr/')
+os.chdir('/home/admin1/scvid/epon_sims/sim_mgr/')
 
-os.system('pyuic -o plotnameform.py plotnameform.ui')
-os.system('pyuic -o siminitform.py siminitform.ui')
-os.system('pyuic -o simmgrform.py simmgrform.ui')
-os.system('pyuic -o simviewform.py simviewform.ui')
-os.system('pyuic -o waitform.py waitform.ui')
+print 'Attempting plotnameform.ui ...'
+os.system('pyuic4 -o plotnameform.py plotnameform.ui -x')
 
-print 'PyQt files updated.'
+print 'Attempting siminitform.ui ...'
+os.system('pyuic4 -o siminitform.py siminitform.ui -x')
+
+print 'Attempting simmgrform.ui ...'
+os.system('pyuic4 -o simmgrform.py simmgrform.ui -x')
+
+print 'Attempting simviewform.ui ...'
+os.system('pyuic4 -o simviewform.py simviewform.ui -x')
+
+print 'Attempting waitform.ui ...'
+os.system('pyuic4 -o waitform.py waitform.ui -x')
+
+print 'PyQt4 files updated.'

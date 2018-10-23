@@ -164,3 +164,13 @@ class Ui_SimMgr(object):
         self.notStartedNameLbl.setText(_translate("SimMgr", "Waiting to Run", None))
         self.completedNameLbl.setText(_translate("SimMgr", "Finished", None))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    SimMgr = QtGui.QWidget()
+    ui = Ui_SimMgr()
+    ui.setupUi(SimMgr)
+    SimMgr.show()
+    sys.exit(app.exec_())
+

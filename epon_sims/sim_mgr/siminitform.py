@@ -1044,3 +1044,13 @@ class Ui_SimInitForm(object):
         self.npoLbl.setText(_translate("SimInitForm", "NUM_PREFERRED_ONU", None))
         self.label_20.setText(_translate("SimInitForm", "Grant Scheduling Parameters", None))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    SimInitForm = QtGui.QWidget()
+    ui = Ui_SimInitForm()
+    ui.setupUi(SimInitForm)
+    SimInitForm.show()
+    sys.exit(app.exec_())
+

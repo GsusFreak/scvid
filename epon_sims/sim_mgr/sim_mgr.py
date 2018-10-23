@@ -1108,8 +1108,12 @@ def launch_sim(simpassword):
 
 
 class PlotNameWin (Ui_plotNameForm):
-	def setupUi(self, parent = None, name = "Plot Name Form", modal = 0, fl = 0):
-		Ui_plotNameForm.__init__(self)
+	#def setupUi(self):
+		#Ui_plotNameForm.__init__(self)
+	def __init__(self):
+		super(self.__class__, self).__init__()
+		self.setupUi(QtGui.QWidget())
+
 	
 	def saveSettingsBtn_pressed(self):
 		saveSettingsBtn_pressed2(self)
@@ -1494,14 +1498,14 @@ class PlotNameWin (Ui_plotNameForm):
 class WaitWin (Ui_WaitForm):	
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(self)
+		self.setupUi(QtGui.QWidget())
 
 class SimViewWin (Ui_SimViewForm):
 	#def __init__(self, parent = None, name = "Simulation View Form", modal = 0, fl = 0):
 		#Ui_SimViewForm.setupUi(self)
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(self)
+		self.setupUi(QtGui.QWidget())
 	
 	def pushButtonAutoName_pressed(self):
 		global fileList
@@ -1637,7 +1641,7 @@ class SimInitWin (Ui_SimInitForm):
 		#Ui_SimInitForm.__init__(self)
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(self)
+		self.setupUi(QtGui.QWidget())
 		global simhostname
 		restore_parameters(self)
 		
@@ -2161,8 +2165,7 @@ class MainSimMgrWin (Ui_SimMgr):
 		#Ui_SimMgr.__init__(self)
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		print dir(self)
-		self.setupUi(self)
+		self.setupUi(QtGui.QWidget())
 		
 	def languageChange(self):
 		Ui_SimMgr.languageChange(self)
@@ -2534,12 +2537,17 @@ class MainSimMgrWin (Ui_SimMgr):
 		print selectedSimID
 
 
-app = QApplication(sys.argv)
+# app = QApplication(sys.argv)
+app = QtGui.QApplication(sys.argv)
+
+#SimViewForm = QtGui.QWidget()
+
 sim_mgr_win = MainSimMgrWin()
 sim_init_win = SimInitWin()
 sim_view_win = SimViewWin()
 wait_win = WaitWin()
 plot_name_win = PlotNameWin()
+
 app.setMainWidget(sim_mgr_win)
 load_sim_data()
 load_plot_settings()

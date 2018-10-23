@@ -1068,3 +1068,13 @@ class Ui_plotNameForm(object):
         self.saveSettingsBtn.setText(_translate("plotNameForm", "Save", None))
         self.restoreSettingsBtn.setText(_translate("plotNameForm", "Restore", None))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    plotNameForm = QtGui.QWidget()
+    ui = Ui_plotNameForm()
+    ui.setupUi(plotNameForm)
+    plotNameForm.show()
+    sys.exit(app.exec_())
+

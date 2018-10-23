@@ -354,3 +354,13 @@ class Ui_SimViewForm(object):
         self.granttimeVsLoadBtn.setText(_translate("SimViewForm", "Grant Time vs. Load", None))
         self.label.setText(_translate("SimViewForm", "Plot Type", None))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    SimViewForm = QtGui.QWidget()
+    ui = Ui_SimViewForm()
+    ui.setupUi(SimViewForm)
+    SimViewForm.show()
+    sys.exit(app.exec_())
+

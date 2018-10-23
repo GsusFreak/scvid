@@ -43,3 +43,13 @@ class Ui_WaitForm(object):
         WaitForm.setWindowTitle(_translate("WaitForm", "Wait", None))
         self.waitLbl.setText(_translate("WaitForm", "Please Wait", None))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    WaitForm = QtGui.QWidget()
+    ui = Ui_WaitForm()
+    ui.setupUi(WaitForm)
+    WaitForm.show()
+    sys.exit(app.exec_())
+
