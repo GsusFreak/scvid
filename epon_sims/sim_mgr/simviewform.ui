@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1116</width>
+    <width>718</width>
     <height>639</height>
    </rect>
   </property>
@@ -836,22 +836,6 @@
    <signal>pressed()</signal>
    <receiver>SimViewForm</receiver>
    <slot>exportOutputBtn_pressed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>viewParamsBtn</sender>
-   <signal>pressed()</signal>
-   <receiver>SimViewForm</receiver>
-   <slot>viewParamsBtn_pressed()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>20</x>

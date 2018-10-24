@@ -289,118 +289,118 @@ def restore_parameters(self):
 	global queueIndex
 	global maxNumOfRunningSims
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] == 'SCALABLE_VIDEO_OFF':
-		self.svOffBtn.setChecked(1)
+		self.ui.svOffBtn.setChecked(1)
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] == 'SCALABLE_VIDEO_ON':
-		self.svOnBtn.setChecked(1)
+		self.ui.svOnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_OFF':
-		self.svDropNone.setChecked(1)
+		self.ui.svDropNone.setChecked(1)
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_THRESHOLD':
-		self.svDropThreshold.setChecked(1)
+		self.ui.svDropThreshold.setChecked(1)
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_DYNAMIC':
-		self.svDropDynamic.setChecked(1)
+		self.ui.svDropDynamic.setChecked(1)
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_STEP_THRESHOLD':
-		self.svDropStepThreshold.setChecked(1)
+		self.ui.svDropStepThreshold.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_IPACT_PSF':
-		self.ipactpsfBtn.setChecked(1)
+		self.ui.ipactpsfBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_NASC':
-		self.nascBtn.setChecked(1)
+		self.ui.nascBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_IPACT':
-		self.ipactBtn.setChecked(1)
+		self.ui.ipactBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LEAST_ASSIGNED':
-		self.leastAssignedBtn.setChecked(1)
+		self.ui.leastAssignedBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_APS':
-		self.apsBtn.setChecked(1)
+		self.ui.apsBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ':
-		self.lfjBtn.setChecked(1)
+		self.ui.lfjBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ_LPT':
-		self.lfjlptBtn.setChecked(1)
+		self.ui.lfjlptBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ_SPT':
-		self.lfjsptBtn.setChecked(1)
+		self.ui.lfjsptBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ_LNF':
-		self.lfjlnfBtn.setChecked(1)
+		self.ui.lfjlnfBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_EAF':
-		self.eafBtn.setChecked(1)
+		self.ui.eafBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_EAAF':
-		self.eaafBtn.setChecked(1)
+		self.ui.eaafBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_SPD':
-		self.spdBtn.setChecked(1)
+		self.ui.spdBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LPD':
-		self.lpdBtn.setChecked(1)
+		self.ui.lpdBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_SPD_LPT':
-		self.spdLptBtn.setChecked(1)
+		self.ui.spdLptBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_LPT':
-		self.intvlLfjlptBtn.setChecked(1)
+		self.ui.intvlLfjlptBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_SPT':
-		self.intvlLfjsptBtn.setChecked(1)
+		self.ui.intvlLfjsptBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_LNF':
-		self.intvlLfjlnfBtn.setChecked(1)
+		self.ui.intvlLfjlnfBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_EAF':
-		self.intvlEafBtn.setChecked(1)
+		self.ui.intvlEafBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_EAAF':
-		self.intvlEaafBtn.setChecked(1)
+		self.ui.intvlEaafBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_LPT':
-		self.jitLfjlptBtn.setChecked(1)
+		self.ui.jitLfjlptBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_SPT':
-		self.jitLfjsptBtn.setChecked(1)
+		self.ui.jitLfjsptBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_LNF':
-		self.jitLfjlnfBtn.setChecked(1)
+		self.ui.jitLfjlnfBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_EAF':
-		self.jitEafBtn.setChecked(1)
+		self.ui.jitEafBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_EAAF':
-		self.jitEaafBtn.setChecked(1)
+		self.ui.jitEaafBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_SPD':
-		self.jitSpdBtn.setChecked(1)
+		self.ui.jitSpdBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LPD':
-		self.jitLpdBtn.setChecked(1)
+		self.ui.jitLpdBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_TEST':
-		self.jitTestBtn.setChecked(1)
+		self.ui.jitTestBtn.setChecked(1)
 	if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_GATED':
-		self.dbaGatedBtn.setChecked(1)
+		self.ui.dbaGatedBtn.setChecked(1)
 	if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_FIXED':
-		self.dbaFixedBtn.setChecked(1)
+		self.ui.dbaFixedBtn.setChecked(1)
 	if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_LIMITED_GATE':
-		self.dbaLimitedBtn.setChecked(1)
+		self.ui.dbaLimitedBtn.setChecked(1)
 	if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_EXCESS':
-		self.dbaExcessBtn.setChecked(1)
+		self.ui.dbaExcessBtn.setChecked(1)
 	if setupSimParams[queueIndex]['TRAFFIC_TYPE'] == 'TRAFFIC_POISSON':
-		self.pnBtn.setChecked(1)
+		self.ui.pnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['TRAFFIC_TYPE'] == 'TRAFFIC_SELF_SIMILAR':
-		self.ssBtn.setChecked(1)
+		self.ui.ssBtn.setChecked(1)
 	if setupSimParams[queueIndex]['WDM_TYPE'] == 'WDM_FIXED':
-		self.fixedBtn.setChecked(1)
+		self.ui.fixedBtn.setChecked(1)
 	if setupSimParams[queueIndex]['WDM_TYPE'] == 'WDM_TUNABLE':
-		self.tunableBtn.setChecked(1)
+		self.ui.tunableBtn.setChecked(1)
 	if setupSimParams[queueIndex]['FIXED_PROP_DELAY'] == 'FIXED_PROP_DELAY_ON':
-		self.fpdOnBtn.setChecked(1)
+		self.ui.fpdOnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['FIXED_PROP_DELAY'] == 'FIXED_PROP_DELAY_OFF':
-		self.fpdOffBtn.setChecked(1)
+		self.ui.fpdOffBtn.setChecked(1)
 	if setupSimParams[queueIndex]['GET_TAIL'] == 'GET_TAIL_ON':
-		self.gtOnBtn.setChecked(1)
+		self.ui.gtOnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['GET_TAIL'] == 'GET_TAIL_OFF':
-		self.gtOffBtn.setChecked(1)
+		self.ui.gtOffBtn.setChecked(1)
 	if setupSimParams[queueIndex]['SIM_TRACE'] == 'SIM_TRACE_ON':
-		self.ttOnBtn.setChecked(1)
+		self.ui.ttOnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['SIM_TRACE'] == 'SIM_TRACE_OFF': 
-		self.ttOffBtn.setChecked(1) 
+		self.ui.ttOffBtn.setChecked(1) 
 	if setupSimParams[queueIndex]['VIDEO_TRAFFIC'] == 'VIDEO_TRAFFIC_ON':
-		self.vtOnBtn.setChecked(1)
-		self.videoTraceEdit.setText(setupSimParams[queueIndex]['VIDEO_TRACE_FILE'])
+		self.ui.vtOnBtn.setChecked(1)
+		self.ui.videoTraceEdit.setText(setupSimParams[queueIndex]['VIDEO_TRACE_FILE'])
 	if setupSimParams[queueIndex]['VIDEO_PREDICTION'] == 'VIDEO_PREDICTION_ON':
-		self.pvtOnBtn.setChecked(1)
+		self.ui.pvtOnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['VIDEO_PREDICTION'] == 'VIDEO_PREDICTION_OFF':
-		self.pvtOffBtn.setChecked(1)
+		self.ui.pvtOffBtn.setChecked(1)
 	if setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] == 'VIDEO_DBA_GATED':
-		self.dbaGatedVideoBtn.setChecked(1)
+		self.ui.dbaGatedVideoBtn.setChecked(1)
 	if setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] == 'VIDEO_DBA_FIXED':
-		self.dbaFixedVideoBtn.setChecked(1)
+		self.ui.dbaFixedVideoBtn.setChecked(1)
 	if setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] == 'VIDEO_DBA_LIMITED_GATE':
-		self.dbaLimitedVideoBtn.setChecked(1)
+		self.ui.dbaLimitedVideoBtn.setChecked(1)
 	if setupSimParams[queueIndex]['VIDEO_RANDOM_START'] == 'VIDEO_RANDOM_START_ON':
-		self.vsOnBtn.setChecked(1)
+		self.ui.vsOnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['VIDEO_RANDOM_START'] == 'VIDEO_RANDOM_START_OFF':
-		self.vsOffBtn.setChecked(1)
+		self.ui.vsOffBtn.setChecked(1)
 	if setupSimParams[queueIndex]['VIDEO_TRAFFIC'] == 'VIDEO_TRAFFIC_OFF':
-		self.vtOffBtn.setChecked(1)
+		self.ui.vtOffBtn.setChecked(1)
 		try:
 			for param in setupSimParamsList[queueIndex]:
 				setupSimParamsList[queueIndex].remove('FRAME_RATE')
@@ -432,111 +432,111 @@ def restore_parameters(self):
 		except:
 			pass
 	if setupSimParams[queueIndex]['GRANT_TRACE'] == 'GRANT_TRACE_ON':
-		self.grtOnBtn.setChecked(1)
+		self.ui.grtOnBtn.setChecked(1)
 	if setupSimParams[queueIndex]['GRANT_TRACE'] == 'GRANT_TRACE_OFF':
-		self.grtOffBtn.setChecked(1)
+		self.ui.grtOffBtn.setChecked(1)
 	if setupSimParams[queueIndex]['SCHEDULER_MAX_WINDOW'] == '1':
-		self.schedulerMaxWinChkBox.setChecked(1)
+		self.ui.schedulerMaxWinChkBox.setChecked(1)
 	else:
-		self.schedulerMaxWinChkBox.setChecked(0)
-	self.hostEdit.setText(simhostname)
-	self.grdTimeEdit.setText(setupSimParams[queueIndex]['GUARD_TIME'])
-	self.tuningTimeEdit.setText(setupSimParams[queueIndex]['TUNING_TIME'])
-	self.fpdValueEdit.setText(setupSimParams[queueIndex]['FIXED_PROP_DELAY_VALUE'])
-	self.maxPropDelayEdit.setText(setupSimParams[queueIndex]['MAX_PROP_DELAY'])
-	self.runsEdit.setText(setupSimParams[queueIndex]['NUM_RUNS'])
-	self.numONUEdit.setText(setupSimParams[queueIndex]['NUM_ONU'])
-	self.numHvyONUEdit.setText(setupSimParams[queueIndex]['NUM_HEAVY_ONU'])
-	self.heavyLoadEdit.setText(setupSimParams[queueIndex]['HEAVY_LOAD'])
-	self.numWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_WDM_ONU'])
-	self.numUhWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_UH_WDM_ONU'])
-	self.numLhWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_LH_WDM_ONU'])
-	self.linkSpdEdit.setText(setupSimParams[queueIndex]['LINK_SPEED'])
-	self.startLoadEdit.setText(setupSimParams[queueIndex]['START_LOAD'])
-	self.endLoadEdit.setText(setupSimParams[queueIndex]['END_LOAD'])
-	self.loadIncrEdit.setText(setupSimParams[queueIndex]['LOAD_INCR'])
-	self.startLambdaEdit.setText(setupSimParams[queueIndex]['START_LAMBDA'])
-	self.endLambdaEdit.setText(setupSimParams[queueIndex]['END_LAMBDA'])
-	self.hurstParamEdit.setText(setupSimParams[queueIndex]['SS_HURST_PARAM'])
-	self.numStrmsEdit.setText(setupSimParams[queueIndex]['NUM_SS_STREAMS'])
-	self.fixedGrantSizeEdit.setText(setupSimParams[queueIndex]['FIXED_GRANT_SIZE'])
-	self.frameRateEdit.setText(setupSimParams[queueIndex]['FRAME_RATE'])
-	self.maxGrantSizeEdit.setText(setupSimParams[queueIndex]['MAX_GRANT_SIZE'])
-	self.schedulerNumSlotEdit.setText(setupSimParams[queueIndex]['SCHEDULER_NUM_SLOT'])
-	self.schedulerSlotSizeEdit.setText(setupSimParams[queueIndex]['SCHEDULER_SLOT_SIZE'])
-	self.starveThreshEdit.setText(setupSimParams[queueIndex]['STARVE_THRESH'])
-	self.acwEdit.setText(setupSimParams[queueIndex]['AVAIL_COST_WEIGHT'])
-	self.npoEdit.setText(setupSimParams[queueIndex]['NUM_PREFERRED_ONU'])
-	self.PredTypeEdit.setText(setupSimParams[queueIndex]['PREDICTION_TYPE'])
-	self.simTimeEdit.setText(setupSimParams[queueIndex]['SIM_TIME'])
-	self.timeShiftEdit.setText(setupSimParams[queueIndex]['TIME_SHIFT'])
-	self.queueIndexSlotEdit.setText(str(queueIndex + 1))
-	self.simIdEdit.setText(setupSimParams[queueIndex]['simID'])
-	self.parallelSimsEdit.setText(str(maxNumOfRunningSims))
-	self.svDropThresholdEdit.setText(str(setupSimParams[queueIndex]['SV_DROP_LAYER_THRESHOLD']))
-	self.svDropSensitivity.setText(str(setupSimParams[queueIndex]['SV_DROP_SENSITIVITY']))
-	self.svDropStepMinBound.setText(str(setupSimParams[queueIndex]['SV_MIN_BOUND']))
-	self.svDropStepMaxBound.setText(str(setupSimParams[queueIndex]['SV_MAX_BOUND']))
-	self.svDropStep_NumMAValues.setText(str(setupSimParams[queueIndex]['SV_NUM_MA_VALUES']))
-	if self.svOnBtn.isChecked():
-		self.svButtonGroup.setEnabled(True)
+		self.ui.schedulerMaxWinChkBox.setChecked(0)
+	self.ui.hostEdit.setText(simhostname)
+	self.ui.grdTimeEdit.setText(setupSimParams[queueIndex]['GUARD_TIME'])
+	self.ui.tuningTimeEdit.setText(setupSimParams[queueIndex]['TUNING_TIME'])
+	self.ui.fpdValueEdit.setText(setupSimParams[queueIndex]['FIXED_PROP_DELAY_VALUE'])
+	self.ui.maxPropDelayEdit.setText(setupSimParams[queueIndex]['MAX_PROP_DELAY'])
+	self.ui.runsEdit.setText(setupSimParams[queueIndex]['NUM_RUNS'])
+	self.ui.numONUEdit.setText(setupSimParams[queueIndex]['NUM_ONU'])
+	self.ui.numHvyONUEdit.setText(setupSimParams[queueIndex]['NUM_HEAVY_ONU'])
+	self.ui.heavyLoadEdit.setText(setupSimParams[queueIndex]['HEAVY_LOAD'])
+	self.ui.numWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_WDM_ONU'])
+	self.ui.numUhWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_UH_WDM_ONU'])
+	self.ui.numLhWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_LH_WDM_ONU'])
+	self.ui.linkSpdEdit.setText(setupSimParams[queueIndex]['LINK_SPEED'])
+	self.ui.startLoadEdit.setText(setupSimParams[queueIndex]['START_LOAD'])
+	self.ui.endLoadEdit.setText(setupSimParams[queueIndex]['END_LOAD'])
+	self.ui.loadIncrEdit.setText(setupSimParams[queueIndex]['LOAD_INCR'])
+	self.ui.startLambdaEdit.setText(setupSimParams[queueIndex]['START_LAMBDA'])
+	self.ui.endLambdaEdit.setText(setupSimParams[queueIndex]['END_LAMBDA'])
+	self.ui.hurstParamEdit.setText(setupSimParams[queueIndex]['SS_HURST_PARAM'])
+	self.ui.numStrmsEdit.setText(setupSimParams[queueIndex]['NUM_SS_STREAMS'])
+	self.ui.fixedGrantSizeEdit.setText(setupSimParams[queueIndex]['FIXED_GRANT_SIZE'])
+	self.ui.frameRateEdit.setText(setupSimParams[queueIndex]['FRAME_RATE'])
+	self.ui.maxGrantSizeEdit.setText(setupSimParams[queueIndex]['MAX_GRANT_SIZE'])
+	self.ui.schedulerNumSlotEdit.setText(setupSimParams[queueIndex]['SCHEDULER_NUM_SLOT'])
+	self.ui.schedulerSlotSizeEdit.setText(setupSimParams[queueIndex]['SCHEDULER_SLOT_SIZE'])
+	self.ui.starveThreshEdit.setText(setupSimParams[queueIndex]['STARVE_THRESH'])
+	self.ui.acwEdit.setText(setupSimParams[queueIndex]['AVAIL_COST_WEIGHT'])
+	self.ui.npoEdit.setText(setupSimParams[queueIndex]['NUM_PREFERRED_ONU'])
+	self.ui.PredTypeEdit.setText(setupSimParams[queueIndex]['PREDICTION_TYPE'])
+	self.ui.simTimeEdit.setText(setupSimParams[queueIndex]['SIM_TIME'])
+	self.ui.timeShiftEdit.setText(setupSimParams[queueIndex]['TIME_SHIFT'])
+	self.ui.queueIndexSlotEdit.setText(str(queueIndex + 1))
+	self.ui.simIdEdit.setText(setupSimParams[queueIndex]['simID'])
+	self.ui.parallelSimsEdit.setText(str(maxNumOfRunningSims))
+	self.ui.svDropThresholdEdit.setText(str(setupSimParams[queueIndex]['SV_DROP_LAYER_THRESHOLD']))
+	self.ui.svDropSensitivity.setText(str(setupSimParams[queueIndex]['SV_DROP_SENSITIVITY']))
+	self.ui.svDropStepMinBound.setText(str(setupSimParams[queueIndex]['SV_MIN_BOUND']))
+	self.ui.svDropStepMaxBound.setText(str(setupSimParams[queueIndex]['SV_MAX_BOUND']))
+	self.ui.svDropStep_NumMAValues.setText(str(setupSimParams[queueIndex]['SV_NUM_MA_VALUES']))
+	#if self.ui.svOnBtn.isChecked():
+		#self.ui.svButtonGroup.setEnabled(True)
+	#else:
+		#self.ui.svButtonGroup.setEnabled(False)
+	if self.ui.vtOnBtn.isChecked():
+		self.ui.videoTraceEdit.setEnabled(True)
+		self.ui.changeTraceBtn.setEnabled(True)
+		self.ui.VideoDBABtnGroup.setEnabled(True)
+		self.ui.dbaGatedVideoBtn.setEnabled(True)
+		self.ui.dbaFixedVideoBtn.setEnabled(True)
+		self.ui.dbaLimitedVideoBtn.setEnabled(True)
+		self.ui.predictTrafficBox.setEnabled(True)
+		self.ui.FRateLbl.setEnabled(True)
+		self.ui.frameRateEdit.setEnabled(True)
+		self.ui.videoStartBox.setEnabled(True)
+		self.ui.ipactpsfBtn.setEnabled(True)
+		self.ui.scalableVideoBox.setEnabled(True)
+		self.ui.svDropThresholdEdit.setEnabled(True)
+		self.ui.svDropSensitivity.setEnabled(True)
+		self.ui.svDropStepMinBound.setEnabled(True)
+		self.ui.svDropStepMaxBound.setEnabled(True)
+		self.ui.svDropStep_NumMAValues.setEnabled(True)
+		self.ui.svDropMinBoundLabel.setEnabled(True)
+		self.ui.svDropMaxBoundLabel.setEnabled(True)
 	else:
-		self.svButtonGroup.setEnabled(False)
-	if self.vtOnBtn.isChecked():
-		self.videoTraceEdit.setEnabled(True)
-		self.changeTraceBtn.setEnabled(True)
-		self.VideoDBABtnGroup.setEnabled(True)
-		self.dbaGatedVideoBtn.setEnabled(True)
-		self.dbaFixedVideoBtn.setEnabled(True)
-		self.dbaLimitedVideoBtn.setEnabled(True)
-		self.predictTrafficBox.setEnabled(True)
-		self.FRateLbl.setEnabled(True)
-		self.frameRateEdit.setEnabled(True)
-		self.videoStartBox.setEnabled(True)
-		self.ipactpsfBtn.setEnabled(True)
-		self.scalableVideoBox.setEnabled(True)
-		self.svDropThresholdEdit.setEnabled(True)
-		self.svDropSensitivity.setEnabled(True)
-		self.svDropStepMinBound.setEnabled(True)
-		self.svDropStepMaxBound.setEnabled(True)
-		self.svDropStep_NumMAValues.setEnabled(True)
-		self.svDropMinBoundLabel.setEnabled(True)
-		self.svDropMaxBoundLabel.setEnabled(True)
+		self.ui.videoTraceEdit.clear()
+		self.ui.videoTraceEdit.setEnabled(False)
+		self.ui.changeTraceBtn.setEnabled(False)
+		#self.ui.VideoDBABtnGroup.setEnabled(False)
+		self.ui.dbaGatedVideoBtn.setEnabled(False)
+		self.ui.dbaFixedVideoBtn.setEnabled(False)
+		self.ui.dbaLimitedVideoBtn.setEnabled(False)
+		#self.ui.predictTrafficBox.setEnabled(False)
+		self.ui.FRateLbl.setEnabled(False)
+		self.ui.frameRateEdit.setEnabled(False)
+		#self.ui.videoStartBox.setEnabled(False)
+		#if self.ui.ipactpsfBtn.isChecked() == 1:
+			#self.ui.nascBtn.setChecked(1)
+		self.ui.ipactpsfBtn.setEnabled(False)
+		#self.ui.scalableVideoBox.setEnabled(False)
+		self.ui.svDropThresholdEdit.setEnabled(False)
+		self.ui.svDropSensitivity.setEnabled(False)
+		self.ui.svDropStepMinBound.setEnabled(False)
+		self.ui.svDropStepMaxBound.setEnabled(False)
+		self.ui.svDropStep_NumMAValues.setEnabled(False)
+		self.ui.svDropMinBoundLabel.setEnabled(False)
+		self.ui.svDropMaxBoundLabel.setEnabled(False)
+	if self.ui.pvtOnBtn.isChecked():
+		self.ui.PredTypeLbl.setEnabled(True)
+		self.ui.PredTypeEdit.setEnabled(True)
 	else:
-		self.videoTraceEdit.clear()
-		self.videoTraceEdit.setEnabled(False)
-		self.changeTraceBtn.setEnabled(False)
-		self.VideoDBABtnGroup.setEnabled(False)
-		self.dbaGatedVideoBtn.setEnabled(False)
-		self.dbaFixedVideoBtn.setEnabled(False)
-		self.dbaLimitedVideoBtn.setEnabled(False)
-		self.predictTrafficBox.setEnabled(False)
-		self.FRateLbl.setEnabled(False)
-		self.frameRateEdit.setEnabled(False)
-		self.videoStartBox.setEnabled(False)
-		#if self.ipactpsfBtn.isChecked() == 1:
-			#self.nascBtn.setChecked(1)
-		self.ipactpsfBtn.setEnabled(False)
-		self.scalableVideoBox.setEnabled(False)
-		self.svDropThresholdEdit.setEnabled(False)
-		self.svDropSensitivity.setEnabled(False)
-		self.svDropStepMinBound.setEnabled(False)
-		self.svDropStepMaxBound.setEnabled(False)
-		self.svDropStep_NumMAValues.setEnabled(False)
-		self.svDropMinBoundLabel.setEnabled(False)
-		self.svDropMaxBoundLabel.setEnabled(False)
-	if self.pvtOnBtn.isChecked():
-		self.PredTypeLbl.setEnabled(True)
-		self.PredTypeEdit.setEnabled(True)
+		self.ui.PredTypeLbl.setEnabled(False)
+		self.ui.PredTypeEdit.setEnabled(False)
+	if self.ui.vsOffBtn.isChecked():
+		self.ui.timeShiftLbl.setEnabled(False)
+		self.ui.timeShiftEdit.setEnabled(False)
 	else:
-		self.PredTypeLbl.setEnabled(False)
-		self.PredTypeEdit.setEnabled(False)
-	if self.vsOffBtn.isChecked():
-		self.timeShiftLbl.setEnabled(False)
-		self.timeShiftEdit.setEnabled(False)
-	else:
-		self.timeShiftLbl.setEnabled(True)
-		self.timeShiftEdit.setEnabled(True)
+		self.ui.timeShiftLbl.setEnabled(True)
+		self.ui.timeShiftEdit.setEnabled(True)
 	# app.processEvents(0)
 
 
@@ -590,50 +590,50 @@ def saveSettingsBtn_pressed2(self):
 
 def restoreSettingsBtn_pressed2(self):
 	global plotSettings
-	self.pointsCBox1.setCurrentItem(plotSettings['pointsCBox1'])
-	self.pointsCBox2.setCurrentItem(plotSettings['pointsCBox2'])
-	self.pointsCBox3.setCurrentItem(plotSettings['pointsCBox3'])
-	self.pointsCBox4.setCurrentItem(plotSettings['pointsCBox4'])
-	self.pointsCBox5.setCurrentItem(plotSettings['pointsCBox5'])
-	self.pointsCBox6.setCurrentItem(plotSettings['pointsCBox6'])
-	self.pointsCBox7.setCurrentItem(plotSettings['pointsCBox7'])
-	self.pointsCBox8.setCurrentItem(plotSettings['pointsCBox8'])
+	self.ui.pointsCBox1.setCurrentIndex(0)
+	self.ui.pointsCBox2.setCurrentIndex(1)
+	self.ui.pointsCBox3.setCurrentIndex(1)
+	self.ui.pointsCBox4.setCurrentIndex(1)
+	self.ui.pointsCBox5.setCurrentIndex(1)
+	self.ui.pointsCBox6.setCurrentIndex(1)
+	self.ui.pointsCBox7.setCurrentIndex(1)
+	self.ui.pointsCBox8.setCurrentIndex(1)
 	
-	self.file1Edit.setText(plotSettings['file1Edit'])
-	self.file2Edit.setText(plotSettings['file2Edit'])
-	self.file3Edit.setText(plotSettings['file3Edit'])
-	self.file4Edit.setText(plotSettings['file4Edit'])
-	self.file5Edit.setText(plotSettings['file5Edit'])
-	self.file6Edit.setText(plotSettings['file6Edit'])
-	self.file7Edit.setText(plotSettings['file7Edit'])
-	self.file8Edit.setText(plotSettings['file8Edit'])
+	self.ui.file1Edit.setText(plotSettings['file1Edit'])
+	self.ui.file2Edit.setText(plotSettings['file2Edit'])
+	self.ui.file3Edit.setText(plotSettings['file3Edit'])
+	self.ui.file4Edit.setText(plotSettings['file4Edit'])
+	self.ui.file5Edit.setText(plotSettings['file5Edit'])
+	self.ui.file6Edit.setText(plotSettings['file6Edit'])
+	self.ui.file7Edit.setText(plotSettings['file7Edit'])
+	self.ui.file8Edit.setText(plotSettings['file8Edit'])
 	
-	self.pointSizeCBox1.setCurrentText(plotSettings['pointSizeCBox1'])
-	self.pointSizeCBox2.setCurrentText(plotSettings['pointSizeCBox2'])
-	self.pointSizeCBox3.setCurrentText(plotSettings['pointSizeCBox3'])
-	self.pointSizeCBox4.setCurrentText(plotSettings['pointSizeCBox4'])
-	self.pointSizeCBox5.setCurrentText(plotSettings['pointSizeCBox5'])
-	self.pointSizeCBox6.setCurrentText(plotSettings['pointSizeCBox6'])
-	self.pointSizeCBox7.setCurrentText(plotSettings['pointSizeCBox7'])
-	self.pointSizeCBox8.setCurrentText(plotSettings['pointSizeCBox8'])
+	self.ui.pointSizeCBox1.setCurrentIndex(1)
+	self.ui.pointSizeCBox2.setCurrentIndex(1)
+	self.ui.pointSizeCBox3.setCurrentIndex(1)
+	self.ui.pointSizeCBox4.setCurrentIndex(1)
+	self.ui.pointSizeCBox5.setCurrentIndex(1)
+	self.ui.pointSizeCBox6.setCurrentIndex(1)
+	self.ui.pointSizeCBox7.setCurrentIndex(1)
+	self.ui.pointSizeCBox8.setCurrentIndex(1)
 	
-	self.lineWidthCBox1.setCurrentText(plotSettings['lineWidthCBox1'])
-	self.lineWidthCBox2.setCurrentText(plotSettings['lineWidthCBox2'])
-	self.lineWidthCBox3.setCurrentText(plotSettings['lineWidthCBox3'])
-	self.lineWidthCBox4.setCurrentText(plotSettings['lineWidthCBox4'])
-	self.lineWidthCBox5.setCurrentText(plotSettings['lineWidthCBox5'])
-	self.lineWidthCBox6.setCurrentText(plotSettings['lineWidthCBox6'])
-	self.lineWidthCBox7.setCurrentText(plotSettings['lineWidthCBox7'])
-	self.lineWidthCBox8.setCurrentText(plotSettings['lineWidthCBox8'])
+	self.ui.lineWidthCBox1.setCurrentIndex(1)
+	self.ui.lineWidthCBox2.setCurrentIndex(1)
+	self.ui.lineWidthCBox3.setCurrentIndex(1)
+	self.ui.lineWidthCBox4.setCurrentIndex(1)
+	self.ui.lineWidthCBox5.setCurrentIndex(1)
+	self.ui.lineWidthCBox6.setCurrentIndex(1)
+	self.ui.lineWidthCBox7.setCurrentIndex(1)
+	self.ui.lineWidthCBox8.setCurrentIndex(1)
 	
-	self.lineColorCBox1.setCurrentItem(plotSettings['lineColorCBox1'])
-	self.lineColorCBox2.setCurrentItem(plotSettings['lineColorCBox2'])
-	self.lineColorCBox3.setCurrentItem(plotSettings['lineColorCBox3'])
-	self.lineColorCBox4.setCurrentItem(plotSettings['lineColorCBox4'])
-	self.lineColorCBox5.setCurrentItem(plotSettings['lineColorCBox5'])
-	self.lineColorCBox6.setCurrentItem(plotSettings['lineColorCBox6'])
-	self.lineColorCBox7.setCurrentItem(plotSettings['lineColorCBox7'])
-	self.lineColorCBox8.setCurrentItem(plotSettings['lineColorCBox8'])
+	self.ui.lineColorCBox1.setCurrentIndex(1)
+	self.ui.lineColorCBox2.setCurrentIndex(1)
+	self.ui.lineColorCBox3.setCurrentIndex(1)
+	self.ui.lineColorCBox4.setCurrentIndex(1)
+	self.ui.lineColorCBox5.setCurrentIndex(1)
+	self.ui.lineColorCBox6.setCurrentIndex(1)
+	self.ui.lineColorCBox7.setCurrentIndex(1)
+	self.ui.lineColorCBox8.setCurrentIndex(1)
 	
 # END David's Funcitons
 
@@ -779,110 +779,6 @@ simParams['PREDICTION_TYPE']		= 'FFBI'
 
 def initialize_data_structure():
 	pass
-	# Initialize data structures
-	#simParamsList.append('OLT_TYPE')
-	#simParamsList.append('DBA_TYPE')
-	#simParamsList.append('TRAFFIC_TYPE')
-
-	#simParamsList.append('VIDEO_TRAFFIC')
-
-	#simParamsList.append('SCALABLE_VIDEO_TRAFFIC')
-	#simParamsList.append('SCALABLE_VIDEO_DROPPING_ALGORITHM')
-
-	#simParamsList.append('WDM_TYPE')
-	#simParamsList.append('GUARD_TIME')
-	#simParamsList.append('TUNING_TIME')
-	#simParamsList.append('NUM_RUNS')
-	#simParamsList.append('NUM_ONU')
-	#simParamsList.append('NUM_HEAVY_ONU')
-	#simParamsList.append('HEAVY_LOAD')
-	#simParamsList.append('LINK_SPEED')
-
-	#simParamsList.append('NUM_WDM_ONU')
-	#simParamsList.append('NUM_UH_WDM_ONU')
-	#simParamsList.append('NUM_LH_WDM_ONU')
-
-	#simParamsList.append('SS_HURST_PARAM')
-	#simParamsList.append('NUM_SS_STREAMS')
-
-	#simParamsList.append('START_LOAD')
-	#simParamsList.append('END_LOAD')
-	#simParamsList.append('LOAD_INCR')
-
-	#simParamsList.append('START_LAMBDA')
-	#simParamsList.append('END_LAMBDA')
-
-	#simParamsList.append('FIXED_GRANT_SIZE')
-	#simParamsList.append('MAX_GRANT_SIZE')
-
-	#simParamsList.append('SCHEDULER_MAX_WINDOW')
-	#simParamsList.append('SCHEDULER_NUM_SLOT')
-	#simParamsList.append('SCHEDULER_SLOT_SIZE')
-	#simParamsList.append('STARVE_THRESH')
-	#simParamsList.append('AVAIL_COST_WEIGHT')
-	#simParamsList.append('NUM_PREFERRED_ONU')
-
-	#simParamsList.append('SIM_TIME')
-
-	#simParamsList.append('GET_TAIL')
-	#simParamsList.append('SIM_TRACE')
-	#simParamsList.append('GRANT_TRACE')
-
-	#simParamsList.append('FIXED_PROP_DELAY')
-	#simParamsList.append('FIXED_PROP_DELAY_VALUE')
-	#simParamsList.append('MAX_PROP_DELAY')
-
-	#simParams['OLT_TYPE']   	= 'OLT_ONLINE_NASC'
-	#simParams['DBA_TYPE']   	= 'DBA_GATED'
-	#simParams['TRAFFIC_TYPE']   	= 'TRAFFIC_SELF_SIMILAR' # Traffic Type
-	#simParams['WDM_TYPE']   	= 'WDM_FIXED' # WDM Type
-	#simParams['GUARD_TIME'] 	= '1e-6'
-
-	#simParams['SCALABLE_VIDEO_TRAFFIC']				= 'SCALABLE_VIDEO_OFF'
-	#simParams['SCALABLE_VIDEO_DROPPING_ALGORITHM']	= 'SCALABLE_VIDEO_DROPPING_OFF'
-
-	#simParams['TUNING_TIME']	= '5e-3'
-	#simParams['NUM_RUNS']   	= '1'   # Number of independent runs
-	#simParams['NUM_ONU']		= '32'  # Number of ONUs on PON
-	#simParams['NUM_HEAVY_ONU'] 	= '0'   # Number of heavily loaded ONUs
-	#simParams['HEAVY_LOAD'] 	= '2'   # heavily loaded ONU multiple
-	#simParams['LINK_SPEED'] 	= '1e9' # link speed in bps
-		                                
-	#simParams['NUM_WDM_ONU']	= '0'   # Number of WDM ONUs
-	#simParams['NUM_UH_WDM_ONU'] 	= '0'   # Number of WDM ONUs
-	#simParams['NUM_LH_WDM_ONU'] 	= '0'   # Number of WDM ONUs
-
-	#simParams['SS_HURST_PARAM'] 	= '0.75'# Self Similar Traffic Source Hurst Parameter
-	#simParams['NUM_SS_STREAMS'] 	= '32'  # Number of Self Similar Traffic Streams
-
-	#simParams['START_LOAD'] 	= '0.1'
-	#simParams['END_LOAD']   	= '0.9'
-	#simParams['LOAD_INCR']  	= '0.1'
-
-	#simParams['START_LAMBDA']   	= '1'
-	#simParams['END_LAMBDA'] 	= '1'
-
-	##simParams['FIXED_GRANT_SIZE']   = '1534'
-	##simParams['MAX_GRANT_SIZE'] 	= '7188'
-
-	#simParams['FIXED_GRANT_SIZE']   = '156876'
-	#simParams['MAX_GRANT_SIZE'] 	= '156876'
-
-	#simParams['SCHEDULER_MAX_WINDOW'] 	= '0'
-	#simParams['SCHEDULER_NUM_SLOT'] 	= '180'
-	#simParams['SCHEDULER_SLOT_SIZE']	= '64'
-	#simParams['STARVE_THRESH']  		= '64'
-	#simParams['AVAIL_COST_WEIGHT']  	= '1.0'
-	#simParams['NUM_PREFERRED_ONU']  	= '0'
-
-	#simParams['SIM_TIME']   		= '300'
-
-	#simParams['GET_TAIL']   		= 'GET_TAIL_OFF'
-	#simParams['SIM_TRACE']  		= 'SIM_TRACE_OFF'
-	#simParams['GRANT_TRACE']		= 'GRANT_TRACE_OFF'
-	#simParams['FIXED_PROP_DELAY']   	= 'FIXED_PROP_DELAY_OFF'
-	#simParams['FIXED_PROP_DELAY_VALUE'] 	= '50e-6'
-	#simParams['MAX_PROP_DELAY'] 		= '50e-6'
 	
 	
 
@@ -1107,12 +1003,12 @@ def launch_sim(simpassword):
 		time.sleep(0.1)
 
 
-class PlotNameWin (Ui_plotNameForm):
-	#def setupUi(self):
-		#Ui_plotNameForm.__init__(self)
+class PlotNameWin (QtGui.QWidget):
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(QtGui.QWidget())
+		self.ui = Ui_plotNameForm()
+		self.ui.setupUi(self)
+
 
 	
 	def saveSettingsBtn_pressed(self):
@@ -1495,17 +1391,17 @@ class PlotNameWin (Ui_plotNameForm):
 		os.chdir('..')
 		self.hide()
 
-class WaitWin (Ui_WaitForm):	
+class WaitWin (QtGui.QWidget):	
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(QtGui.QWidget())
+		self.ui = Ui_WaitForm()
+		self.ui.setupUi(self)
 
-class SimViewWin (Ui_SimViewForm):
-	#def __init__(self, parent = None, name = "Simulation View Form", modal = 0, fl = 0):
-		#Ui_SimViewForm.setupUi(self)
+class SimViewWin (QtGui.QWidget):
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(QtGui.QWidget())
+		self.ui = Ui_SimViewForm()
+		self.ui.setupUi(self)
 	
 	def pushButtonAutoName_pressed(self):
 		global fileList
@@ -1636,168 +1532,17 @@ class SimViewWin (Ui_SimViewForm):
 		sim_mgr_win.show()
 
 
-class SimInitWin (Ui_SimInitForm):
+class SimInitWin (QtGui.QWidget):
 	#def __init__(self, parent = None, name = "Simulation Init Form", modal = 0, fl = 0):
 		#Ui_SimInitForm.__init__(self)
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(QtGui.QWidget())
+		self.ui = Ui_SimInitForm()
+		self.ui.setupUi(self)
+		
 		global simhostname
 		restore_parameters(self)
 		
-		#if setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] == 'SCALABLE_VIDEO_OFF':
-			#self.svOffBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] == 'SCALABLE_VIDEO_ON':
-			#self.svOnBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_OFF':
-			#self.svDropMethod0.setChecked(1)
-		#if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_METHOD_1':
-			#self.svDropMethod1.setChecked(1)
-		#if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_METHOD_2':
-			#self.svDropMethod2.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_NASC':
-			#self.nascBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_IPACT':
-			#self.ipactBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LEAST_ASSIGNED':
-			#self.leastAssignedBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_APS':
-			#self.apsBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ':
-			#self.lfjBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ_LPT':
-			#self.lfjlptBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ_SPT':
-			#self.lfjsptBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LFJ_LNF':
-			#self.lfjlnfBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_EAF':
-			#self.eafBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_EAAF':
-			#self.eaafBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_SPD':
-			#self.spdBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_LPD':
-			#self.lpdBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_SPD_LPT':
-			#self.spdLptBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_LPT':
-			#self.intvlLfjlptBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_SPT':
-			#self.intvlLfjsptBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_LNF':
-			#self.intvlLfjlnfBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_EAF':
-			#self.intvlEafBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_EAAF':
-			#self.intvlEaafBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_LPT':
-			#self.jitLfjlptBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_SPT':
-			#self.jitLfjsptBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_LNF':
-			#self.jitLfjlnfBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_EAF':
-			#self.jitEafBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_EAAF':
-			#self.jitEaafBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_SPD':
-			#self.jitSpdBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_LPD':
-			#self.jitLpdBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_JIT_TEST':
-			#self.jitTestBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_GATED':
-			#self.dbaGatedBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_FIXED':
-			#self.dbaFixedBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_LIMITED_GATE':
-			#self.dbaLimitedBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['DBA_TYPE'] == 'DBA_EXCESS':
-			#self.dbaExcessBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['TRAFFIC_TYPE'] == 'TRAFFIC_POISSON':
-			#self.pnBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['TRAFFIC_TYPE'] == 'TRAFFIC_SELF_SIMILAR':
-			#self.ssBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['WDM_TYPE'] == 'WDM_FIXED':
-			#self.fixedBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['WDM_TYPE'] == 'WDM_TUNABLE':
-			#self.tunableBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['FIXED_PROP_DELAY'] == 'FIXED_PROP_DELAY_ON':
-			#self.fpdOnBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['FIXED_PROP_DELAY'] == 'FIXED_PROP_DELAY_OFF':
-			#self.fpdOffBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['GET_TAIL'] == 'GET_TAIL_ON':
-			#self.gtOnBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['GET_TAIL'] == 'GET_TAIL_OFF':
-			#self.gtOffBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['SIM_TRACE'] == 'SIM_TRACE_ON':
-			#self.ttOnBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['SIM_TRACE'] == 'SIM_TRACE_OFF':
-			#self.ttOffBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['GRANT_TRACE'] == 'GRANT_TRACE_ON':
-			#self.grtOnBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['GRANT_TRACE'] == 'GRANT_TRACE_OFF':
-			#self.grtOffBtn.setChecked(1)
-		#if setupSimParams[queueIndex]['SCHEDULER_MAX_WINDOW'] == '1':
-			#self.schedulerMaxWinChkBox.setChecked(1)
-		#else:
-			#self.schedulerMaxWinChkBox.setChecked(0)
-		#self.hostEdit.setText(simhostname)
-		#self.grdTimeEdit.setText(setupSimParams[queueIndex]['GUARD_TIME'])
-		#self.tuningTimeEdit.setText(setupSimParams[queueIndex]['TUNING_TIME'])
-		#self.fpdValueEdit.setText(setupSimParams[queueIndex]['FIXED_PROP_DELAY_VALUE'])
-		#self.maxPropDelayEdit.setText(setupSimParams[queueIndex]['MAX_PROP_DELAY'])
-		#self.runsEdit.setText(setupSimParams[queueIndex]['NUM_RUNS'])
-		#self.numONUEdit.setText(setupSimParams[queueIndex]['NUM_ONU'])
-		#self.numHvyONUEdit.setText(setupSimParams[queueIndex]['NUM_HEAVY_ONU'])
-		#self.heavyLoadEdit.setText(setupSimParams[queueIndex]['HEAVY_LOAD'])
-		#self.numWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_WDM_ONU'])
-		#self.numUhWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_UH_WDM_ONU'])
-		#self.numLhWdmONUEdit.setText(setupSimParams[queueIndex]['NUM_LH_WDM_ONU'])
-		#self.linkSpdEdit.setText(setupSimParams[queueIndex]['LINK_SPEED'])
-		#self.startLoadEdit.setText(setupSimParams[queueIndex]['START_LOAD'])
-		#self.endLoadEdit.setText(setupSimParams[queueIndex]['END_LOAD'])
-		#self.loadIncrEdit.setText(setupSimParams[queueIndex]['LOAD_INCR'])
-		#self.startLambdaEdit.setText(setupSimParams[queueIndex]['START_LAMBDA'])
-		#self.endLambdaEdit.setText(setupSimParams[queueIndex]['END_LAMBDA'])
-		#self.hurstParamEdit.setText(setupSimParams[queueIndex]['SS_HURST_PARAM'])
-		#self.numStrmsEdit.setText(setupSimParams[queueIndex]['NUM_SS_STREAMS'])
-		#self.fixedGrantSizeEdit.setText(setupSimParams[queueIndex]['FIXED_GRANT_SIZE'])
-		#self.maxGrantSizeEdit.setText(setupSimParams[queueIndex]['MAX_GRANT_SIZE'])
-		#self.schedulerNumSlotEdit.setText(setupSimParams[queueIndex]['SCHEDULER_NUM_SLOT'])
-		#self.schedulerSlotSizeEdit.setText(setupSimParams[queueIndex]['SCHEDULER_SLOT_SIZE'])
-		#self.starveThreshEdit.setText(setupSimParams[queueIndex]['STARVE_THRESH'])
-		#self.acwEdit.setText(setupSimParams[queueIndex]['AVAIL_COST_WEIGHT'])
-		#self.npoEdit.setText(setupSimParams[queueIndex]['NUM_PREFERRED_ONU'])
-		#self.simTimeEdit.setText(setupSimParams[queueIndex]['SIM_TIME'])
-		#self.queueIndexSlotEdit.setText(str(queueIndex + 1))
-		
-#	def UpdateCluster(self):
-#		#Populating the Cluster Select
-#		self.ClusterCB.clear()
-#		clustercount = 2
-#		lifeline = re.compile(r"(\d) received")
-#		report = ("No response","Partial Response","Alive")
-#
-#		print time.ctime()
-#
-#		for host in range(2,8):
-#			ip = self.ui.IPpart1Edit.text() + '.' + self.ui.IPpart2Edit.text() + '.' + self.ui.IPpart3Edit.text() + '.' + str(host)
-#			pingaling = os.popen("ping -q -c2 "+str(ip),"r")
-#			print "Testing ",ip,
-#			sys.stdout.flush()
-#			while 1:
-#				line = pingaling.readline()
-#				if not line: break
-#				igot = re.findall(lifeline,line)
-#				if igot:
-#					print report[int(igot[0])]
-#					if report[int(igot[0])] == 'Alive':
-#						self.ClusterCB.addItem("sim"+str(clustercount))
-#						clustercount = clustercount + 1
-#					else:
-#						clustercount = clustercount + 1
 
 	def cancelBtn_pressed(self):
 		store_parameters(self)
@@ -1808,172 +1553,6 @@ class SimInitWin (Ui_SimInitForm):
 		self.launchBtn.setDown(0)
 		global simhostname
 		store_parameters(self)
-		#simParamsList = []
-		#initialize_data_structure()
-		#if self.svOffBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] = 'SCALABLE_VIDEO_OFF'
-		#if self.svOnBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] = 'SCALABLE_VIDEO_ON'
-		#if self.svDropMethod0.isChecked() == 1:
-			#setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_OFF'
-		#if self.svDropMethod1.isChecked() == 1:
-			#setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_METHOD_1'
-		#if self.svDropMethod2.isChecked() == 1:
-			#setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_METHOD_2'
-		#if self.ipactpsfBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_IPACT_PSF'
-		#if self.nascBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_NASC'
-		#if self.ipactBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_IPACT'
-		#if self.leastAssignedBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LEAST_ASSIGNED'
-		#if self.apsBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_APS'
-		#if self.lfjBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ'
-		#if self.lfjlptBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ_LPT'
-		#if self.lfjsptBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ_SPT'
-		#if self.lfjlnfBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ_LNF'
-		#if self.eafBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_EAF'
-		#if self.eaafBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_EAAF'
-		#if self.spdBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_SPD'
-		#if self.lpdBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LPD'
-		#if self.spdLptBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_SPD_LPT'
-		#if self.intvlLfjlptBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_LFJ_LPT'
-		#if self.intvlLfjsptBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_LFJ_SPT'
-		#if self.intvlLfjlnfBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_LFJ_LNF'
-		#if self.intvlEafBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_EAF'
-		#if self.intvlEaafBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_EAAF'
-		#if self.jitLfjlptBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LFJ_LPT'
-		#if self.jitLfjsptBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LFJ_SPT'
-		#if self.jitLfjlnfBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LFJ_LNF'
-		#if self.jitEafBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_EAF'
-		#if self.jitEaafBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_EAAF'
-		#if self.jitSpdBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_SPD'
-		#if self.jitLpdBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LPD'
-		#if self.jitTestBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_TEST'
-		#if self.dbaGatedBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_GATED'
-		#if self.dbaFixedBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_FIXED'
-		#if self.dbaLimitedBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_LIMITED_GATE'
-		#if self.dbaExcessBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_EXCESS'
-		#if self.pnBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['TRAFFIC_TYPE'] = 'TRAFFIC_POISSON'
-		#if self.ssBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['TRAFFIC_TYPE'] = 'TRAFFIC_SELF_SIMILAR'
-		#if self.tunableBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['WDM_TYPE'] = 'WDM_TUNABLE'
-		#if self.fixedBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['WDM_TYPE'] = 'WDM_FIXED'
-		#if self.fpdOnBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['FIXED_PROP_DELAY'] = 'FIXED_PROP_DELAY_ON'
-		#if self.fpdOffBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['FIXED_PROP_DELAY'] = 'FIXED_PROP_DELAY_OFF'
-		#if self.gtOnBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['GET_TAIL'] = 'GET_TAIL_ON'
-		#if self.gtOffBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['GET_TAIL'] = 'GET_TAIL_OFF'
-		#if self.ttOnBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['SIM_TRACE'] = 'SIM_TRACE_ON'
-		#if self.ttOffBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['SIM_TRACE'] = 'SIM_TRACE_OFF'
-		#if self.vtOnBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['VIDEO_TRAFFIC'] = 'VIDEO_TRAFFIC_ON'
-			#setupSimParamsList[queueIndex].append('FRAME_RATE')
-			#setupSimParams[queueIndex]['FRAME_RATE'] = self.frameRateEdit.text().ascii()
-			#setupSimParamsList[queueIndex].append('VIDEO_TRACE_FILE')
-			#setupSimParams[queueIndex]['VIDEO_TRACE_FILE'] = self.videoTraceEdit.text().ascii()
-			#setupSimParamsList[queueIndex].append('VIDEO_PREDICTION')
-			#if self.pvtOnBtn.isChecked() == 1:
-				#setupSimParams[queueIndex]['VIDEO_PREDICTION'] = 'VIDEO_PREDICTION_ON'
-				#setupSimParamsList[queueIndex].append('PREDICTION_TYPE')
-				#setupSimParams[queueIndex]['PREDICTION_TYPE'] = self.PredTypeEdit.text().ascii()
-			#else:
-				#setupSimParams[queueIndex]['VIDEO_PREDICTION'] = 'VIDEO_PREDICTION_OFF'
-			
-			#setupSimParamsList[queueIndex].append('TIME_SHIFT')
-			#if self.vsOnBtn.isChecked() == 1:
-				#setupSimParams[queueIndex]['TIME_SHIFT'] = self.timeShiftEdit.text().ascii()
-			#else:
-				#setupSimParams[queueIndex]['TIME_SHIFT'] = '0.0'
-				
-			#setupSimParamsList[queueIndex].append('VIDEO_DBA_TYPE')
-			#if self.dbaGatedVideoBtn.isChecked() == 1:
-				#setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] = 'VIDEO_DBA_GATED'
-			#if self.dbaFixedVideoBtn.isChecked() == 1:
-				#setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] = 'VIDEO_DBA_FIXED'
-			#if self.dbaLimitedVideoBtn.isChecked() == 1:
-				#setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] = 'VIDEO_DBA_LIMITED_GATE'
-		#if self.vtOffBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['VIDEO_TRAFFIC'] = 'VIDEO_TRAFFIC_OFF'
-		#if self.grtOnBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['GRANT_TRACE'] = 'GRANT_TRACE_ON'
-		#if self.grtOffBtn.isChecked() == 1:
-			#setupSimParams[queueIndex]['GRANT_TRACE'] = 'GRANT_TRACE_OFF'
-		#if self.schedulerMaxWinChkBox.isChecked() == 1:
-			#setupSimParams[queueIndex]['SCHEDULER_MAX_WINDOW'] = '1'
-		#else:
-			#setupSimParams[queueIndex]['SCHEDULER_MAX_WINDOW'] = '0'
-		#simhostname = self.hostEdit.text().ascii()
-		#setupSimParams[queueIndex]['GUARD_TIME'] = self.grdTimeEdit.text().ascii()
-		#setupSimParams[queueIndex]['TUNING_TIME'] = self.tuningTimeEdit.text().ascii()
-		#setupSimParams[queueIndex]['FIXED_PROP_DELAY_VALUE'] = self.fpdValueEdit.text().ascii()
-		#setupSimParams[queueIndex]['MAX_PROP_DELAY'] = self.maxPropDelayEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_RUNS'] = self.runsEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_ONU'] = self.numONUEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_HEAVY_ONU'] = self.numHvyONUEdit.text().ascii()
-		#setupSimParams[queueIndex]['HEAVY_LOAD'] = self.heavyLoadEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_WDM_ONU'] = self.numWdmONUEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_UH_WDM_ONU'] = self.numUhWdmONUEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_LH_WDM_ONU'] = self.numLhWdmONUEdit.text().ascii()
-		#setupSimParams[queueIndex]['LINK_SPEED'] = self.linkSpdEdit.text().ascii()
-		#setupSimParams[queueIndex]['START_LOAD'] = self.startLoadEdit.text().ascii()
-		#setupSimParams[queueIndex]['END_LOAD'] = self.endLoadEdit.text().ascii()
-		#setupSimParams[queueIndex]['LOAD_INCR'] = self.loadIncrEdit.text().ascii()
-		#setupSimParams[queueIndex]['START_LAMBDA'] = self.startLambdaEdit.text().ascii()
-		#setupSimParams[queueIndex]['END_LAMBDA'] = self.endLambdaEdit.text().ascii()
-		#setupSimParams[queueIndex]['SS_HURST_PARAM'] = self.hurstParamEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_SS_STREAMS'] = self.numStrmsEdit.text().ascii()
-		#setupSimParams[queueIndex]['FIXED_GRANT_SIZE'] = self.fixedGrantSizeEdit.text().ascii()
-		#setupSimParams[queueIndex]['MAX_GRANT_SIZE'] = self.maxGrantSizeEdit.text().ascii()
-		#setupSimParams[queueIndex]['SCHEDULER_NUM_SLOT'] = self.schedulerNumSlotEdit.text().ascii()
-		#setupSimParams[queueIndex]['SCHEDULER_SLOT_SIZE'] = self.schedulerSlotSizeEdit.text().ascii()
-		#setupSimParams[queueIndex]['STARVE_THRESH'] = self.starveThreshEdit.text().ascii()
-		#setupSimParams[queueIndex]['AVAIL_COST_WEIGHT'] = self.acwEdit.text().ascii()
-		#setupSimParams[queueIndex]['NUM_PREFERRED_ONU'] = self.npoEdit.text().ascii()
-		#setupSimParams[queueIndex]['SIM_TIME'] = self.simTimeEdit.text().ascii()
-		#queueIndex = self.queueIndexSlotEdit.text().ascii()
-		########simID = self.simIdEdit.text().ascii()
-		#for iaa in range(len(setupSimParams)):
-			#queueSimParams.append(setupSimParams[iaa])
-			#queueSimParamsList.append(setupSimParamsList[iaa])
-		#setupSimParams = []
-		#setupSimParamsList = []
 		simpassword = self.passwordEdit.text().ascii()
 		sim_init_win.hide()
 		sim_mgr_win.show()
@@ -2158,14 +1737,14 @@ class SimInitWin (Ui_SimInitForm):
 
 	
 
-class MainSimMgrWin (Ui_SimMgr):
-#	def __init__(self, parent = None, name = "Simulation Manager", modal = 0, fl = 0):
-#		Ui_SimMgr.__init__(self, parent, name, fl)
-	#def __init__(self):
-		#Ui_SimMgr.__init__(self)
+class MainSimMgrWin (QtGui.QWidget):
 	def __init__(self):
 		super(self.__class__, self).__init__()
-		self.setupUi(QtGui.QWidget())
+		self.ui = Ui_SimMgr()
+		self.ui.setupUi(self)
+
+		## self.qwidget = QtGui.QWidget()
+		#self.setupUi(self.qwidget)
 		
 	def languageChange(self):
 		Ui_SimMgr.languageChange(self)
@@ -2200,137 +1779,8 @@ class MainSimMgrWin (Ui_SimMgr):
 		global simhostname
 		sim_mgr_win.hide()
 		restore_parameters(sim_init_win);
-		#if simParams['SCALABLE_VIDEO_TRAFFIC'] == 'SCALABLE_VIDEO_OFF':
-			#sim_init_win.svOffBtn.setChecked(1)
-		#if simParams['SCALABLE_VIDEO_TRAFFIC'] == 'SCALABLE_VIDEO_ON':
-			#sim_init_win.svOnBtn.setChecked(1)
-		#if simParams['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_OFF':
-			#sim_init_win.svDropMethod0.setChecked(1)
-		#if simParams['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_METHOD_1':
-			#sim_init_win.svDropMethod1.setChecked(1)
-		#if simParams['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_METHOD_2':
-			#sim_init_win.svDropMethod2.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_NASC':
-			#sim_init_win.nascBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_IPACT':
-			#sim_init_win.ipactBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_LEAST_ASSIGNED':
-			#sim_init_win.leastAssignedBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_APS':
-			#sim_init_win.apsBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_LFJ':
-			#sim_init_win.lfjBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_LFJ_LPT':
-			#sim_init_win.lfjlptBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_LFJ_SPT':
-			#sim_init_win.lfjsptBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_LFJ_LNF':
-			#sim_init_win.lfjlnfBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_EAF':
-			#sim_init_win.eafBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_EAAF':
-			#sim_init_win.eaafBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_SPD':
-			#sim_init_win.spdBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_LPD':
-			#sim_init_win.lpdBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_SPD_LPT':
-			#sim_init_win.spdLptBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_LPT':
-			#sim_init_win.intvlLfjlptBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_SPT':
-			#sim_init_win.intvlLfjsptBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_LFJ_LNF':
-			#sim_init_win.intvlLfjlnfBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_EAF':
-			#sim_init_win.intvlEafBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_INTERVAL_EAAF':
-			#sim_init_win.intvlEaafBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_LPT':
-			#sim_init_win.jitLfjlptBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_SPT':
-			#sim_init_win.jitLfjsptBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_LFJ_LNF':
-			#sim_init_win.jitLfjlnfBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_EAF':
-			#sim_init_win.jitEafBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_EAAF':
-			#sim_init_win.jitEaafBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_SPD':
-			#sim_init_win.jitSpdBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_LPD':
-			#sim_init_win.jitLpdBtn.setChecked(1)
-		#if simParams['OLT_TYPE'] == 'OLT_ONLINE_JIT_TEST':
-			#sim_init_win.jitTestBtn.setChecked(1)
-		#if simParams['DBA_TYPE'] == 'DBA_GATED':
-			#sim_init_win.dbaGatedBtn.setChecked(1)
-		#if simParams['DBA_TYPE'] == 'DBA_FIXED':
-			#sim_init_win.dbaFixedBtn.setChecked(1)
-		#if simParams['DBA_TYPE'] == 'DBA_LIMITED_GATE':
-			#sim_init_win.dbaLimitedBtn.setChecked(1)
-		#if simParams['DBA_TYPE'] == 'DBA_EXCESS':
-			#sim_init_win.dbaExcessBtn.setChecked(1)
-		#if simParams['TRAFFIC_TYPE'] == 'TRAFFIC_POISSON':
-			#sim_init_win.pnBtn.setChecked(1)
-		#if simParams['TRAFFIC_TYPE'] == 'TRAFFIC_SELF_SIMILAR':
-			#sim_init_win.ssBtn.setChecked(1)
-		#if simParams['WDM_TYPE'] == 'WDM_FIXED':
-			#sim_init_win.fixedBtn.setChecked(1)
-		#if simParams['WDM_TYPE'] == 'WDM_TUNABLE':
-			#sim_init_win.tunableBtn.setChecked(1)
-		#if simParams['FIXED_PROP_DELAY'] == 'FIXED_PROP_DELAY_ON':
-			#sim_init_win.fpdOnBtn.setChecked(1)
-		#if simParams['FIXED_PROP_DELAY'] == 'FIXED_PROP_DELAY_OFF':
-			#sim_init_win.fpdOffBtn.setChecked(1)
-		#if simParams['GET_TAIL'] == 'GET_TAIL_ON':
-			#sim_init_win.gtOnBtn.setChecked(1)
-		#if simParams['GET_TAIL'] == 'GET_TAIL_OFF':
-			#sim_init_win.gtOffBtn.setChecked(1)
-		#if simParams['SIM_TRACE'] == 'SIM_TRACE_ON':
-			#sim_init_win.ttOnBtn.setChecked(1)
-		#if simParams['SIM_TRACE'] == 'SIM_TRACE_OFF':
-			#sim_init_win.ttOffBtn.setChecked(1)
-		#if simParams['GRANT_TRACE'] == 'GRANT_TRACE_ON':
-			#sim_init_win.grtOnBtn.setChecked(1)
-		#if simParams['GRANT_TRACE'] == 'GRANT_TRACE_OFF':
-			#sim_init_win.grtOffBtn.setChecked(1)
-		#if simParams['SCHEDULER_MAX_WINDOW'] == '1':
-			#sim_init_win.schedulerMaxWinChkBox.setChecked(1)
-		#else:
-			#sim_init_win.schedulerMaxWinChkBox.setChecked(0)
-		#sim_init_win.hostEdit.setText(simhostname)
-		#sim_init_win.grdTimeEdit.setText(simParams['GUARD_TIME'])
-		#sim_init_win.tuningTimeEdit.setText(simParams['TUNING_TIME'])
-		#sim_init_win.fpdValueEdit.setText(simParams['FIXED_PROP_DELAY_VALUE'])
-		#sim_init_win.maxPropDelayEdit.setText(simParams['MAX_PROP_DELAY'])
-		#sim_init_win.numONUEdit.setText(simParams['NUM_ONU'])
-		#sim_init_win.runsEdit.setText(simParams['NUM_RUNS'])
-		#sim_init_win.numHvyONUEdit.setText(simParams['NUM_HEAVY_ONU'])
-		#sim_init_win.heavyLoadEdit.setText(simParams['HEAVY_LOAD'])
-		#sim_init_win.numWdmONUEdit.setText(simParams['NUM_WDM_ONU'])
-		#sim_init_win.numUhWdmONUEdit.setText(simParams['NUM_UH_WDM_ONU'])
-		#sim_init_win.numLhWdmONUEdit.setText(simParams['NUM_LH_WDM_ONU'])
-		#sim_init_win.linkSpdEdit.setText(simParams['LINK_SPEED'])
-		#sim_init_win.startLoadEdit.setText(simParams['START_LOAD'])
-		#sim_init_win.endLoadEdit.setText(simParams['END_LOAD'])
-		#sim_init_win.loadIncrEdit.setText(simParams['LOAD_INCR'])
-		#sim_init_win.startLambdaEdit.setText(simParams['START_LAMBDA'])
-		#sim_init_win.endLambdaEdit.setText(simParams['END_LAMBDA'])
-		#sim_init_win.hurstParamEdit.setText(simParams['SS_HURST_PARAM'])
-		#sim_init_win.numStrmsEdit.setText(simParams['NUM_SS_STREAMS'])
-		#sim_init_win.fixedGrantSizeEdit.setText(simParams['FIXED_GRANT_SIZE'])
-		#sim_init_win.maxGrantSizeEdit.setText(simParams['MAX_GRANT_SIZE'])
-		#sim_init_win.schedulerNumSlotEdit.setText(simParams['SCHEDULER_NUM_SLOT'])
-		#sim_init_win.schedulerSlotSizeEdit.setText(simParams['SCHEDULER_SLOT_SIZE'])
-		#sim_init_win.starveThreshEdit.setText(simParams['STARVE_THRESH'])
-		#sim_init_win.acwEdit.setText(simParams['AVAIL_COST_WEIGHT'])
-		#sim_init_win.npoEdit.setText(simParams['NUM_PREFERRED_ONU'])
-		#sim_init_win.simTimeEdit.setText(simParams['SIM_TIME'])
-		#sim_init_win.queueIndexSlotEdit.setText(str(queueIndex))
 		sim_init_win.usernameEdit.setText(simusername)
 		sim_init_win.usernameEdit.setEnabled(False)
-		# del simParamsList[:]
-		# initialize_data_structure()
 		sim_init_win.show()
 		
 	def viewSimButton_pressed(self):
@@ -2540,16 +1990,15 @@ class MainSimMgrWin (Ui_SimMgr):
 # app = QApplication(sys.argv)
 app = QtGui.QApplication(sys.argv)
 
-#SimViewForm = QtGui.QWidget()
-
 sim_mgr_win = MainSimMgrWin()
 sim_init_win = SimInitWin()
 sim_view_win = SimViewWin()
 wait_win = WaitWin()
 plot_name_win = PlotNameWin()
 
-app.setMainWidget(sim_mgr_win)
+sim_mgr_win.show()
 load_sim_data()
 load_plot_settings()
 sim_mgr_win.show()
-app.exec_loop()
+#app.exec_loop()
+sys.exit(app.exec_())

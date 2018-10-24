@@ -1133,7 +1133,7 @@ you're dropping everything except the base layer.</string>
     <string>Grant Scheduling</string>
    </property>
   </widget>
-  <widget class="QLabel" name="timeShiftLbl_2">
+  <widget class="QLabel" name="timeShiftLbl">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1269,7 +1269,7 @@ you're dropping everything except the base layer.</string>
     <string notr="true">buttonGroup_5</string>
    </attribute>
   </widget>
-  <widget class="QLabel" name="PredTypeLbl_2">
+  <widget class="QLabel" name="PredTypeLbl">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -3072,7 +3072,7 @@ you're dropping everything except the base layer.</string>
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_13"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_4"/>
@@ -3080,10 +3080,10 @@ you're dropping everything except the base layer.</string>
   <buttongroup name="buttonGroup_6"/>
   <buttongroup name="buttonGroup_7"/>
   <buttongroup name="buttonGroup_8"/>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_9"/>
   <buttongroup name="buttonGroup_10"/>
   <buttongroup name="buttonGroup_11"/>
   <buttongroup name="buttonGroup_12"/>
-  <buttongroup name="buttonGroup_13"/>
  </buttongroups>
 </ui>

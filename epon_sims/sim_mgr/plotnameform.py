@@ -686,7 +686,6 @@ class Ui_plotNameForm(object):
 
         self.retranslateUi(plotNameForm)
         QtCore.QObject.connect(self.doneBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), plotNameForm.doneBtn_pressed)
-        QtCore.QObject.connect(self.cancelBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), plotNameForm.cancelBtn_pressed)
         QtCore.QObject.connect(self.legendCBox, QtCore.SIGNAL(_fromUtf8("activated(int)")), plotNameForm.LegendPosition_selected)
         QtCore.QObject.connect(self.SaveTimeButton, QtCore.SIGNAL(_fromUtf8("pressed()")), plotNameForm.SaveTimeButton_pressed)
         QtCore.QObject.connect(self.pointsCBoxChangeAll, QtCore.SIGNAL(_fromUtf8("activated(int)")), plotNameForm.pointsCBoxChangeAll_activated)

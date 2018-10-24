@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_SimViewForm(object):
     def setupUi(self, SimViewForm):
         SimViewForm.setObjectName(_fromUtf8("SimViewForm"))
-        SimViewForm.resize(1116, 639)
+        SimViewForm.resize(718, 639)
         self.maxXEdit = QtGui.QLineEdit(SimViewForm)
         self.maxXEdit.setGeometry(QtCore.QRect(100, 150, 70, 23))
         font = QtGui.QFont()
@@ -297,7 +297,6 @@ class Ui_SimViewForm(object):
         self.retranslateUi(SimViewForm)
         QtCore.QObject.connect(self.viewOutputBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), SimViewForm.viewOutputBtn_pressed)
         QtCore.QObject.connect(self.exportOutputBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), SimViewForm.exportOutputBtn_pressed)
-        QtCore.QObject.connect(self.viewParamsBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), SimViewForm.viewParamsBtn_pressed)
         QtCore.QObject.connect(self.exitBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), SimViewForm.exitBtn_pressed)
         QtCore.QObject.connect(self.stopSimBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), SimViewForm.stopSimBtn_pressed)
         QtCore.QObject.connect(self.pushButtonAutoName, QtCore.SIGNAL(_fromUtf8("pressed()")), SimViewForm.pushButtonAutoName_pressed)
