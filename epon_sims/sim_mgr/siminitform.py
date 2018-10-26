@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_SimInitForm(object):
     def setupUi(self, SimInitForm):
         SimInitForm.setObjectName(_fromUtf8("SimInitForm"))
-        SimInitForm.resize(1325, 887)
+        SimInitForm.resize(861, 887)
         self.simIdLbl = QtGui.QLabel(SimInitForm)
         self.simIdLbl.setGeometry(QtCore.QRect(20, 40, 90, 20))
         font = QtGui.QFont()

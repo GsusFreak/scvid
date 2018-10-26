@@ -71,6 +71,7 @@ from plotnameform import Ui_plotNameForm
 # Modify the dirRoot variable as necessary
 
 dirRoot = '/home/admin1/scvid'
+
 dirLauncher = os.path.join(dirRoot, 'eponsim/eponsim')
 
 st = os.stat(dirLauncher)
@@ -111,178 +112,178 @@ def add_simParams():
 def store_parameters(self):
 	global queueIndex
 	global maxNumOfRunningSims
-	if self.svOffBtn.isChecked() == 1:
+	if self.ui.svOffBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] = 'SCALABLE_VIDEO_OFF'
-	if self.svOnBtn.isChecked() == 1:
+	if self.ui.svOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_TRAFFIC'] = 'SCALABLE_VIDEO_ON'
-	if self.svDropNone.isChecked() == 1:
+	if self.ui.svDropNone.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_OFF'
-	if self.svDropThreshold.isChecked() == 1:
+	if self.ui.svDropThreshold.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_THRESHOLD'
-	if self.svDropDynamic.isChecked() == 1:
+	if self.ui.svDropDynamic.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_DYNAMIC'
-	if self.svDropStepThreshold.isChecked() == 1:
+	if self.ui.svDropStepThreshold.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_STEP_THRESHOLD'
-	if self.ipactpsfBtn.isChecked() == 1:
+	if self.ui.ipactpsfBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_IPACT_PSF'
-	if self.nascBtn.isChecked() == 1:
+	if self.ui.nascBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_NASC'
-	if self.ipactBtn.isChecked() == 1:
+	if self.ui.ipactBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_IPACT'
-	if self.leastAssignedBtn.isChecked() == 1:
+	if self.ui.leastAssignedBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LEAST_ASSIGNED'
-	if self.apsBtn.isChecked() == 1:
+	if self.ui.apsBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_APS'
-	if self.lfjBtn.isChecked() == 1:
+	if self.ui.lfjBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ'
-	if self.lfjlptBtn.isChecked() == 1:
+	if self.ui.lfjlptBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ_LPT'
-	if self.lfjsptBtn.isChecked() == 1:
+	if self.ui.lfjsptBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ_SPT'
-	if self.lfjlnfBtn.isChecked() == 1:
+	if self.ui.lfjlnfBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LFJ_LNF'
-	if self.eafBtn.isChecked() == 1:
+	if self.ui.eafBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_EAF'
-	if self.eaafBtn.isChecked() == 1:
+	if self.ui.eaafBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_EAAF'
-	if self.spdBtn.isChecked() == 1:
+	if self.ui.spdBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_SPD'
-	if self.lpdBtn.isChecked() == 1:
+	if self.ui.lpdBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_LPD'
-	if self.spdLptBtn.isChecked() == 1:
+	if self.ui.spdLptBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_SPD_LPT'
-	if self.intvlLfjlptBtn.isChecked() == 1:
+	if self.ui.intvlLfjlptBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_LFJ_LPT'
-	if self.intvlLfjsptBtn.isChecked() == 1:
+	if self.ui.intvlLfjsptBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_LFJ_SPT'
-	if self.intvlLfjlnfBtn.isChecked() == 1:
+	if self.ui.intvlLfjlnfBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_LFJ_LNF'
-	if self.intvlEafBtn.isChecked() == 1:
+	if self.ui.intvlEafBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_EAF'
-	if self.intvlEaafBtn.isChecked() == 1:
+	if self.ui.intvlEaafBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_INTERVAL_EAAF'
-	if self.jitLfjlptBtn.isChecked() == 1:
+	if self.ui.jitLfjlptBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LFJ_LPT'
-	if self.jitLfjsptBtn.isChecked() == 1:
+	if self.ui.jitLfjsptBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LFJ_SPT'
-	if self.jitLfjlnfBtn.isChecked() == 1:
+	if self.ui.jitLfjlnfBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LFJ_LNF'
-	if self.jitEafBtn.isChecked() == 1:
+	if self.ui.jitEafBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_EAF'
-	if self.jitEaafBtn.isChecked() == 1:
+	if self.ui.jitEaafBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_EAAF'
-	if self.jitSpdBtn.isChecked() == 1:
+	if self.ui.jitSpdBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_SPD'
-	if self.jitLpdBtn.isChecked() == 1:
+	if self.ui.jitLpdBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_LPD'
-	if self.jitTestBtn.isChecked() == 1:
+	if self.ui.jitTestBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_ONLINE_JIT_TEST'
-	if self.dbaGatedBtn.isChecked() == 1:
+	if self.ui.dbaGatedBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_GATED'
-	if self.dbaFixedBtn.isChecked() == 1:
+	if self.ui.dbaFixedBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_FIXED'
-	if self.dbaLimitedBtn.isChecked() == 1:
+	if self.ui.dbaLimitedBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_LIMITED_GATE'
-	if self.dbaExcessBtn.isChecked() == 1:
+	if self.ui.dbaExcessBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['DBA_TYPE'] = 'DBA_EXCESS'
-	if self.pnBtn.isChecked() == 1:
+	if self.ui.pnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['TRAFFIC_TYPE'] = 'TRAFFIC_POISSON'
-	if self.ssBtn.isChecked() == 1:
+	if self.ui.ssBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['TRAFFIC_TYPE'] = 'TRAFFIC_SELF_SIMILAR'
-	if self.tunableBtn.isChecked() == 1:
+	if self.ui.tunableBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['WDM_TYPE'] = 'WDM_TUNABLE'
-	if self.fixedBtn.isChecked() == 1:
+	if self.ui.fixedBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['WDM_TYPE'] = 'WDM_FIXED'
-	if self.fpdOnBtn.isChecked() == 1:
+	if self.ui.fpdOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['FIXED_PROP_DELAY'] = 'FIXED_PROP_DELAY_ON'
-	if self.fpdOffBtn.isChecked() == 1:
+	if self.ui.fpdOffBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['FIXED_PROP_DELAY'] = 'FIXED_PROP_DELAY_OFF'
-	if self.gtOnBtn.isChecked() == 1:
+	if self.ui.gtOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['GET_TAIL'] = 'GET_TAIL_ON'
-	if self.gtOffBtn.isChecked() == 1:
+	if self.ui.gtOffBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['GET_TAIL'] = 'GET_TAIL_OFF'
-	if self.ttOnBtn.isChecked() == 1:
+	if self.ui.ttOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['SIM_TRACE'] = 'SIM_TRACE_ON'
-	if self.ttOffBtn.isChecked() == 1:
+	if self.ui.ttOffBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['SIM_TRACE'] = 'SIM_TRACE_OFF'
-	if self.vtOnBtn.isChecked() == 1:
+	if self.ui.vtOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_TRAFFIC'] = 'VIDEO_TRAFFIC_ON'
 		if setupSimParamsList[queueIndex].count('FRAME_RATE') == 0:
 			setupSimParamsList[queueIndex].append('FRAME_RATE')
-		setupSimParams[queueIndex]['FRAME_RATE'] = self.frameRateEdit.text().ascii()
+		setupSimParams[queueIndex]['FRAME_RATE'] = self.ui.frameRateEdit.text()
 		if setupSimParamsList[queueIndex].count('VIDEO_TRACE_FILE') == 0:
 			setupSimParamsList[queueIndex].append('VIDEO_TRACE_FILE')
-		setupSimParams[queueIndex]['VIDEO_TRACE_FILE'] = self.videoTraceEdit.text().ascii()
+		setupSimParams[queueIndex]['VIDEO_TRACE_FILE'] = self.ui.videoTraceEdit.text()
 		if setupSimParamsList[queueIndex].count('VIDEO_PREDICTION') == 0:
 			setupSimParamsList[queueIndex].append('VIDEO_PREDICTION')
-		if self.pvtOnBtn.isChecked() == 1 and setupSimParamsList[queueIndex].count('PREDICTION_TYPE') == 0:
+		if self.ui.pvtOnBtn.isChecked() == 1 and setupSimParamsList[queueIndex].count('PREDICTION_TYPE') == 0:
 			setupSimParamsList[queueIndex].append('PREDICTION_TYPE')
 		if setupSimParamsList[queueIndex].count('TIME_SHIFT') == 0:
 			setupSimParamsList[queueIndex].append('TIME_SHIFT')
 		if setupSimParamsList[queueIndex].count('VIDEO_DBA_TYPE') == 0:
 			setupSimParamsList[queueIndex].append('VIDEO_DBA_TYPE')
-	if self.pvtOnBtn.isChecked() == 1:
+	if self.ui.pvtOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_PREDICTION'] = 'VIDEO_PREDICTION_ON'
-		setupSimParams[queueIndex]['PREDICTION_TYPE'] = self.PredTypeEdit.text().ascii()
+		setupSimParams[queueIndex]['PREDICTION_TYPE'] = self.ui.PredTypeEdit.text()
 	else:
 		setupSimParams[queueIndex]['VIDEO_PREDICTION'] = 'VIDEO_PREDICTION_OFF'
-	if self.vsOnBtn.isChecked() == 1:
+	if self.ui.vsOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_RANDOM_START'] = 'VIDEO_RANDOM_START_ON'
-		setupSimParams[queueIndex]['TIME_SHIFT'] = self.timeShiftEdit.text().ascii()
+		setupSimParams[queueIndex]['TIME_SHIFT'] = self.ui.timeShiftEdit.text()
 	#else:
 		#setupSimParams[queueIndex]['TIME_SHIFT'] = '0.0'
-	if self.vsOffBtn.isChecked() == 1:
+	if self.ui.vsOffBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_RANDOM_START'] = 'VIDEO_RANDOM_START_OFF'
-	if self.dbaGatedVideoBtn.isChecked() == 1:
+	if self.ui.dbaGatedVideoBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] = 'VIDEO_DBA_GATED'
-	if self.dbaFixedVideoBtn.isChecked() == 1:
+	if self.ui.dbaFixedVideoBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] = 'VIDEO_DBA_FIXED'
-	if self.dbaLimitedVideoBtn.isChecked() == 1:
+	if self.ui.dbaLimitedVideoBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_DBA_TYPE'] = 'VIDEO_DBA_LIMITED_GATE'
-	if self.vtOffBtn.isChecked() == 1:
+	if self.ui.vtOffBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['VIDEO_TRAFFIC'] = 'VIDEO_TRAFFIC_OFF'
-	if self.grtOnBtn.isChecked() == 1:
+	if self.ui.grtOnBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['GRANT_TRACE'] = 'GRANT_TRACE_ON'
-	if self.grtOffBtn.isChecked() == 1:
+	if self.ui.grtOffBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['GRANT_TRACE'] = 'GRANT_TRACE_OFF'
-	if self.schedulerMaxWinChkBox.isChecked() == 1:
+	if self.ui.schedulerMaxWinChkBox.isChecked() == 1:
 		setupSimParams[queueIndex]['SCHEDULER_MAX_WINDOW'] = '1'
 	else:
 		setupSimParams[queueIndex]['SCHEDULER_MAX_WINDOW'] = '0'
-	setupSimParams[queueIndex]['GUARD_TIME'] = self.grdTimeEdit.text().ascii()
-	setupSimParams[queueIndex]['TUNING_TIME'] = self.tuningTimeEdit.text().ascii()
-	setupSimParams[queueIndex]['FIXED_PROP_DELAY_VALUE'] = self.fpdValueEdit.text().ascii()
-	setupSimParams[queueIndex]['MAX_PROP_DELAY'] = self.maxPropDelayEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_RUNS'] = self.runsEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_ONU'] = self.numONUEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_HEAVY_ONU'] = self.numHvyONUEdit.text().ascii()
-	setupSimParams[queueIndex]['HEAVY_LOAD'] = self.heavyLoadEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_WDM_ONU'] = self.numWdmONUEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_UH_WDM_ONU'] = self.numUhWdmONUEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_LH_WDM_ONU'] = self.numLhWdmONUEdit.text().ascii()
-	setupSimParams[queueIndex]['LINK_SPEED'] = self.linkSpdEdit.text().ascii()
-	setupSimParams[queueIndex]['START_LOAD'] = self.startLoadEdit.text().ascii()
-	setupSimParams[queueIndex]['END_LOAD'] = self.endLoadEdit.text().ascii()
-	setupSimParams[queueIndex]['LOAD_INCR'] = self.loadIncrEdit.text().ascii()
-	setupSimParams[queueIndex]['START_LAMBDA'] = self.startLambdaEdit.text().ascii()
-	setupSimParams[queueIndex]['END_LAMBDA'] = self.endLambdaEdit.text().ascii()
-	setupSimParams[queueIndex]['SS_HURST_PARAM'] = self.hurstParamEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_SS_STREAMS'] = self.numStrmsEdit.text().ascii()
-	setupSimParams[queueIndex]['FIXED_GRANT_SIZE'] = self.fixedGrantSizeEdit.text().ascii()
-	setupSimParams[queueIndex]['MAX_GRANT_SIZE'] = self.maxGrantSizeEdit.text().ascii()
-	setupSimParams[queueIndex]['SCHEDULER_NUM_SLOT'] = self.schedulerNumSlotEdit.text().ascii()
-	setupSimParams[queueIndex]['SCHEDULER_SLOT_SIZE'] = self.schedulerSlotSizeEdit.text().ascii()
-	setupSimParams[queueIndex]['STARVE_THRESH'] = self.starveThreshEdit.text().ascii()
-	setupSimParams[queueIndex]['AVAIL_COST_WEIGHT'] = self.acwEdit.text().ascii()
-	setupSimParams[queueIndex]['NUM_PREFERRED_ONU'] = self.npoEdit.text().ascii()
-	setupSimParams[queueIndex]['SIM_TIME'] = self.simTimeEdit.text().ascii()
-	setupSimParams[queueIndex]['simID'] = self.simIdEdit.text().ascii()
-	setupSimParams[queueIndex]['SV_DROP_LAYER_THRESHOLD'] = self.svDropThresholdEdit.text().ascii()
-	setupSimParams[queueIndex]['SV_DROP_SENSITIVITY'] = self.svDropSensitivity.text().ascii()
-	setupSimParams[queueIndex]['SV_MIN_BOUND'] = self.svDropStepMinBound.text().ascii()
-	setupSimParams[queueIndex]['SV_MAX_BOUND'] = self.svDropStepMaxBound.text().ascii()
-	setupSimParams[queueIndex]['SV_NUM_MA_VALUES'] = self.svDropStep_NumMAValues.text().ascii()
-	maxNumOfRunningSims = int(self.parallelSimsEdit.text().ascii())
+	setupSimParams[queueIndex]['GUARD_TIME'] = self.ui.grdTimeEdit.text()
+	setupSimParams[queueIndex]['TUNING_TIME'] = self.ui.tuningTimeEdit.text()
+	setupSimParams[queueIndex]['FIXED_PROP_DELAY_VALUE'] = self.ui.fpdValueEdit.text()
+	setupSimParams[queueIndex]['MAX_PROP_DELAY'] = self.ui.maxPropDelayEdit.text()
+	setupSimParams[queueIndex]['NUM_RUNS'] = self.ui.runsEdit.text()
+	setupSimParams[queueIndex]['NUM_ONU'] = self.ui.numONUEdit.text()
+	setupSimParams[queueIndex]['NUM_HEAVY_ONU'] = self.ui.numHvyONUEdit.text()
+	setupSimParams[queueIndex]['HEAVY_LOAD'] = self.ui.heavyLoadEdit.text()
+	setupSimParams[queueIndex]['NUM_WDM_ONU'] = self.ui.numWdmONUEdit.text()
+	setupSimParams[queueIndex]['NUM_UH_WDM_ONU'] = self.ui.numUhWdmONUEdit.text()
+	setupSimParams[queueIndex]['NUM_LH_WDM_ONU'] = self.ui.numLhWdmONUEdit.text()
+	setupSimParams[queueIndex]['LINK_SPEED'] = self.ui.linkSpdEdit.text()
+	setupSimParams[queueIndex]['START_LOAD'] = self.ui.startLoadEdit.text()
+	setupSimParams[queueIndex]['END_LOAD'] = self.ui.endLoadEdit.text()
+	setupSimParams[queueIndex]['LOAD_INCR'] = self.ui.loadIncrEdit.text()
+	setupSimParams[queueIndex]['START_LAMBDA'] = self.ui.startLambdaEdit.text()
+	setupSimParams[queueIndex]['END_LAMBDA'] = self.ui.endLambdaEdit.text()
+	setupSimParams[queueIndex]['SS_HURST_PARAM'] = self.ui.hurstParamEdit.text()
+	setupSimParams[queueIndex]['NUM_SS_STREAMS'] = self.ui.numStrmsEdit.text()
+	setupSimParams[queueIndex]['FIXED_GRANT_SIZE'] = self.ui.fixedGrantSizeEdit.text()
+	setupSimParams[queueIndex]['MAX_GRANT_SIZE'] = self.ui.maxGrantSizeEdit.text()
+	setupSimParams[queueIndex]['SCHEDULER_NUM_SLOT'] = self.ui.schedulerNumSlotEdit.text()
+	setupSimParams[queueIndex]['SCHEDULER_SLOT_SIZE'] = self.ui.schedulerSlotSizeEdit.text()
+	setupSimParams[queueIndex]['STARVE_THRESH'] = self.ui.starveThreshEdit.text()
+	setupSimParams[queueIndex]['AVAIL_COST_WEIGHT'] = self.ui.acwEdit.text()
+	setupSimParams[queueIndex]['NUM_PREFERRED_ONU'] = self.ui.npoEdit.text()
+	setupSimParams[queueIndex]['SIM_TIME'] = self.ui.simTimeEdit.text()
+	setupSimParams[queueIndex]['simID'] = self.ui.simIdEdit.text()
+	setupSimParams[queueIndex]['SV_DROP_LAYER_THRESHOLD'] = self.ui.svDropThresholdEdit.text()
+	setupSimParams[queueIndex]['SV_DROP_SENSITIVITY'] = self.ui.svDropSensitivity.text()
+	setupSimParams[queueIndex]['SV_MIN_BOUND'] = self.ui.svDropStepMinBound.text()
+	setupSimParams[queueIndex]['SV_MAX_BOUND'] = self.ui.svDropStepMaxBound.text()
+	setupSimParams[queueIndex]['SV_NUM_MA_VALUES'] = self.ui.svDropStep_NumMAValues.text()
+	maxNumOfRunningSims = int(self.ui.parallelSimsEdit.text())
 
 	
 def restore_parameters(self):
@@ -542,62 +543,62 @@ def restore_parameters(self):
 
 def saveSettingsBtn_pressed2(self):
 	global plotSettings
-	plotSettings['pointsCBox1'] = self.pointsCBox1.currentItem()
-	plotSettings['pointsCBox2'] = self.pointsCBox2.currentItem()
-	plotSettings['pointsCBox3'] = self.pointsCBox3.currentItem()
-	plotSettings['pointsCBox4'] = self.pointsCBox4.currentItem()
-	plotSettings['pointsCBox5'] = self.pointsCBox5.currentItem()
-	plotSettings['pointsCBox6'] = self.pointsCBox6.currentItem()
-	plotSettings['pointsCBox7'] = self.pointsCBox7.currentItem()
-	plotSettings['pointsCBox8'] = self.pointsCBox8.currentItem()
+	plotSettings['pointsCBox1'] = self.ui.pointsCBox1.currentIndex()
+	plotSettings['pointsCBox2'] = self.ui.pointsCBox2.currentIndex()
+	plotSettings['pointsCBox3'] = self.ui.pointsCBox3.currentIndex()
+	plotSettings['pointsCBox4'] = self.ui.pointsCBox4.currentIndex()
+	plotSettings['pointsCBox5'] = self.ui.pointsCBox5.currentIndex()
+	plotSettings['pointsCBox6'] = self.ui.pointsCBox6.currentIndex()
+	plotSettings['pointsCBox7'] = self.ui.pointsCBox7.currentIndex()
+	plotSettings['pointsCBox8'] = self.ui.pointsCBox8.currentIndex()
 	
-	plotSettings['file1Edit'] = self.file1Edit.text().ascii()
-	plotSettings['file2Edit'] = self.file2Edit.text().ascii()
-	plotSettings['file3Edit'] = self.file3Edit.text().ascii()
-	plotSettings['file4Edit'] = self.file4Edit.text().ascii()
-	plotSettings['file5Edit'] = self.file5Edit.text().ascii()
-	plotSettings['file6Edit'] = self.file6Edit.text().ascii()
-	plotSettings['file7Edit'] = self.file7Edit.text().ascii()
-	plotSettings['file8Edit'] = self.file8Edit.text().ascii()
+	plotSettings['file1Edit'] = self.ui.file1Edit.text()
+	plotSettings['file2Edit'] = self.ui.file2Edit.text()
+	plotSettings['file3Edit'] = self.ui.file3Edit.text()
+	plotSettings['file4Edit'] = self.ui.file4Edit.text()
+	plotSettings['file5Edit'] = self.ui.file5Edit.text()
+	plotSettings['file6Edit'] = self.ui.file6Edit.text()
+	plotSettings['file7Edit'] = self.ui.file7Edit.text()
+	plotSettings['file8Edit'] = self.ui.file8Edit.text()
 	
-	plotSettings['pointSizeCBox1'] = self.pointSizeCBox1.currentText().ascii()
-	plotSettings['pointSizeCBox2'] = self.pointSizeCBox2.currentText().ascii()
-	plotSettings['pointSizeCBox3'] = self.pointSizeCBox3.currentText().ascii()
-	plotSettings['pointSizeCBox4'] = self.pointSizeCBox4.currentText().ascii()
-	plotSettings['pointSizeCBox5'] = self.pointSizeCBox5.currentText().ascii()
-	plotSettings['pointSizeCBox6'] = self.pointSizeCBox6.currentText().ascii()
-	plotSettings['pointSizeCBox7'] = self.pointSizeCBox7.currentText().ascii()
-	plotSettings['pointSizeCBox8'] = self.pointSizeCBox8.currentText().ascii()
+	plotSettings['pointSizeCBox1'] = self.ui.pointSizeCBox1.currentIndex()
+	plotSettings['pointSizeCBox2'] = self.ui.pointSizeCBox2.currentIndex()
+	plotSettings['pointSizeCBox3'] = self.ui.pointSizeCBox3.currentIndex()
+	plotSettings['pointSizeCBox4'] = self.ui.pointSizeCBox4.currentIndex()
+	plotSettings['pointSizeCBox5'] = self.ui.pointSizeCBox5.currentIndex()
+	plotSettings['pointSizeCBox6'] = self.ui.pointSizeCBox6.currentIndex()
+	plotSettings['pointSizeCBox7'] = self.ui.pointSizeCBox7.currentIndex()
+	plotSettings['pointSizeCBox8'] = self.ui.pointSizeCBox8.currentIndex()
 	
-	plotSettings['lineWidthCBox1'] = self.lineWidthCBox1.currentText().ascii()
-	plotSettings['lineWidthCBox2'] = self.lineWidthCBox2.currentText().ascii()
-	plotSettings['lineWidthCBox3'] = self.lineWidthCBox3.currentText().ascii()
-	plotSettings['lineWidthCBox4'] = self.lineWidthCBox4.currentText().ascii()
-	plotSettings['lineWidthCBox5'] = self.lineWidthCBox5.currentText().ascii()
-	plotSettings['lineWidthCBox6'] = self.lineWidthCBox6.currentText().ascii()
-	plotSettings['lineWidthCBox7'] = self.lineWidthCBox7.currentText().ascii()
-	plotSettings['lineWidthCBox8'] = self.lineWidthCBox8.currentText().ascii()
+	plotSettings['lineWidthCBox1'] = self.ui.lineWidthCBox1.currentIndex()
+	plotSettings['lineWidthCBox2'] = self.ui.lineWidthCBox2.currentIndex()
+	plotSettings['lineWidthCBox3'] = self.ui.lineWidthCBox3.currentIndex()
+	plotSettings['lineWidthCBox4'] = self.ui.lineWidthCBox4.currentIndex()
+	plotSettings['lineWidthCBox5'] = self.ui.lineWidthCBox5.currentIndex()
+	plotSettings['lineWidthCBox6'] = self.ui.lineWidthCBox6.currentIndex()
+	plotSettings['lineWidthCBox7'] = self.ui.lineWidthCBox7.currentIndex()
+	plotSettings['lineWidthCBox8'] = self.ui.lineWidthCBox8.currentIndex()
 	
-	plotSettings['lineColorCBox1'] = self.lineColorCBox1.currentItem()
-	plotSettings['lineColorCBox2'] = self.lineColorCBox2.currentItem()
-	plotSettings['lineColorCBox3'] = self.lineColorCBox3.currentItem()
-	plotSettings['lineColorCBox4'] = self.lineColorCBox4.currentItem()
-	plotSettings['lineColorCBox5'] = self.lineColorCBox5.currentItem()
-	plotSettings['lineColorCBox6'] = self.lineColorCBox6.currentItem()
-	plotSettings['lineColorCBox7'] = self.lineColorCBox7.currentItem()
-	plotSettings['lineColorCBox8'] = self.lineColorCBox8.currentItem()
+	plotSettings['lineColorCBox1'] = self.ui.lineColorCBox1.currentIndex()
+	plotSettings['lineColorCBox2'] = self.ui.lineColorCBox2.currentIndex()
+	plotSettings['lineColorCBox3'] = self.ui.lineColorCBox3.currentIndex()
+	plotSettings['lineColorCBox4'] = self.ui.lineColorCBox4.currentIndex()
+	plotSettings['lineColorCBox5'] = self.ui.lineColorCBox5.currentIndex()
+	plotSettings['lineColorCBox6'] = self.ui.lineColorCBox6.currentIndex()
+	plotSettings['lineColorCBox7'] = self.ui.lineColorCBox7.currentIndex()
+	plotSettings['lineColorCBox8'] = self.ui.lineColorCBox8.currentIndex()
 
 
 def restoreSettingsBtn_pressed2(self):
 	global plotSettings
-	self.ui.pointsCBox1.setCurrentIndex(0)
-	self.ui.pointsCBox2.setCurrentIndex(1)
-	self.ui.pointsCBox3.setCurrentIndex(1)
-	self.ui.pointsCBox4.setCurrentIndex(1)
-	self.ui.pointsCBox5.setCurrentIndex(1)
-	self.ui.pointsCBox6.setCurrentIndex(1)
-	self.ui.pointsCBox7.setCurrentIndex(1)
-	self.ui.pointsCBox8.setCurrentIndex(1)
+	self.ui.pointsCBox1.setCurrentIndex(plotSettings['pointsCBox1'])
+	self.ui.pointsCBox2.setCurrentIndex(plotSettings['pointsCBox2'])
+	self.ui.pointsCBox3.setCurrentIndex(plotSettings['pointsCBox3'])
+	self.ui.pointsCBox4.setCurrentIndex(plotSettings['pointsCBox4'])
+	self.ui.pointsCBox5.setCurrentIndex(plotSettings['pointsCBox5'])
+	self.ui.pointsCBox6.setCurrentIndex(plotSettings['pointsCBox6'])
+	self.ui.pointsCBox7.setCurrentIndex(plotSettings['pointsCBox7'])
+	self.ui.pointsCBox8.setCurrentIndex(plotSettings['pointsCBox8'])
 	
 	self.ui.file1Edit.setText(plotSettings['file1Edit'])
 	self.ui.file2Edit.setText(plotSettings['file2Edit'])
@@ -608,34 +609,34 @@ def restoreSettingsBtn_pressed2(self):
 	self.ui.file7Edit.setText(plotSettings['file7Edit'])
 	self.ui.file8Edit.setText(plotSettings['file8Edit'])
 	
-	self.ui.pointSizeCBox1.setCurrentIndex(1)
-	self.ui.pointSizeCBox2.setCurrentIndex(1)
-	self.ui.pointSizeCBox3.setCurrentIndex(1)
-	self.ui.pointSizeCBox4.setCurrentIndex(1)
-	self.ui.pointSizeCBox5.setCurrentIndex(1)
-	self.ui.pointSizeCBox6.setCurrentIndex(1)
-	self.ui.pointSizeCBox7.setCurrentIndex(1)
-	self.ui.pointSizeCBox8.setCurrentIndex(1)
+	self.ui.pointSizeCBox1.setCurrentIndex(plotSettings['pointSizeCBox1'])
+	self.ui.pointSizeCBox2.setCurrentIndex(plotSettings['pointSizeCBox2'])
+	self.ui.pointSizeCBox3.setCurrentIndex(plotSettings['pointSizeCBox3'])
+	self.ui.pointSizeCBox4.setCurrentIndex(plotSettings['pointSizeCBox4'])
+	self.ui.pointSizeCBox5.setCurrentIndex(plotSettings['pointSizeCBox5'])
+	self.ui.pointSizeCBox6.setCurrentIndex(plotSettings['pointSizeCBox6'])
+	self.ui.pointSizeCBox7.setCurrentIndex(plotSettings['pointSizeCBox7'])
+	self.ui.pointSizeCBox8.setCurrentIndex(plotSettings['pointSizeCBox8'])
 	
-	self.ui.lineWidthCBox1.setCurrentIndex(1)
-	self.ui.lineWidthCBox2.setCurrentIndex(1)
-	self.ui.lineWidthCBox3.setCurrentIndex(1)
-	self.ui.lineWidthCBox4.setCurrentIndex(1)
-	self.ui.lineWidthCBox5.setCurrentIndex(1)
-	self.ui.lineWidthCBox6.setCurrentIndex(1)
-	self.ui.lineWidthCBox7.setCurrentIndex(1)
-	self.ui.lineWidthCBox8.setCurrentIndex(1)
+	self.ui.lineWidthCBox1.setCurrentIndex(plotSettings['lineWidthCBox1'])
+	self.ui.lineWidthCBox2.setCurrentIndex(plotSettings['lineWidthCBox2'])
+	self.ui.lineWidthCBox3.setCurrentIndex(plotSettings['lineWidthCBox3'])
+	self.ui.lineWidthCBox4.setCurrentIndex(plotSettings['lineWidthCBox4'])
+	self.ui.lineWidthCBox5.setCurrentIndex(plotSettings['lineWidthCBox5'])
+	self.ui.lineWidthCBox6.setCurrentIndex(plotSettings['lineWidthCBox6'])
+	self.ui.lineWidthCBox7.setCurrentIndex(plotSettings['lineWidthCBox7'])
+	self.ui.lineWidthCBox8.setCurrentIndex(plotSettings['lineWidthCBox8'])
 	
-	self.ui.lineColorCBox1.setCurrentIndex(1)
-	self.ui.lineColorCBox2.setCurrentIndex(1)
-	self.ui.lineColorCBox3.setCurrentIndex(1)
-	self.ui.lineColorCBox4.setCurrentIndex(1)
-	self.ui.lineColorCBox5.setCurrentIndex(1)
-	self.ui.lineColorCBox6.setCurrentIndex(1)
-	self.ui.lineColorCBox7.setCurrentIndex(1)
-	self.ui.lineColorCBox8.setCurrentIndex(1)
+	self.ui.lineColorCBox1.setCurrentIndex(plotSettings['lineColorCBox1'])
+	self.ui.lineColorCBox2.setCurrentIndex(plotSettings['lineColorCBox2'])
+	self.ui.lineColorCBox3.setCurrentIndex(plotSettings['lineColorCBox3'])
+	self.ui.lineColorCBox4.setCurrentIndex(plotSettings['lineColorCBox4'])
+	self.ui.lineColorCBox5.setCurrentIndex(plotSettings['lineColorCBox5'])
+	self.ui.lineColorCBox6.setCurrentIndex(plotSettings['lineColorCBox6'])
+	self.ui.lineColorCBox7.setCurrentIndex(plotSettings['lineColorCBox7'])
+	self.ui.lineColorCBox8.setCurrentIndex(plotSettings['lineColorCBox8'])
 	
-# END David's Funcitons
+# END David's Functions
 
 
 # global simulation data
@@ -795,7 +796,7 @@ def load_sim_data():
 		simList = sims.keys()
 		simList.sort()
 		for loopIdx in range(len(simList)):
-			sim_mgr_win.simListBox.insertItem(simList[loopIdx])
+			sim_mgr_win.ui.simListBox.insertItem(simList[loopIdx])
 
 
 def load_plot_settings():
@@ -815,13 +816,13 @@ def load_plot_settings():
 def write_sim_param_file():
 	sim_cfg = open('sim_cfg','w')
 	for loopIdx in range(len(simParamsList)):
-		sim_cfg.write(queueSimParamsList[0][loopIdx]+'\t'+queueSimParams[0][simParamsList[loopIdx]]+'\n')
+		sim_cfg.write(queueSimParamsList[0][loopIdx] + '\t' + queueSimParams[0][simParamsList[loopIdx]] + '\n')
 	sim_cfg.close()
     
 def generate_file_list(file_list,list_box):
 	for loopIdx in range(list_box.count()):
 		if list_box.isSelected(loopIdx) == 1:
-			file_list.append(list_box.item(loopIdx).text().ascii())
+			file_list.append(list_box.item(loopIdx).text())
 
 def check_pids(currentlyRunning):
 	global finished_pids
@@ -845,9 +846,9 @@ def conclude_simulation(pid, currentlyRunning):
 		else:
 			return
 			
-	simListBoxItem = sim_mgr_win.startedListBox.findItem(simID)
-	sim_mgr_win.startedListBox.takeItem(simListBoxItem)
-	sim_mgr_win.simListBox.insertItem(simID)
+	simListBoxItem = sim_mgr_win.ui.startedListBox.findItem(simID)
+	sim_mgr_win.ui.startedListBox.takeItem(simListBoxItem)
+	sim_mgr_win.ui.simListBox.insertItem(simID)
 	print simID + ' has concluded.'
 	#print '(pid, simID): ({}, {})'.format(simPid, simID)
 	currentlyRunning.remove((simPid, simID))
@@ -888,11 +889,11 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	#simcommandfinal = 'valgrind --leak-check=yes --log-file=valgrind_output ' + os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
 	#cmd = 'ssh -f -l'+simusername+' '+simhostname+' \'cd '+ExecutePath+'/'+simID+'; '+simcommandfinal+' > sim_log &\''
 	simcommandfinal = os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
-	cmd = 'ssh -f -l'+simusername+' '+simhostname+' \'cd '+ExecutePath+'/'+simID+'; '+simcommandfinal+' > sim_log &\''
+	cmd = 'ssh -f -l' + simusername + ' ' + simhostname + ' \'cd ' + ExecutePath + '/' + simID + '; ' + simcommandfinal + ' > sim_log &\''
 	child = pexpect.spawn(cmd)
 	# expect ssh to prompt for a user password
-	child.expect(str(simusername)+'@'+str(simhostname)+'\'s' + ' password:')
-	print str(simusername)+'@'+str(simhostname)+'\'s' + ' password:'
+	child.expect(str(simusername) + '@' + str(simhostname) + '\'s' + ' password:')
+	print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
 	# send the password
 	child.sendline(str(simpassword))
 	child.read()
@@ -930,7 +931,7 @@ def launch_additional_sim(currentlyRunning, simpassword):
 			os.system('rm *')
 			time.sleep(5)
 			os.chdir('..')
-			os.system('rm -rf '+simID)
+			os.system('rm -rf ' + simID)
 			print "Launch Failed!!!!"
 		else:
 			# Record simulation data and place an entry in simulation list box
@@ -940,19 +941,19 @@ def launch_additional_sim(currentlyRunning, simpassword):
 			sims[simID] = copy.deepcopy(simData)
 			#simListBoxItem = sim_mgr_win.simListBox.findItem(simID + '_(Not_Started)')
 			#indexOfItem = sim_mgr_win.simListBox.index(simListBoxItem)
-			#sim_mgr_win.simListBox.changeItem(simID + '_(Started)', indexOfItem)
-			simListBoxItem = sim_mgr_win.notStartedListBox.findItem(simID)
-			sim_mgr_win.notStartedListBox.takeItem(simListBoxItem)
-			sim_mgr_win.startedListBox.insertItem(simID)
-			#sim_mgr_win.simListBox.setCurrentItem(simID)
-			#sim_mgr_win.simListBox.currentItem().setTextColor(qColor.fromRgb(255,0,0,255))
+			#sim_mgr_win.ui.simListBox.changeItem(simID + '_(Started)', indexOfItem)
+			simListBoxItem = sim_mgr_win.ui.notStartedListBox.findItem(simID)
+			sim_mgr_win.ui.notStartedListBox.takeItem(simListBoxItem)
+			sim_mgr_win.ui.startedListBox.insertItem(simID)
+			#sim_mgr_win.ui.simListBox.setCurrentItem(simID)
+			#sim_mgr_win.ui.simListBox.currentItem().setTextColor(qColor.fromRgb(255,0,0,255))
 			os.chdir('..')
 			print 'Sim ID: ' + simID + '   Sim Host: ' + simhostname + '   Simulation ID: ' + str(simpid)
 	else:	
 		os.system('rm *')
 		time.sleep(5)
 		os.chdir('..')
-		os.system('rm -rf '+simID)
+		os.system('rm -rf ' + simID)
 		print "Launch Failed!!!!"
 		
 	queueSimParamsList.remove(queueSimParamsList[0])
@@ -964,7 +965,7 @@ def add_items_to_list():
 #		newList[iaa] = queueSimParamsList[iaa]['simID']
 #	for simID in newList:
 	for simID in [queueSimParams[iaa]['simID'] for iaa in range(len(queueSimParams))]:
-		sim_mgr_win.notStartedListBox.insertItem(simID)
+		sim_mgr_win.ui.notStartedListBox.insertItem(simID)
 		#qIndex = sim_mgr_win.simListBox.findItem(simID + ' (Not Started)')
 		#sim_mgr_win.simListBox.changeitem(simID + ' (Started)', qIndex)
 		#lineObject = sim_mgr_win.simListBox.row(rowIndex)
@@ -1018,44 +1019,44 @@ class PlotNameWin (QtGui.QWidget):
 		restoreSettingsBtn_pressed2(self)
 		
 	def pointsCBoxChangeAll_activated(self, pointsCBoxIndex):
-		self.pointsCBox1.setCurrentItem(pointsCBoxIndex)
-		self.pointsCBox2.setCurrentItem(pointsCBoxIndex)
-		self.pointsCBox3.setCurrentItem(pointsCBoxIndex)
-		self.pointsCBox4.setCurrentItem(pointsCBoxIndex)
-		self.pointsCBox5.setCurrentItem(pointsCBoxIndex)
-		self.pointsCBox6.setCurrentItem(pointsCBoxIndex)
-		self.pointsCBox7.setCurrentItem(pointsCBoxIndex)
-		self.pointsCBox8.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox1.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox2.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox3.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox4.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox5.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox6.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox7.setCurrentItem(pointsCBoxIndex)
+		self.ui.pointsCBox8.setCurrentItem(pointsCBoxIndex)
 		
 	def pointSizeCBoxChangeAll_activated(self, pointSizeCBoxIndex):
-		self.pointSizeCBox1.setCurrentItem(pointSizeCBoxIndex)
-		self.pointSizeCBox2.setCurrentItem(pointSizeCBoxIndex)
-		self.pointSizeCBox3.setCurrentItem(pointSizeCBoxIndex)
-		self.pointSizeCBox4.setCurrentItem(pointSizeCBoxIndex)
-		self.pointSizeCBox5.setCurrentItem(pointSizeCBoxIndex)
-		self.pointSizeCBox6.setCurrentItem(pointSizeCBoxIndex)
-		self.pointSizeCBox7.setCurrentItem(pointSizeCBoxIndex)
-		self.pointSizeCBox8.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox1.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox2.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox3.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox4.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox5.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox6.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox7.setCurrentItem(pointSizeCBoxIndex)
+		self.ui.pointSizeCBox8.setCurrentItem(pointSizeCBoxIndex)
 		
 	def lineWidthCBoxChangeAll_activated(self, lineWidthCBoxIndex):
-		self.lineWidthCBox1.setCurrentItem(lineWidthCBoxIndex)
-		self.lineWidthCBox2.setCurrentItem(lineWidthCBoxIndex)
-		self.lineWidthCBox3.setCurrentItem(lineWidthCBoxIndex)
-		self.lineWidthCBox4.setCurrentItem(lineWidthCBoxIndex)
-		self.lineWidthCBox5.setCurrentItem(lineWidthCBoxIndex)
-		self.lineWidthCBox6.setCurrentItem(lineWidthCBoxIndex)
-		self.lineWidthCBox7.setCurrentItem(lineWidthCBoxIndex)
-		self.lineWidthCBox8.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox1.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox2.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox3.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox4.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox5.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox6.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox7.setCurrentItem(lineWidthCBoxIndex)
+		self.ui.lineWidthCBox8.setCurrentItem(lineWidthCBoxIndex)
 		
 	def lineColorCBoxChangeAll_activated(self, lineColorCBoxIndex):
-		self.lineColorCBox1.setCurrentItem(lineColorCBoxIndex)
-		self.lineColorCBox2.setCurrentItem(lineColorCBoxIndex)
-		self.lineColorCBox3.setCurrentItem(lineColorCBoxIndex)
-		self.lineColorCBox4.setCurrentItem(lineColorCBoxIndex)
-		self.lineColorCBox5.setCurrentItem(lineColorCBoxIndex)
-		self.lineColorCBox6.setCurrentItem(lineColorCBoxIndex)
-		self.lineColorCBox7.setCurrentItem(lineColorCBoxIndex)
-		self.lineColorCBox8.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox1.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox2.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox3.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox4.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox5.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox6.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox7.setCurrentItem(lineColorCBoxIndex)
+		self.ui.lineColorCBox8.setCurrentItem(lineColorCBoxIndex)
 	
 	def SaveTimeButton_pressed(self):
 		global fileList
@@ -1063,59 +1064,59 @@ class PlotNameWin (QtGui.QWidget):
 		if len(fileList) > 0:
 			pieces = fileList[0].split('_')
 			newLegend1 = pieces[4] + ' ' + pieces[5]
-			self.file1Edit.setText(newLegend1)
+			self.ui.file1Edit.setText(newLegend1)
 	
 		if len(fileList) > 1:
 			pieces = fileList[1].split('_')
 			newLegend2 = pieces[4] + ' ' + pieces[5]
-			self.file2Edit.setText(newLegend2)
+			self.ui.file2Edit.setText(newLegend2)
 		
 		if len(fileList) > 2:
 			pieces = fileList[2].split('_')
 			newLegend3 = pieces[4] + ' ' + pieces[5]
-			self.file3Edit.setText(newLegend3)
+			self.ui.file3Edit.setText(newLegend3)
 		
 		if len(fileList) > 3:
 			pieces = fileList[3].split('_')
 			newLegend4 = pieces[4] + ' ' + pieces[5]
-			self.file4Edit.setText(newLegend4)
+			self.ui.file4Edit.setText(newLegend4)
 		
 		if len(fileList) > 4:
 			pieces = fileList[4].split('_')
 			newLegend5 = pieces[4] + ' ' + pieces[5]
-			self.file5Edit.setText(newLegend5)
+			self.ui.file5Edit.setText(newLegend5)
 		
 		if len(fileList) > 5:
 			pieces = fileList[5].split('_')
 			newLegend6 = pieces[4] + ' ' + pieces[5]
-			self.file6Edit.setText(newLegend6)
+			self.ui.file6Edit.setText(newLegend6)
 		
 		if len(fileList) > 6:
 			pieces = fileList[6].split('_')
 			newLegend7 = pieces[4] + ' ' + pieces[5]
-			self.file7Edit.setText(newLegend7)
+			self.ui.file7Edit.setText(newLegend7)
 		
 		if len(fileList) > 7:
 			pieces = fileList[7].split('_')
 			newLegend8 = pieces[4] + ' ' + pieces[5]
-			self.file8Edit.setText(newLegend8)
+			self.ui.file8Edit.setText(newLegend8)
 		
 	def LegendPosition_selected(self):
-		if self.legendCBox.currentText() == 'Customized Position':
-			self.x_axisPositionLbl.setEnabled(True)
-			self.y_axisPositionLbl.setEnabled(True)
-			self.x_axisEdit.setEnabled(True)
-			self.y_axisEdit.setEnabled(True)
+		if self.ui.legendCBox.currentText() == 'Customized Position':
+			self.ui.x_axisPositionLbl.setEnabled(True)
+			self.ui.y_axisPositionLbl.setEnabled(True)
+			self.ui.x_axisEdit.setEnabled(True)
+			self.ui.y_axisEdit.setEnabled(True)
 		else:
-			self.x_axisPositionLbl.setEnabled(False)
-			self.y_axisPositionLbl.setEnabled(False)
-			self.x_axisEdit.setEnabled(False)
-			self.y_axisEdit.setEnabled(False)			
+			self.ui.x_axisPositionLbl.setEnabled(False)
+			self.ui.y_axisPositionLbl.setEnabled(False)
+			self.ui.x_axisEdit.setEnabled(False)
+			self.ui.y_axisEdit.setEnabled(False)			
 		
 	def doneBtn_pressed(self):
 		global fileList
 		global plotType
-		simID = sim_view_win.simIDEdit.text().ascii()
+		simID = sim_view_win.ui.simIDEdit.text()
 		os.chdir(simID)
 		# Set files to be plotted, in proper order
 		newFileList = []
@@ -1134,104 +1135,104 @@ class PlotNameWin (QtGui.QWidget):
 			
 		for loopIdx in range(len(fileList)):
 			if loopIdx == 0:
-				plotIdx = int(self.plotOrder1.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder1.text())-1
 				newFileList[plotIdx] = fileList[0]
-				newFileListText[plotIdx] = self.file1Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox1.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox1.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox1.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox1.currentItem()
+				newFileListText[plotIdx] = self.ui.file1Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox1.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox1.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox1.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox1.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1
 				
 			elif loopIdx == 1:
-				plotIdx = int(self.plotOrder2.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder2.text())-1
 				newFileList[plotIdx] = fileList[1]
-				newFileListText[plotIdx] = self.file2Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox2.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox2.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox2.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox2.currentItem()
+				newFileListText[plotIdx] = self.ui.file2Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox2.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox2.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox2.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox2.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1								
 			elif loopIdx == 2:
-				plotIdx = int(self.plotOrder3.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder3.text())-1
 				newFileList[plotIdx] = fileList[2]
-				newFileListText[plotIdx] = self.file3Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox3.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox3.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox3.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox3.currentItem()
+				newFileListText[plotIdx] = self.ui.file3Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox3.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox3.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox3.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox3.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1			
 			elif loopIdx == 3:
-				plotIdx = int(self.plotOrder4.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder4.text())-1
 				newFileList[plotIdx] = fileList[3]
-				newFileListText[plotIdx] = self.file4Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox4.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox4.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox4.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox4.currentItem()
+				newFileListText[plotIdx] = self.ui.file4Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox4.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox4.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox4.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox4.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1			
 			elif loopIdx == 4:
-				plotIdx = int(self.plotOrder5.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder5.text())-1
 				newFileList[plotIdx] = fileList[4]
-				newFileListText[plotIdx] = self.file5Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox5.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox5.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox5.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox5.currentItem()
+				newFileListText[plotIdx] = self.ui.file5Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox5.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox5.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox5.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox5.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1			
 			elif loopIdx == 5:
-				plotIdx = int(self.plotOrder6.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder6.text())-1
 				newFileList[plotIdx] = fileList[5]
-				newFileListText[plotIdx] = self.file6Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox6.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox6.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox6.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox6.currentItem()
+				newFileListText[plotIdx] = self.ui.file6Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox6.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox6.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox6.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox6.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1
 			elif loopIdx == 6:
-				plotIdx = int(self.plotOrder7.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder7.text())-1
 				newFileList[plotIdx] = fileList[6]
-				newFileListText[plotIdx] = self.file7Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox7.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox7.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox7.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox7.currentItem()
+				newFileListText[plotIdx] = self.ui.file7Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox7.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox7.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox7.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox7.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1
 			elif loopIdx == 7:
-				plotIdx = int(self.plotOrder8.text().ascii())-1
+				plotIdx = int(self.ui.plotOrder8.text())-1
 				newFileList[plotIdx] = fileList[7]
-				newFileListText[plotIdx] = self.file8Edit.text().ascii()
-				newPointTypeList[plotIdx] = self.pointsCBox8.currentItem()
-				newPointSizeList[plotIdx] = self.pointSizeCBox8.currentText()
-				newLineWidthList[plotIdx] = self.lineWidthCBox8.currentText()
-				newLineColorList[plotIdx] = self.lineColorCBox8.currentItem()
+				newFileListText[plotIdx] = self.ui.file8Edit.text()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox8.currentItem()
+				newPointSizeList[plotIdx] = self.ui.pointSizeCBox8.currentText()
+				newLineWidthList[plotIdx] = self.ui.lineWidthCBox8.currentText()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox8.currentItem()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1			
 		#
 		# Setup gnuplot script
 		#
-		if sim_view_win.plotNameEdit.text().ascii() == '':
-			sim_view_win.plotNameEdit.setText('selected_plot')
-		gplot_file = open(sim_view_win.plotNameEdit.text().ascii()+'.gp','w')
-		if sim_view_win.histBtn.isChecked() == 1 or sim_view_win.timeHistBtn.isChecked() == 1 or sim_view_win.byteHistBtn.isChecked() == 1:
+		if sim_view_win.ui.plotNameEdit.text() == '':
+			sim_view_win.ui.plotNameEdit.setText('selected_plot')
+		gplot_file = open(sim_view_win.ui.plotNameEdit.text()+'.gp','w')
+		if sim_view_win.ui.histBtn.isChecked() == 1 or sim_view_win.ui.timeHistBtn.isChecked() == 1 or sim_view_win.ui.byteHistBtn.isChecked() == 1:
 			gplot_file.write('set style data hist\n')
 			gplot_file.write('set key right top Right\n')
 		else:
-			if self.legendCBox.currentText() == 'Customized Position':		
-					gplot_file.write('set key ' + self.x_axisEdit.text() + ',' + self.y_axisEdit.text() + '\n')
+			if self.ui.legendCBox.currentText() == 'Customized Position':		
+					gplot_file.write('set key ' + self.ui.x_axisEdit.text() + ',' + self.ui.y_axisEdit.text() + '\n')
 			elif self.legendCBox.currentText() == 'Remove Legend':
 					gplot_file.write('unset key\n')
 			else:
 				gplot_file.write('set key left top Left\n')
 				
-			if sim_view_win.confIntvlChkBox.isChecked() == 1:
+			if sim_view_win.ui.confIntvlChkBox.isChecked() == 1:
 				gplot_file.write('set style data yerrorlines\n')
 			else:
 				for loopIdx in range(len(fileList)):
@@ -1242,88 +1243,87 @@ class PlotNameWin (QtGui.QWidget):
 					
 					gplot_file.write('set style line ' + str(loopIdx+1) + ' pt ' + str(pointtype) + ' ps ' + str(pointsize) + ' lw ' + str(linewidth) + ' lc ' + str(linecolor) + ' \n')
 				
-		if sim_view_win.delayVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.delayVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'delay (in seconds)\'\n') #{/Symbol m}
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
 #   		gplot_file.write('set xtics 0.0,0.2\n')
 			gplot_file.write('set format y \"%.1se%S\"\n')
-		if sim_view_win.jitterVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.jitterVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'jitter (in seconds squared)\'\n')
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
 #   		gplot_file.write('set xtics 0.0,0.2\n')
 			gplot_file.write('set format y \"%.1se%S\"\n') #%csec^2
-		if sim_view_win.delayVsTimeBtn.isChecked() == 1:
+		if sim_view_win.ui.delayVsTimeBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'delay (in seconds)\'\n')
 			gplot_file.write('set xlabel \'simulation time (in 1 second intervals)\'\n')
 #   		gplot_file.write('set xtics 0.0,1\n')
 			gplot_file.write('set format y \"%.1s %csec\"\n')
-		if sim_view_win.delayVsONUBtn.isChecked() == 1:
+		if sim_view_win.ui.ui.delayVsONUBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'delay (in seconds)\'\n')
 			gplot_file.write('set xlabel \'# of ONUs\'\n')
 			gplot_file.write('set format y \"%.1s %csec\"\n')
-		if sim_view_win.utilVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.utilVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'utilization\'\n')
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
-		if sim_view_win.cyclelenVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.cyclelenVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'cycle length (in seconds)\'\n')
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
 			gplot_file.write('set format y \"%.1se%S\"\n')
-		if sim_view_win.cyclelenVsONUBtn.isChecked() == 1:
+		if sim_view_win.ui.cyclelenVsONUBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'cycle length (in seconds)\'\n')
 			gplot_file.write('set xlabel \'# of ONUs\'\n')
 			gplot_file.write('set format y \"%.1s %csec\"\n')
-		if sim_view_win.grantsizeVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.grantsizeVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'Grant Size (in bytes)\'\n')
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
 			gplot_file.write('set format y \"%.1f\"\n')
-		if sim_view_win.reportsizeVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.reportsizeVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'Report Size (in bytes)\'\n')
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
 			gplot_file.write('set format y \"%.1f\"\n')
-		if sim_view_win.grantsizePVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.grantsizePVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'Grant Size (in packets)\'\n')
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
-		if sim_view_win.granttimeVsLoadBtn.isChecked() == 1:
+		if sim_view_win.ui.granttimeVsLoadBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'Grant Time (in seconds)\'\n')
 			gplot_file.write('set xlabel \'data load (in Gbps)\'\n')
 			gplot_file.write('set format y \"%.1s %csec\"\n')
-		if sim_view_win.histBtn.isChecked() == 1:
+		if sim_view_win.ui.histBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'Probability\'\n')
-		if sim_view_win.timeHistBtn.isChecked() == 1:
+		if sim_view_win.ui.timeHistBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'Probability\'\n')
 			gplot_file.write('set xlabel \'(in seconds)\'\n')
 			gplot_file.write('set format x \"%.1s%cs\"\n')
-		if sim_view_win.byteHistBtn.isChecked() == 1:
+		if sim_view_win.ui.byteHistBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'Probability\'\n')
 			gplot_file.write('set xlabel \'(in bytes)\'\n')
 			gplot_file.write('set format x \"%.1s%cB\"\n')
-		if ((sim_view_win.maxYEdit.text().ascii() != '') and (sim_view_win.minYEdit.text().ascii() != '')):
-			gplot_file.write('set yrange ['+sim_view_win.minYEdit.text().ascii()+':'+sim_view_win.maxYEdit.text().ascii()+']\n')
-		if ((sim_view_win.maxYEdit.text().ascii() != '') and (sim_view_win.minYEdit.text().ascii() == '')):
-			gplot_file.write('set yrange [:'+sim_view_win.maxYEdit.text().ascii()+']\n')
-		if ((sim_view_win.maxYEdit.text().ascii() == '') and (sim_view_win.minYEdit.text().ascii() != '')):
-			gplot_file.write('set yrange ['+sim_view_win.minYEdit.text().ascii()+':]\n')
-		if ((sim_view_win.maxXEdit.text().ascii() != '') and (sim_view_win.minXEdit.text().ascii() != '')):
-			gplot_file.write('set xrange ['+sim_view_win.minXEdit.text().ascii()+':'+sim_view_win.maxXEdit.text().ascii()+']\n')
-		if ((sim_view_win.maxXEdit.text().ascii() != '') and (sim_view_win.minXEdit.text().ascii() == '')):
-			gplot_file.write('set xrange [:'+sim_view_win.maxXEdit.text().ascii()+']\n')
-		if ((sim_view_win.maxXEdit.text().ascii() == '') and (sim_view_win.minXEdit.text().ascii() != '')):
-			gplot_file.write('set xrange ['+sim_view_win.minXEdit.text().ascii()+':]\n')
+		if ((sim_view_win.ui.maxYEdit.text() != '') and (sim_view_win.ui.minYEdit.text() != '')):
+			gplot_file.write('set yrange ['+sim_view_win.ui.minYEdit.text()+':'+sim_view_win.ui.maxYEdit.text()+']\n')
+		if ((sim_view_win.ui.maxYEdit.text() != '') and (sim_view_win.ui.minYEdit.text() == '')):
+			gplot_file.write('set yrange [:'+sim_view_win.ui.maxYEdit.text()+']\n')
+		if ((sim_view_win.ui.maxYEdit.text() == '') and (sim_view_win.ui.minYEdit.text() != '')):
+			gplot_file.write('set yrange ['+sim_view_win.ui.minYEdit.text()+':]\n')
+		if ((sim_view_win.ui.maxXEdit.text() != '') and (sim_view_win.ui.minXEdit.text() != '')):
+			gplot_file.write('set xrange ['+sim_view_win.ui.minXEdit.text()+':'+sim_view_win.ui.maxXEdit.text()+']\n')
+		if ((sim_view_win.ui.maxXEdit.text() != '') and (sim_view_win.ui.minXEdit.text() == '')):
+			gplot_file.write('set xrange [:'+sim_view_win.ui.maxXEdit.text()+']\n')
+		if ((sim_view_win.ui.maxXEdit.text() == '') and (sim_view_win.ui.minXEdit.text() != '')):
+			gplot_file.write('set xrange ['+sim_view_win.ui.minXEdit.text()+':]\n')
 		gplot_file.write('set grid\n')
 		if plotType == 0:
 			gplot_file.write('set terminal x11 font \"times,14\" enhanced \n')
 		else:
 			gplot_file.write('set terminal fig fontsize 12 \n')
-			gplot_file.write('set output "'+sim_view_win.plotNameEdit.text().ascii()+'.fig"\n')
+			gplot_file.write('set output "'+sim_view_win.ui.plotNameEdit.text()+'.fig"\n')
 		plotStr = 'plot '
 		count = 1
 		
-		if sim_view_win.confIntvlChkBox.isChecked() == 1:
+		if sim_view_win.ui.confIntvlChkBox.isChecked() == 1:
 			for loopIdx in range(len(fileList)):
 				if loopIdx > 0:
 					plotStr = plotStr + ','
 				plotStr = plotStr + '"' + newFileList[loopIdx] + '"'
-				#plotStr = plotStr + ' title \'' + newFileListText[loopIdx] + '\'' + ' with yerr linestyle ' + str(loopIdx+1)
 				plotStr = plotStr + ' title \'' + newFileListText[loopIdx] + '\''
 		else:
 			for loopIdx in range(len(fileList)):
@@ -1332,26 +1332,12 @@ class PlotNameWin (QtGui.QWidget):
 				plotStr = plotStr + '"' + newFileList[loopIdx] + '"'
 				plotStr = plotStr + ' title \'' + newFileListText[loopIdx] + '\'' + ' with linespoints linestyle ' + str(loopIdx+1)
 			
-#   		if loopIdx == 0:
-#   			plotStr = plotStr + ' title \'' + self.file1Edit.text().ascii() + '\''
-#   		if loopIdx == 1:
-#   			plotStr = plotStr + ' title \'' + self.file2Edit.text().ascii() + '\''
-#   		if loopIdx == 2:
-#   			plotStr = plotStr + ' title \'' + self.file3Edit.text().ascii() + '\''
-#   		if loopIdx == 3:
-#   			plotStr = plotStr + ' title \'' + self.file4Edit.text().ascii() + '\''
-#   		if loopIdx == 4:
-#   			plotStr = plotStr + ' title \'' + self.file5Edit.text().ascii() + '\''
-#   		if loopIdx == 5:
-#   			plotStr = plotStr + ' title \'' + self.file6Edit.text().ascii() + '\''
-#   		if loopIdx == 6:
-#   			plotStr = plotStr + ' title \'' + self.file7Edit.text().ascii() + '\''
 		plotStr = plotStr + '\n'
 		gplot_file.write(plotStr)
 		#
 		# Setup plot refresh loop file
 		
-		if sim_view_win.plotRefreshChkBox.isChecked() == 1:
+		if sim_view_win.ui.plotRefreshChkBox.isChecked() == 1:
 			gplot_file.write('load "loop.gp"')
 			loop_file = open('loop.gp','w')
 			loop_file.write('pause 15\n')
@@ -1360,16 +1346,16 @@ class PlotNameWin (QtGui.QWidget):
 			loop_file.close()
 		gplot_file.close()
 		if plotType == 0:
-			os.system('gnuplot -persist '+sim_view_win.plotNameEdit.text().ascii()+'.gp')
+			os.system('gnuplot -persist '+sim_view_win.ui.plotNameEdit.text()+'.gp')
 		else:
-			os.system('gnuplot '+sim_view_win.plotNameEdit.text().ascii()+'.gp')
-			os.system('fig2dev -L pdf '+sim_view_win.plotNameEdit.text().ascii()+'.fig '+sim_view_win.plotNameEdit.text().ascii()+'.pdf')
-			os.system('fig2dev -L eps '+sim_view_win.plotNameEdit.text().ascii()+'.fig '+sim_view_win.plotNameEdit.text().ascii()+'.eps')
-			tex_file = open(sim_view_win.plotNameEdit.text().ascii()+'.tex','w')
+			os.system('gnuplot '+sim_view_win.ui.plotNameEdit.text()+'.gp')
+			os.system('fig2dev -L pdf '+sim_view_win.ui.plotNameEdit.text()+'.fig '+sim_view_win.ui.plotNameEdit.text()+'.pdf')
+			os.system('fig2dev -L eps '+sim_view_win.ui.plotNameEdit.text()+'.fig '+sim_view_win.ui.plotNameEdit.text()+'.eps')
+			tex_file = open(sim_view_win.ui.plotNameEdit.text()+'.tex','w')
 			tex_file.write('\\begin{figure}[tb]\n')
-			tex_file.write('\\includegraphics[scale=0.75,angle=270]{'+sim_view_win.plotNameEdit.text().ascii()+'.pdf}\n')
-			tex_file.write('\\caption{'+sim_view_win.plotCaptionEdit.text().ascii()+'}\n')
-			tex_file.write('\\label{fig:'+sim_view_win.plotNameEdit.text().ascii()+'}\n')
+			tex_file.write('\\includegraphics[scale=0.75,angle=270]{'+sim_view_win.ui.plotNameEdit.text()+'.pdf}\n')
+			tex_file.write('\\caption{'+sim_view_win.ui.plotCaptionEdit.text()+'}\n')
+			tex_file.write('\\label{fig:'+sim_view_win.ui.plotNameEdit.text()+'}\n')
 			tex_file.write('\\end{figure}\n')
 			tex_file.close()
 		
@@ -1380,13 +1366,13 @@ class PlotNameWin (QtGui.QWidget):
 			os.mkdir('A_Results')
 		if not os.path.isdir(pdfDir):
 			os.mkdir('A_Results/pdf_files')
-		os.rename(cwdDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.gp', resultsDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.gp')
-		os.rename(cwdDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.fig', resultsDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.fig')
-		os.rename(cwdDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.pdf', resultsDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.pdf')
-		os.rename(cwdDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.eps', resultsDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.eps')
-		os.rename(cwdDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.tex', resultsDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.tex')
+		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.gp', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.gp')
+		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.fig', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.fig')
+		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf')
+		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.eps', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.eps')
+		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.tex', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.tex')
 
-		shutil.copy2(resultsDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.pdf', pdfDir+'/'+sim_view_win.plotNameEdit.text().ascii()+'.pdf')
+		shutil.copy2(resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf', pdfDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf')
 		
 		os.chdir('..')
 		self.hide()
@@ -1407,7 +1393,7 @@ class SimViewWin (QtGui.QWidget):
 		global fileList
 		del fileList
 		fileList = []
-		generate_file_list(fileList,self.simOutputListBox)
+		generate_file_list(fileList, self.simOutputListBox)
 		if fileList[0] != '':
 			plot_name_win.file1Lbl.setText(fileList[0])
 		if len(fileList) > 1:
@@ -1546,14 +1532,14 @@ class SimInitWin (QtGui.QWidget):
 
 	def cancelBtn_pressed(self):
 		store_parameters(self)
-		self.cancelBtn.setDown(0)
+		self.ui.cancelBtn.setDown(0)
 		sim_init_win.hide()
 		sim_mgr_win.show()
 	def launchBtn_pressed(self):
-		self.launchBtn.setDown(0)
+		self.ui.launchBtn.setDown(0)
 		global simhostname
 		store_parameters(self)
-		simpassword = self.passwordEdit.text().ascii()
+		simpassword = self.ui.passwordEdit.text()
 		sim_init_win.hide()
 		sim_mgr_win.show()
 		launch_sim(simpassword)
@@ -1585,7 +1571,7 @@ class SimInitWin (QtGui.QWidget):
 			add_simParamsList()
 			if queueIndex == queueIndexMax:
 				queueIndexMax += 1
-				self.indexIncreaseButton_pressed()
+				self.ui.indexIncreaseButton_pressed()
 			else:
 				queueIndexMax += 1
 	
@@ -1594,81 +1580,82 @@ class SimInitWin (QtGui.QWidget):
 		global queueIndex
 		if queueIndexMax > 0:
 			if queueIndex == queueIndexMax:
-				self.indexDecreaseButton_pressed()
+				self.ui.indexDecreaseButton_pressed()
 			setupSimParams.pop()
 			setupSimParamsList.pop()
 			queueIndexMax -= 1
 			restore_parameters(self)
 	
 	def loginBtn_pressed(self):
-		self.loginBtn.setDown(0)
-		simusername = self.usernameEdit.text().ascii()
-		simpassword = self.passwordEdit.text().ascii()
-		if os.path.isdir(os.path.join('/home',str(simusername))) == False:
+		self.ui.loginBtn.setDown(0)
+		simusername = self.ui.usernameEdit.text()
+		simpassword = self.ui.passwordEdit.text()
+		if False:
+		#if os.path.isdir(os.path.join('/home', str(simusername))) == False:
 			print 'Not a Valid Username, please Try again.' 
-			self.usernameEdit.clear()
-			self.passwordEdit.clear()
+			self.ui.usernameEdit.clear()
+			self.ui.passwordEdit.clear()
 		else:
 			ExecutePath = os.path.join('/home',str(simusername))
 			os.chdir(os.path.join('/home',str(simusername)))
 			simcommandfinal = os.path.join(os.path.join('/home',str(simusername)), 'ls')
 
-			cmd = 'ssh -f -l '+str(simusername)+' '+str(simhostname)+' \'cd '+ExecutePath+'; '+simcommandfinal+' >sim_log &\''
+			cmd = 'ssh -f -l ' + str(simusername) + ' ' + str(simhostname) + ' \'cd ' + ExecutePath + '; ' + simcommandfinal + ' >sim_log &\''
 			child = pexpect.spawn(cmd)
 
 			# expect ssh to prompt for a user password
-			child.expect(str(simusername)+'@'+str(simhostname)+'\'s' + ' password:')
-			print str(simusername)+'@'+str(simhostname)+'\'s' + ' password:'
+			child.expect(str(simusername) + '@' + str(simhostname) + '\'s' + ' password:')
+			print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
 			# send the password
 			child.sendline(str(simpassword))
 			child.read()
 			if child.isalive() == False:
-				self.passwordEdit.setEnabled(False)
-				self.logoutBtn.setEnabled(True)
-				self.loginBtn.setEnabled(False)
+				self.ui.passwordEdit.setEnabled(False)
+				self.ui.logoutBtn.setEnabled(True)
+				self.ui.loginBtn.setEnabled(False)
 				print 'Logged In Successfully'
-				self.launchBtn.setEnabled(True)
+				self.ui.launchBtn.setEnabled(True)
 			else:
 				print 'Logged In Failed'
-				self.usernameEdit.clear()
-				self.passwordEdit.clear()
+				self.ui.usernameEdit.clear()
+				self.ui.passwordEdit.clear()
 				
 	def logoutBtn_pressed(self):
-		self.logoutBtn.setDown(0)
+		self.ui.logoutBtn.setDown(0)
 		simpassword = ''
-		self.passwordEdit.clear()
-		self.passwordEdit.setEnabled(True)
-		self.loginBtn.setEnabled(True)
-		self.logoutBtn.setEnabled(False)
-		self.launchBtn.setEnabled(False)
+		self.ui.passwordEdit.clear()
+		self.ui.passwordEdit.setEnabled(True)
+		self.ui.loginBtn.setEnabled(True)
+		self.ui.logoutBtn.setEnabled(False)
+		self.ui.launchBtn.setEnabled(False)
 		
 	def svOnBtn_checked(self):
-		self.svButtonGroup.setEnabled(True)
+		self.ui.svButtonGroup.setEnabled(True)
 		
 	def svOffBtn_checked(self):
-		self.svButtonGroup.setEnabled(False)
+		self.ui.svButtonGroup.setEnabled(False)
 		
 	def vtOnBtn_checked(self):
 		global filename
-		self.videoTraceEdit.setEnabled(True)
-		self.changeTraceBtn.setEnabled(True)
-		self.VideoDBABtnGroup.setEnabled(True)
-		self.dbaGatedVideoBtn.setEnabled(True)
-		self.dbaFixedVideoBtn.setEnabled(True)
-		self.dbaLimitedVideoBtn.setEnabled(True)
-		self.predictTrafficBox.setEnabled(True)
-		self.FRateLbl.setEnabled(True)
-		self.frameRateEdit.setEnabled(True)
-		self.videoStartBox.setEnabled(True)
-		self.ipactpsfBtn.setEnabled(True)
-		self.scalableVideoBox.setEnabled(True)
-		self.svDropThresholdEdit.setEnabled(True)
-		self.svDropSensitivity.setEnabled(True)
-		self.svDropStepMinBound.setEnabled(True)
-		self.svDropStepMaxBound.setEnabled(True)
-		self.svDropStep_NumMAValues.setEnabled(True)
-		self.svDropMinBoundLabel.setEnabled(True)
-		self.svDropMaxBoundLabel.setEnabled(True)
+		self.ui.videoTraceEdit.setEnabled(True)
+		self.ui.changeTraceBtn.setEnabled(True)
+		self.ui.VideoDBABtnGroup.setEnabled(True)
+		self.ui.dbaGatedVideoBtn.setEnabled(True)
+		self.ui.dbaFixedVideoBtn.setEnabled(True)
+		self.ui.dbaLimitedVideoBtn.setEnabled(True)
+		self.ui.predictTrafficBox.setEnabled(True)
+		self.ui.FRateLbl.setEnabled(True)
+		self.ui.frameRateEdit.setEnabled(True)
+		self.ui.videoStartBox.setEnabled(True)
+		self.ui.ipactpsfBtn.setEnabled(True)
+		self.ui.scalableVideoBox.setEnabled(True)
+		self.ui.svDropThresholdEdit.setEnabled(True)
+		self.ui.svDropSensitivity.setEnabled(True)
+		self.ui.svDropStepMinBound.setEnabled(True)
+		self.ui.svDropStepMaxBound.setEnabled(True)
+		self.ui.svDropStep_NumMAValues.setEnabled(True)
+		self.ui.svDropMinBoundLabel.setEnabled(True)
+		self.ui.svDropMaxBoundLabel.setEnabled(True)
 		
 		
 		sim_init_win.hide()
@@ -1676,49 +1663,49 @@ class SimInitWin (QtGui.QWidget):
 		while str(filename) == "()":
 			filename = tkFileDialog.askopenfilename(title="Select a Video Trace File to be Used", initialdir=(os.path.join(path_2,"Video_Trace_Library")))
 		if str(filename) != "()":
-			self.videoTraceEdit.setText(filename)
+			self.ui.videoTraceEdit.setText(filename)
 		sim_init_win.show()
 		
 	def vtOffBtn_checked(self):
-		self.videoTraceEdit.clear()
-		self.videoTraceEdit.setEnabled(False)
-		self.changeTraceBtn.setEnabled(False)
-		self.VideoDBABtnGroup.setEnabled(False)
-		self.dbaGatedVideoBtn.setEnabled(False)
-		self.dbaFixedVideoBtn.setEnabled(False)
-		self.dbaLimitedVideoBtn.setEnabled(False)
-		self.predictTrafficBox.setEnabled(False)
-		self.FRateLbl.setEnabled(False)
-		self.frameRateEdit.setEnabled(False)
-		self.videoStartBox.setEnabled(False)
-		#if self.ipactpsfBtn.isChecked() == 1:
-			#self.nascBtn.setChecked(1)
-		self.ipactpsfBtn.setEnabled(False)
-		self.scalableVideoBox.setEnabled(False)
-		self.svDropThresholdEdit.setEnabled(False)
-		self.svDropSensitivity.setEnabled(False)
-		self.svDropStepMinBound.setEnabled(False)
-		self.svDropStepMaxBound.setEnabled(False)
-		self.svDropStep_NumMAValues.setEnabled(False)
-		self.svDropMinBoundLabel.setEnabled(False)
-		self.svDropMaxBoundLabel.setEnabled(False)
+		self.ui.videoTraceEdit.clear()
+		self.ui.videoTraceEdit.setEnabled(False)
+		self.ui.changeTraceBtn.setEnabled(False)
+		self.ui.VideoDBABtnGroup.setEnabled(False)
+		self.ui.dbaGatedVideoBtn.setEnabled(False)
+		self.ui.dbaFixedVideoBtn.setEnabled(False)
+		self.ui.dbaLimitedVideoBtn.setEnabled(False)
+		self.ui.predictTrafficBox.setEnabled(False)
+		self.ui.FRateLbl.setEnabled(False)
+		self.ui.frameRateEdit.setEnabled(False)
+		self.ui.videoStartBox.setEnabled(False)
+		#if self.ui.ipactpsfBtn.isChecked() == 1:
+			#self.ui.nascBtn.setChecked(1)
+		self.ui.ipactpsfBtn.setEnabled(False)
+		self.ui.scalableVideoBox.setEnabled(False)
+		self.ui.svDropThresholdEdit.setEnabled(False)
+		self.ui.svDropSensitivity.setEnabled(False)
+		self.ui.svDropStepMinBound.setEnabled(False)
+		self.ui.svDropStepMaxBound.setEnabled(False)
+		self.ui.svDropStep_NumMAValues.setEnabled(False)
+		self.ui.svDropMinBoundLabel.setEnabled(False)
+		self.ui.svDropMaxBoundLabel.setEnabled(False)
 	
 		
 	def pvtOnBtn_checked(self):
-		self.PredTypeLbl.setEnabled(True)
-		self.PredTypeEdit.setEnabled(True)
+		self.ui.PredTypeLbl.setEnabled(True)
+		self.ui.PredTypeEdit.setEnabled(True)
 	
 	def pvtOffBtn_checked(self):
-		self.PredTypeLbl.setEnabled(False)
-		self.PredTypeEdit.setEnabled(False)
+		self.ui.PredTypeLbl.setEnabled(False)
+		self.ui.PredTypeEdit.setEnabled(False)
 		
 	def vsOffBtn_checked(self):
-		self.timeShiftLbl.setEnabled(False)
-		self.timeShiftEdit.setEnabled(False)
+		self.ui.timeShiftLbl.setEnabled(False)
+		self.ui.timeShiftEdit.setEnabled(False)
 		
 	def vsOnBtn_checked(self):
-		self.timeShiftLbl.setEnabled(True)
-		self.timeShiftEdit.setEnabled(True)
+		self.ui.timeShiftLbl.setEnabled(True)
+		self.ui.timeShiftEdit.setEnabled(True)
 		
 	def changeTraceBtn_pressed(self):
 		sim_init_win.hide()
@@ -1726,12 +1713,12 @@ class SimInitWin (QtGui.QWidget):
 		newfilename = tkFileDialog.askopenfilename()
 		if str(newfilename) == "()":
 			newfilename = filename
-		self.videoTraceEdit.setText(newfilename)
+		self.ui.videoTraceEdit.setText(newfilename)
 		sim_init_win.show()
 		
 	#Redefining the close even to give a message box to confirm	
 	def closeEvent(self, event):
-		self.cancelBtn.setDown(0)
+		self.ui.cancelBtn.setDown(0)
 		sim_init_win.hide()
 		sim_mgr_win.show()		
 
@@ -1747,58 +1734,58 @@ class MainSimMgrWin (QtGui.QWidget):
 		#self.setupUi(self.qwidget)
 		
 	def languageChange(self):
-		Ui_SimMgr.languageChange(self)
-		self.simListBox.clear()
-		self.notStartedListBox.clear()
-		self.startedListBox.clear()
+		Ui_SimMgr.ui.languageChange(self)
+		self.ui.simListBox.clear()
+		self.ui.notStartedListBox.clear()
+		self.ui.startedListBox.clear()
 	def quitButton_pressed(self):
 #   	simdatafile = open('sim_mgr_data','w')
 #   	marshal.dump(sims,simdatafile)
 #   	simdatafile.close()
-		os.chdir(os.path.join(os.path.join('/home', str(simusername)), str(simhomedir_2)))
-		print '1'
+		os.chdir(os.path.join(os.path.join('/home', 'admin1', 'scvid', str(simhomedir_2))))
+		#print '1'
 		simpicklefile = open('sim_mgr_data','w')
-		print '2'
+		#print '2'
 		pickler = pickle.Pickler(simpicklefile)
-		print '3'
+		#print '3'
 		pickler.dump(sims)
-		print '4'
+		#print '4'
 		simpicklefile.close()
-		print 'Finished Pickle: simpicklefile'
+		#print 'Finished Pickle: simpicklefile'
 		plotSettingsPicklefile = open('plot_settings_data','w')
-		print '5'
+		#print '5'
 		pickler = pickle.Pickler(plotSettingsPicklefile)
-		print '6'
+		#print '6'
 		pickler.dump(plotSettings)
-		print '7'
+		#print '7'
 		plotSettingsPicklefile.close()
-		print 'Finished Pickle: plotSettings'
+		#print 'Finished Pickle: plotSettings'
 		sys.exit()
 	def newSimButton_pressed(self):
-		self.newSimButton.setDown(0)
+		self.ui.newSimButton.setDown(0)
 		global simhostname
 		sim_mgr_win.hide()
 		restore_parameters(sim_init_win);
-		sim_init_win.usernameEdit.setText(simusername)
-		sim_init_win.usernameEdit.setEnabled(False)
+		sim_init_win.ui.usernameEdit.setText('admin1')
+		sim_init_win.ui.usernameEdit.setEnabled(False)
 		sim_init_win.show()
 		
 	def viewSimButton_pressed(self):
-		wait_win.waitProgressBar.setPercentageVisible(1)
-		wait_win.waitProgressBar.setTotalSteps(5)
-		wait_win.waitProgressBar.setProgress(0)
+		wait_win.ui.waitProgressBar.setPercentageVisible(1)
+		wait_win.ui.waitProgressBar.setTotalSteps(5)
+		wait_win.ui.waitProgressBar.setProgress(0)
 		wait_win.show()
 		self.hide()
-		self.viewSimButton.setDown(0)
+		self.ui.viewSimButton.setDown(0)
 		Selection = False
-		for loopIdx in range(self.simListBox.count()):
-			if self.simListBox.isSelected(loopIdx) == 1:
+		for loopIdx in range(self.ui.simListBox.count()):
+			if self.ui.simListBox.isSelected(loopIdx) == 1:
 				simIdx = loopIdx
 				Selection = True
 		if Selection:
-			simID = self.simListBox.item(simIdx).text().ascii()
+			simID = self.ui.simListBox.item(simIdx).text()
 			# Clear list box
-			sim_view_win.simOutputListBox.clear()
+			sim_view_win.ui.simOutputListBox.clear()
 		
 			os.chdir(path)
 			if os.path.exists(simID) == 1:
@@ -1809,16 +1796,16 @@ class MainSimMgrWin (QtGui.QWidget):
 				pidFile = open('pid','r')
 				pidStr = pidFile.readline()
 				if pidStr == 'done\n':
-					sim_view_win.simStatusLbl.setText('Completed')
+					sim_view_win.ui.simStatusLbl.setText('Completed')
 				else:
 					if pidStr == 'Failed\n':
-						sim_view_win.simStatusLbl.setText('Failed')
+						sim_view_win.ui.simStatusLbl.setText('Failed')
 					else:
-						sim_view_win.simStatusLbl.setText('Running: '+pidStr)
+						sim_view_win.ui.simStatusLbl.setText('Running: ' + pidStr)
 			simData = sims[simID]
-			sim_view_win.simIDEdit.setText(simID)
-			sim_view_win.hostEdit.setText(simData['host'])
-			wait_win.waitProgressBar.setProgress(3)
+			sim_view_win.ui.simIDEdit.setText(simID)
+			sim_view_win.ui.hostEdit.setText(simData['host'])
+			wait_win.ui.waitProgressBar.setProgress(3)
 			# Fill list box with output files
 			#
 			filedir = os.popen('ls','r')
@@ -1829,31 +1816,31 @@ class MainSimMgrWin (QtGui.QWidget):
 				and (filename != 'sim_core')
 				and (string.find(filename,'.fig') == -1) 
 				and (string.find(filename,'.gp') == -1)):
-					sim_view_win.simOutputListBox.insertItem(filename)
+					sim_view_win.ui.simOutputListBox.insertItem(filename)
 				filename = filedir.readline()
 			os.chdir('..')
-			wait_win.waitProgressBar.setProgress(5)
+			wait_win.ui.waitProgressBar.setProgress(5)
 			wait_win.hide()
 			sim_view_win.show()
 		else:
-			wait_win.waitProgressBar.setProgress(5)
+			wait_win.ui.waitProgressBar.setProgress(5)
 			wait_win.hide()
 			sim_mgr_win.show()
 			print "No valid Selection for a Simulation ID to be viewed, Please Try again."
 			
 	def consolidateBtn_pressed(self):
 		wait_win.show()
-		self.consolidateBtn.setDown(0)
+		self.ui.consolidateBtn.setDown(0)
 		global simParams
 		simList = []
-		for loopIdx in range(self.simListBox.count()):
-			if self.simListBox.isSelected(loopIdx) == 1:
+		for loopIdx in range(self.ui.simListBox.count()):
+			if self.ui.simListBox.isSelected(loopIdx) == 1:
 				# Add simulation to list
-				simList.append(self.simListBox.item(loopIdx).text().ascii())
+				simList.append(self.simListBox.item(loopIdx).text())
 		# Create a consolidated pseudo-simulation
-		if self.consolidateNameEdit.text().ascii() == '':
-			self.consolidateNameEdit.setText('consolidated')
-		consolidatedName = self.consolidateNameEdit.text().ascii()
+		if self.ui.consolidateNameEdit.text() == '':
+			self.ui.consolidateNameEdit.setText('consolidated')
+		consolidatedName = self.ui.consolidateNameEdit.text()
 		if sims.has_key(consolidatedName) == 1:
 			del sims[consolidatedName]
 		simData['host'] = 'null'
@@ -1862,26 +1849,26 @@ class MainSimMgrWin (QtGui.QWidget):
 		simID = consolidatedName
 		sims[simID] = copy.deepcopy(simData)
 		if os.path.exists(consolidatedName) == 1:
-			os.system('rm -rf '+consolidatedName)
+			os.system('rm -rf ' + consolidatedName)
 		os.mkdir(consolidatedName)
 		# copy files to consolidated directory
 		for loopIdx in range(len(simList)):
 			dirStr = simList[loopIdx]
-			os.system('cp '+dirStr+'/* '+consolidatedName)
-		self.simListBox.insertItem(consolidatedName)
+			os.system('cp ' + dirStr + '/* ' + consolidatedName)
+		self.ui.simListBox.insertItem(consolidatedName)
 		wait_win.hide()
 	
 	def addSimButton_pressed(self):
 		wait_win.show()
-		self.addSimButton.setDown(0)
+		self.ui.addSimButton.setDown(0)
 		global simParams
 		simList = []
 		os.chdir(path)
 
 		# Add the simulation directory
-		if self.consolidateNameEdit.text().ascii() == '':
-			self.consolidateNameEdit.setText('new_sim')
-		addSimName = self.consolidateNameEdit.text().ascii()
+		if self.ui.consolidateNameEdit.text() == '':
+			self.ui.consolidateNameEdit.setText('new_sim')
+		addSimName = self.ui.consolidateNameEdit.text()
 		
 		if os.path.exists(addSimName) == 0:
 			os.mkdir(addSimName)
@@ -1893,20 +1880,20 @@ class MainSimMgrWin (QtGui.QWidget):
 		simData['params'] = copy.deepcopy(simParams)
 		simID = addSimName
 		sims[simID] = copy.deepcopy(simData)
-		self.simListBox.insertItem(addSimName)
+		self.ui.simListBox.insertItem(addSimName)
 		wait_win.hide()
 	
 	def removeSimButton_pressed(self):
 		wait_win.show() 
 		app.processEvents(0)
-		self.removeSimButton.setDown(0)
-		for loopIdx in range(self.simListBox.count())[::-1]:
-			if self.simListBox.isSelected(loopIdx) == 1:
+		self.ui.removeSimButton.setDown(0)
+		for loopIdx in range(self.ui.simListBox.count())[::-1]:
+			if self.ui.simListBox.isSelected(loopIdx) == 1:
 				# Remove selected simulation
-				selectedSimID = self.simListBox.item(loopIdx).text().ascii()
-				self.simListBox.removeItem(loopIdx)
+				selectedSimID = self.ui.simListBox.item(loopIdx).text()
+				self.ui.simListBox.removeItem(loopIdx)
 				os.chdir(path)
-				if self.removeDirCheckBox.isChecked() == 1:
+				if self.ui.removeDirCheckBox.isChecked() == 1:
 					if os.path.exists(selectedSimID) == 1:
 						os.chdir(selectedSimID)
 						
@@ -1941,19 +1928,19 @@ class MainSimMgrWin (QtGui.QWidget):
 								#shutil.rmtree(os.getcwd())
 								#print selectedSimID + ' was Stopped and Deleted'
 						else:
-							os.system('rm -rf '+selectedSimID)
+							os.system('rm -rf ' + selectedSimID)
 				
 				del sims[selectedSimID]
-		self.removeDirCheckBox.setChecked(0)
+		self.ui.removeDirCheckBox.setChecked(0)
 		time.sleep(0.05)
 		wait_win.hide()
 	
 	def haltSimBtn_pressed(self):
 		#self.haltSimBtn.setDown(0)
 		for loopIdx in range(self.startedListBox.count()):
-			if self.startedListBox.isSelected(loopIdx) == 1:
+			if self.ui.startedListBox.isSelected(loopIdx) == 1:
 				# Halt selected simulation
-				selectedSimID = self.startedListBox.item(loopIdx).text().ascii()
+				selectedSimID = self.ui.startedListBox.item(loopIdx).text()
 				os.chdir(path)
 				if os.path.exists(selectedSimID) == 1:
 					os.chdir(selectedSimID)
@@ -1974,9 +1961,9 @@ class MainSimMgrWin (QtGui.QWidget):
 							print selectedSimID + ' was Stopped'
 	
 	def openSimButton_pressed(self):
-		for loopIdx in range(self.simListBox.count())[::-1]:
-			if self.simListBox.isSelected(loopIdx) == 1:
-				selectedSimID = self.simListBox.item(loopIdx).text().ascii()
+		for loopIdx in range(self.ui.simListBox.count())[::-1]:
+			if self.ui.simListBox.isSelected(loopIdx) == 1:
+				selectedSimID = self.ui.simListBox.item(loopIdx).text()
 				os.chdir(path)
 				if os.path.exists(selectedSimID) == 1:
 					os.chdir(selectedSimID)
