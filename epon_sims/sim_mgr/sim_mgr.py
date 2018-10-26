@@ -43,6 +43,7 @@ import subprocess, shutil
 
 import shutil
 import signal
+import random
 
 import sys
 import os
@@ -1768,6 +1769,8 @@ class MainSimMgrWin (QtGui.QWidget):
 		restore_parameters(sim_init_win);
 		sim_init_win.ui.usernameEdit.setText('admin1')
 		sim_init_win.ui.usernameEdit.setEnabled(False)
+		testID = random.randint(0, 9999)
+		sim_init_win.ui.simIdEdit.setText('test_' + "%04d" % (testID, ))
 		sim_init_win.show()
 		
 	def viewSimButton_pressed(self):
