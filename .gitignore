@@ -7,6 +7,7 @@
 !/epon_sims/sim_mgr
 !/epon_sims/plot_settings_data
 !/epon_sims/sim_mgr_data
+!/epon_sims/test_num
 
 # Specific file types to ignore
 *.pyc

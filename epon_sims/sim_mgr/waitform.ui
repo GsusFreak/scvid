@@ -32,7 +32,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QProgressBar" name="waitProgressBar_2">
+  <widget class="QProgressBar" name="waitProgressBar">
    <property name="geometry">
     <rect>
      <x>43</x>

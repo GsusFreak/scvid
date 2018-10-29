@@ -43,7 +43,6 @@ import subprocess, shutil
 
 import shutil
 import signal
-import random
 
 import sys
 import os
@@ -790,28 +789,39 @@ def load_sim_data():
 	global sims
 	os.chdir(simhomedir)
 	if os.path.exists('sim_mgr_data'):
-		simpicklefile = open('sim_mgr_data','r')
+		simpicklefile = open('sim_mgr_data', 'r')
 		unpickler = pickle.Unpickler(simpicklefile)
 		sims = unpickler.load()
 		simpicklefile.close()
 		simList = sims.keys()
 		simList.sort()
 		for loopIdx in range(len(simList)):
-			sim_mgr_win.ui.simListBox.insertItem(simList[loopIdx])
+			sim_mgr_win.ui.simListBox.addItem(simList[loopIdx])
 
 
 def load_plot_settings():
 	global plotSettings
 	os.chdir(simhomedir)
 	if os.path.exists('plot_settings_data'):
-		plotSettingsPicklefile = open('plot_settings_data','r')
+		plotSettingsPicklefile = open('plot_settings_data', 'r')
 		unpickler = pickle.Unpickler(plotSettingsPicklefile)
 		plotSettings = unpickler.load()
 		plotSettingsPicklefile.close()
 		restoreSettingsBtn_pressed2(plot_name_win)
 	else:
 		saveSettingsBtn_pressed2(plot_name_win)
-		
+
+
+def load_test_num():
+	global testNum
+	os.chdir(simhomedir)
+	if os.path.exists('test_num'):
+		testNumPickleFile = open('test_num', 'r')
+		unpickler = pickle.Unpickler(testNumPickleFile)
+		testNum = unpickler.load()
+		testNumPickleFile.close()
+	else:
+		testNum = 1
 
 
 def write_sim_param_file():
@@ -819,6 +829,7 @@ def write_sim_param_file():
 	for loopIdx in range(len(simParamsList)):
 		sim_cfg.write(queueSimParamsList[0][loopIdx] + '\t' + queueSimParams[0][simParamsList[loopIdx]] + '\n')
 	sim_cfg.close()
+
     
 def generate_file_list(file_list,list_box):
 	for loopIdx in range(list_box.count()):
@@ -1215,7 +1226,7 @@ class PlotNameWin (QtGui.QWidget):
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox8.currentText()
 				newLineColorList[plotIdx] = self.ui.lineColorCBox8.currentItem()
 				if newLineColorList[plotIdx] == 'black':
-					newLineColorList[plotIdx] = -1			
+					newLineColorList[plotIdx] = -1
 		#
 		# Setup gnuplot script
 		#
@@ -1530,12 +1541,12 @@ class SimInitWin (QtGui.QWidget):
 		global simhostname
 		restore_parameters(self)
 		
-
 	def cancelBtn_pressed(self):
 		store_parameters(self)
 		self.ui.cancelBtn.setDown(0)
 		sim_init_win.hide()
 		sim_mgr_win.show()
+		
 	def launchBtn_pressed(self):
 		self.ui.launchBtn.setDown(0)
 		global simhostname
@@ -1552,7 +1563,6 @@ class SimInitWin (QtGui.QWidget):
 			store_parameters(self)
 			queueIndex += 1
 			restore_parameters(self)
-			
 	
 	def indexDecreaseButton_pressed(self):
 		global queueIndexMax
@@ -1565,6 +1575,7 @@ class SimInitWin (QtGui.QWidget):
 	def indexMaxIncreaseButton_pressed(self):
 		global queueIndexMax
 		global queueIndex
+		global testNum
 		if queueIndexMax < 100:
 			store_parameters(self)
 			restore_parameters(self)
@@ -1572,7 +1583,10 @@ class SimInitWin (QtGui.QWidget):
 			add_simParamsList()
 			if queueIndex == queueIndexMax:
 				queueIndexMax += 1
-				self.ui.indexIncreaseButton_pressed()
+				self.indexIncreaseButton_pressed()
+				# Increment the Sim ID test number
+				testNum += 1
+				self.ui.simIdEdit.setText('test_' + "%04d" % (testNum,))
 			else:
 				queueIndexMax += 1
 	
@@ -1581,7 +1595,7 @@ class SimInitWin (QtGui.QWidget):
 		global queueIndex
 		if queueIndexMax > 0:
 			if queueIndex == queueIndexMax:
-				self.ui.indexDecreaseButton_pressed()
+				self.indexDecreaseButton_pressed()
 			setupSimParams.pop()
 			setupSimParamsList.pop()
 			queueIndexMax -= 1
@@ -1730,53 +1744,50 @@ class MainSimMgrWin (QtGui.QWidget):
 		super(self.__class__, self).__init__()
 		self.ui = Ui_SimMgr()
 		self.ui.setupUi(self)
+		self.ui.simListBox.setSelectionMode(3)
 
-		## self.qwidget = QtGui.QWidget()
-		#self.setupUi(self.qwidget)
-		
 	def languageChange(self):
 		Ui_SimMgr.ui.languageChange(self)
 		self.ui.simListBox.clear()
 		self.ui.notStartedListBox.clear()
 		self.ui.startedListBox.clear()
+		
 	def quitButton_pressed(self):
-#   	simdatafile = open('sim_mgr_data','w')
-#   	marshal.dump(sims,simdatafile)
-#   	simdatafile.close()
 		os.chdir(os.path.join(os.path.join('/home', 'admin1', 'scvid', str(simhomedir_2))))
-		#print '1'
 		simpicklefile = open('sim_mgr_data','w')
-		#print '2'
 		pickler = pickle.Pickler(simpicklefile)
-		#print '3'
 		pickler.dump(sims)
-		#print '4'
 		simpicklefile.close()
-		#print 'Finished Pickle: simpicklefile'
+		
 		plotSettingsPicklefile = open('plot_settings_data','w')
-		#print '5'
 		pickler = pickle.Pickler(plotSettingsPicklefile)
-		#print '6'
 		pickler.dump(plotSettings)
-		#print '7'
 		plotSettingsPicklefile.close()
-		#print 'Finished Pickle: plotSettings'
+		
+		global testNum
+		testNum += 1
+		testNumPickleFile = open('test_num','w')
+		pickler = pickle.Pickler(testNumPickleFile)
+		pickler.dump(testNum)
+		testNumPickleFile.close()
+		
 		sys.exit()
+		
 	def newSimButton_pressed(self):
 		self.ui.newSimButton.setDown(0)
 		global simhostname
+		global testNum
 		sim_mgr_win.hide()
 		restore_parameters(sim_init_win);
 		sim_init_win.ui.usernameEdit.setText('admin1')
 		sim_init_win.ui.usernameEdit.setEnabled(False)
-		testID = random.randint(0, 9999)
-		sim_init_win.ui.simIdEdit.setText('test_' + "%04d" % (testID, ))
+		sim_init_win.ui.simIdEdit.setText('test_' + "%04d" % (testNum, ))
 		sim_init_win.show()
 		
 	def viewSimButton_pressed(self):
-		wait_win.ui.waitProgressBar.setPercentageVisible(1)
-		wait_win.ui.waitProgressBar.setTotalSteps(5)
-		wait_win.ui.waitProgressBar.setProgress(0)
+		# wait_win.ui.waitProgressBar.setPercentageVisible(1)
+		wait_win.ui.waitProgressBar.setMaximum(5)
+		wait_win.ui.waitProgressBar.setValue(0)
 		wait_win.show()
 		self.hide()
 		self.ui.viewSimButton.setDown(0)
@@ -1822,11 +1833,11 @@ class MainSimMgrWin (QtGui.QWidget):
 					sim_view_win.ui.simOutputListBox.insertItem(filename)
 				filename = filedir.readline()
 			os.chdir('..')
-			wait_win.ui.waitProgressBar.setProgress(5)
+			wait_win.ui.waitProgressBar.setValue(5)
 			wait_win.hide()
 			sim_view_win.show()
 		else:
-			wait_win.ui.waitProgressBar.setProgress(5)
+			wait_win.ui.waitProgressBar.setValue(5)
 			wait_win.hide()
 			sim_mgr_win.show()
 			print "No valid Selection for a Simulation ID to be viewed, Please Try again."
@@ -1835,15 +1846,21 @@ class MainSimMgrWin (QtGui.QWidget):
 		wait_win.show()
 		self.ui.consolidateBtn.setDown(0)
 		global simParams
-		simList = []
-		for loopIdx in range(self.ui.simListBox.count()):
-			if self.ui.simListBox.isSelected(loopIdx) == 1:
-				# Add simulation to list
-				simList.append(self.simListBox.item(loopIdx).text())
+		simList = self.ui.simListBox.selectedItems()
+		#for loopIdx in range(self.ui.simListBox.count()):
+			#if self.ui.simListBox.isSelected(loopIdx) == 1:
+				## Add simulation to list
+				#simList.append(self.simListBox.item(loopIdx).text())
+		
+		#for entry in self.ui.simListBox.selectedItems()
+			## Add simulation to list
+			#simList.append(self.ui.simListBox.item(loopIdx).text())
+		
 		# Create a consolidated pseudo-simulation
-		if self.ui.consolidateNameEdit.text() == '':
+		if str(self.ui.consolidateNameEdit.text()) == '':
 			self.ui.consolidateNameEdit.setText('consolidated')
-		consolidatedName = self.ui.consolidateNameEdit.text()
+		consolidatedNameQSTRING = self.ui.consolidateNameEdit.text()
+		consolidatedName = str(consolidatedNameQSTRING)
 		if sims.has_key(consolidatedName) == 1:
 			del sims[consolidatedName]
 		simData['host'] = 'null'
@@ -1855,10 +1872,10 @@ class MainSimMgrWin (QtGui.QWidget):
 			os.system('rm -rf ' + consolidatedName)
 		os.mkdir(consolidatedName)
 		# copy files to consolidated directory
-		for loopIdx in range(len(simList)):
-			dirStr = simList[loopIdx]
-			os.system('cp ' + dirStr + '/* ' + consolidatedName)
-		self.ui.simListBox.insertItem(consolidatedName)
+		for item in simList:
+			# dirStr = simList[loopIdx]
+			os.system('cp ' + str(dirStr) + '/* ' + consolidatedName)
+		self.ui.simListBox.addItem(consolidatedNameQSTRING)
 		wait_win.hide()
 	
 	def addSimButton_pressed(self):
@@ -1869,9 +1886,9 @@ class MainSimMgrWin (QtGui.QWidget):
 		os.chdir(path)
 
 		# Add the simulation directory
-		if self.ui.consolidateNameEdit.text() == '':
+		if str(self.ui.consolidateNameEdit.text()) == '':
 			self.ui.consolidateNameEdit.setText('new_sim')
-		addSimName = self.ui.consolidateNameEdit.text()
+		addSimName = str(self.ui.consolidateNameEdit.text())
 		
 		if os.path.exists(addSimName) == 0:
 			os.mkdir(addSimName)
@@ -1883,63 +1900,75 @@ class MainSimMgrWin (QtGui.QWidget):
 		simData['params'] = copy.deepcopy(simParams)
 		simID = addSimName
 		sims[simID] = copy.deepcopy(simData)
-		self.ui.simListBox.insertItem(addSimName)
+		self.ui.simListBox.addItem(addSimName)
 		wait_win.hide()
 	
 	def removeSimButton_pressed(self):
 		wait_win.show() 
-		app.processEvents(0)
+		#app.processEvents(0)
 		self.ui.removeSimButton.setDown(0)
-		for loopIdx in range(self.ui.simListBox.count())[::-1]:
-			if self.ui.simListBox.isSelected(loopIdx) == 1:
-				# Remove selected simulation
-				selectedSimID = self.ui.simListBox.item(loopIdx).text()
-				self.ui.simListBox.removeItem(loopIdx)
-				os.chdir(path)
-				if self.ui.removeDirCheckBox.isChecked() == 1:
-					if os.path.exists(selectedSimID) == 1:
-						os.chdir(selectedSimID)
+		#os.chdir('epon_sims')
+		for itemSelected in self.ui.simListBox.selectedItems():
+			# Remove selected simulation
+			selectedSimID = str(itemSelected.text())
+			print sims.keys()
+			#self.ui.simListBox.removeItemWidget(itemSelected)
+			self.ui.simListBox.takeItem(self.ui.simListBox.row(itemSelected))
+			os.chdir(path)
+			if self.ui.removeDirCheckBox.isChecked() == 1:
+				if os.path.exists(selectedSimID) == 1:
+					os.chdir(selectedSimID)
+					
+					if os.path.exists('pid') == 1:
+						pidFile = open('pid','r')
+						pidStr = pidFile.readline()
+						pidFile.close()
 						
-						if os.path.exists('pid') == 1:
-							pidFile = open('pid','r')
-							pidStr = pidFile.readline()
-							pidFile.close()
-							
-							if pidStr == 'done\n':
-								shutil.rmtree(os.getcwd())
-								print selectedSimID + ' was Deleted'
-							elif pidStr == 'Failed\n':
-								shutil.rmtree(os.getcwd())
-								print selectedSimID + ' was Deleted'
-							else:
-								try:
-									os.kill(int(pidStr), signal.SIG_IGN)
-								except:
-									pass
-								shutil.rmtree(os.getcwd())
-								print selectedSimID + ' was Stopped and Deleted'
-								#simData = sims[selectedSimID]
-								#cmd = 'ssh ' + simData['host'] + ' kill ' + str(int(pidStr)) + ' &\''
-								#child = pexpect.spawn(cmd)
-								## expect ssh to prompt for a user password
-								#child.expect(str(simusername)+'@'+str(simData['host'])+'\'s' + ' password:')
-								#print str(simusername)+'@'+str(simData['host'])+'\'s' + ' password:'
-								## send the password
-								#child.sendline(sim_init_win.passwordEdit.text().ascii())
-								#child.read()
-								#child.kill(0)
-								#shutil.rmtree(os.getcwd())
-								#print selectedSimID + ' was Stopped and Deleted'
+						if pidStr == 'done\n':
+							shutil.rmtree(os.getcwd())
+							print selectedSimID + ' was Deleted'
+						elif pidStr == 'Failed\n':
+							shutil.rmtree(os.getcwd())
+							print selectedSimID + ' was Deleted'
 						else:
-							os.system('rm -rf ' + selectedSimID)
-				
-				del sims[selectedSimID]
+							try:
+								os.kill(int(pidStr), signal.SIG_IGN)
+							except:
+								pass
+							shutil.rmtree(os.getcwd())
+							print selectedSimID + ' was Stopped and Deleted'
+							#simData = sims[selectedSimID]
+							#cmd = 'ssh ' + simData['host'] + ' kill ' + str(int(pidStr)) + ' &\''
+							#child = pexpect.spawn(cmd)
+							## expect ssh to prompt for a user password
+							#child.expect(str(simusername)+'@'+str(simData['host'])+'\'s' + ' password:')
+							#print str(simusername)+'@'+str(simData['host'])+'\'s' + ' password:'
+							## send the password
+							#child.sendline(sim_init_win.passwordEdit.text().ascii())
+							#child.read()
+							#child.kill(0)
+							#shutil.rmtree(os.getcwd())
+							#print selectedSimID + ' was Stopped and Deleted'
+					else:
+						os.system('rm -rf ' + selectedSimID)
+			
+			listofRowsToRemove = []
+			# Please note that it doesn't include -1
+			for iaa in range(self.ui.simListBox.count() - 1, -1, -1):
+				if str(self.ui.simListBox.item(iaa).text()) == selectedSimID:
+					#listofRowsToRemove.append(iaa)
+					self.ui.simListBox.takeItem(iaa)
+					
+			#for iaa in listofRowsToRemove.reverse():
+				#self.ui.simListBox.takeItem(iaa)
+			del sims[selectedSimID]
 		self.ui.removeDirCheckBox.setChecked(0)
 		time.sleep(0.05)
 		wait_win.hide()
 	
 	def haltSimBtn_pressed(self):
 		#self.haltSimBtn.setDown(0)
+		os.chdir('epon_sims')
 		for loopIdx in range(self.startedListBox.count()):
 			if self.ui.startedListBox.isSelected(loopIdx) == 1:
 				# Halt selected simulation
@@ -1964,16 +1993,19 @@ class MainSimMgrWin (QtGui.QWidget):
 							print selectedSimID + ' was Stopped'
 	
 	def openSimButton_pressed(self):
-		for loopIdx in range(self.ui.simListBox.count())[::-1]:
-			if self.ui.simListBox.isSelected(loopIdx) == 1:
-				selectedSimID = self.ui.simListBox.item(loopIdx).text()
-				os.chdir(path)
-				if os.path.exists(selectedSimID) == 1:
-					os.chdir(selectedSimID)
-					os.system('xdg-open ' + os.getcwd())
+		listSelected = self.ui.simListBox.findItems()
+		os.chdir('epon_sims')
+		for listItem in listSelected:
+		#for loopIdx in range(self.ui.simListBox.count())[::-1]:
+			#if self.ui.simListBox.isSelected(loopIdx) == 1:
+			selectedSimID = str(listItem)
+			os.chdir(path)
+			if os.path.exists(selectedSimID) == 1:
+				os.chdir(selectedSimID)
+				os.system('xdg-open ' + os.getcwd())
 				
-	def simListBox_doubleClicked(self,selectedItem):
-		selectedSimID = selectedItem.text().ascii()
+	def simListBox_doubleClicked(self, selectedItem):
+		selectedSimID = str(selectedItem.text())
 		print selectedSimID
 
 
@@ -1990,5 +2022,5 @@ sim_mgr_win.show()
 load_sim_data()
 load_plot_settings()
 sim_mgr_win.show()
-#app.exec_loop()
+load_test_num()
 sys.exit(app.exec_())
