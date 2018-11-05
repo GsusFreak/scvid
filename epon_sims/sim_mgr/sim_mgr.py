@@ -486,16 +486,19 @@ def restore_parameters(self):
 	if self.ui.vtOnBtn.isChecked():
 		self.ui.videoTraceEdit.setEnabled(True)
 		self.ui.changeTraceBtn.setEnabled(True)
-		self.ui.VideoDBABtnGroup.setEnabled(True)
+		#self.ui.VideoDBABtnGroup.setEnabled(True)
+		# Replacement:
+		
+		
 		self.ui.dbaGatedVideoBtn.setEnabled(True)
 		self.ui.dbaFixedVideoBtn.setEnabled(True)
 		self.ui.dbaLimitedVideoBtn.setEnabled(True)
-		self.ui.predictTrafficBox.setEnabled(True)
+		#self.ui.predictTrafficBox.setEnabled(True)
 		self.ui.FRateLbl.setEnabled(True)
 		self.ui.frameRateEdit.setEnabled(True)
-		self.ui.videoStartBox.setEnabled(True)
+		#self.ui.videoStartBox.setEnabled(True)
 		self.ui.ipactpsfBtn.setEnabled(True)
-		self.ui.scalableVideoBox.setEnabled(True)
+		#self.ui.scalableVideoBox.setEnabled(True)
 		self.ui.svDropThresholdEdit.setEnabled(True)
 		self.ui.svDropSensitivity.setEnabled(True)
 		self.ui.svDropStepMinBound.setEnabled(True)
@@ -1645,10 +1648,17 @@ class SimInitWin (QtGui.QWidget):
 		self.ui.launchBtn.setEnabled(False)
 		
 	def svOnBtn_checked(self):
-		self.ui.svButtonGroup.setEnabled(True)
+		#self.ui.svButtonGroup.setEnabled(True)
+		self.ui.svDropNone
+		self.ui.svDropThreshold
+		self.ui.svDropDynamic
+		self.ui.svDropStepThreshold
+		self.ui.svDropThresholdEdit
+		self.ui.
+		self.ui.
 		
 	def svOffBtn_checked(self):
-		self.ui.svButtonGroup.setEnabled(False)
+		#self.ui.svButtonGroup.setEnabled(False)
 		
 	def vtOnBtn_checked(self):
 		global filename
