@@ -1654,11 +1654,11 @@ class SimInitWin (QtGui.QWidget):
 		self.ui.svDropDynamic
 		self.ui.svDropStepThreshold
 		self.ui.svDropThresholdEdit
-		self.ui.
-		self.ui.
+		#self.ui.
+		#self.ui.
 		
 	def svOffBtn_checked(self):
-		#self.ui.svButtonGroup.setEnabled(False)
+		self.ui.svButtonGroup.setEnabled(False)
 		
 	def vtOnBtn_checked(self):
 		global filename
