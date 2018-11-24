@@ -872,9 +872,11 @@ def conclude_simulation(pid, currentlyRunning):
 		else:
 			return
 			
-	simListBoxItem = sim_mgr_win.ui.startedListBox.findItem(simID)
-	sim_mgr_win.ui.startedListBox.takeItem(simListBoxItem)
-	sim_mgr_win.ui.simListBox.insertItem(simID)
+	list_simListBoxItem = sim_mgr_win.ui.startedListBox.findItems(simID, Qt.MatchExactly)
+	for item in list_simListBoxItem:
+		tmp = sim_mgr_win.ui.startedListBox.takeItem(sim_mgr_win.ui.startedListBox.row(item))
+		del tmp
+	sim_mgr_win.ui.simListBox.addItem(simID)
 	print simID + ' has concluded.'
 	#print '(pid, simID): ({}, {})'.format(simPid, simID)
 	currentlyRunning.remove((simPid, simID))
@@ -892,7 +894,7 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	
 	#print 'launch_additional_sim has been run'
 	
-	simID = queueSimParams[0]['simID']
+	simID = str(queueSimParams[0]['simID'])
 	os.chdir(dir_epon_sims)
 	if os.path.exists(simID) != 1:
 		os.mkdir(simID)
@@ -912,20 +914,26 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	
 	#ExecutePath = os.path.join(os.path.join('/home',str(simusername)), str(simhomedir_2))
 	ExecutePath = dir_epon_sims
-	SimPath = os.join(dir_epon_sims, simID)
+	SimPath = os.path.join(dir_epon_sims, simID)
 	#os.chdir(os.path.join('/home',str(simusername)))
-	os.chdir(dir_project)
+	os.chdir(dir_projectRoot)
 	#simcommandfinal = 'valgrind --leak-check=yes --log-file=valgrind_output ' + os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
 	#cmd = 'ssh -f -l'+simusername+' '+simhostname+' \'cd '+ExecutePath+'/'+simID+'; '+simcommandfinal+' > sim_log &\''
 	#simcommandfinal = os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
-	cmd = 'ssh -f -l' + simusername + ' ' + simhostname + ' \'cd ' + SimPath + '; ' + dirLauncher + ' > sim_log &\''
+	cmd = 'ssh -f -l ' + simusername + ' ' + simhostname + ' \'cd ' + SimPath + '; ' + dirLauncher + ' > sim_log &\''
+	print cmd
 	child = pexpect.spawn(cmd)
+	time.sleep(0.1)
 	# expect ssh to prompt for a user password
-	child.expect('Password:')
-	print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
+	#child.expect('Password:')
+	#time.sleep(0.1)
+	#print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
 	# send the password
-	child.sendline(str(simpassword))
-	child.read()
+	#child.sendline(str(simpassword))
+	#time.sleep(0.1)
+	print child.isalive()
+	print child.read()
+	print child.isalive()
 	
 	if child.isalive() == False:
 		print 'Simulation Launched Successfully'
@@ -949,7 +957,7 @@ def launch_additional_sim(currentlyRunning, simpassword):
 			pidFile.close()
 		
 		
-		if ((pidStr == 'done\n') or (pidStr == 'Failed\n')):
+		if ((pidStr == 'Done\n') or (pidStr == 'Failed\n')):
 			simpid = 0
 		else:
 			simpid = int(pidStr)
@@ -971,9 +979,11 @@ def launch_additional_sim(currentlyRunning, simpassword):
 			#simListBoxItem = sim_mgr_win.simListBox.findItem(simID + '_(Not_Started)')
 			#indexOfItem = sim_mgr_win.simListBox.index(simListBoxItem)
 			#sim_mgr_win.ui.simListBox.changeItem(simID + '_(Started)', indexOfItem)
-			simListBoxItem = sim_mgr_win.ui.notStartedListBox.findItem(simID)
-			sim_mgr_win.ui.notStartedListBox.takeItem(simListBoxItem)
-			sim_mgr_win.ui.startedListBox.insertItem(simID)
+			list_simListBoxItem = sim_mgr_win.ui.notStartedListBox.findItems(simID, Qt.MatchExactly)
+			for item in list_simListBoxItem:
+				tmp = sim_mgr_win.ui.notStartedListBox.takeItem(sim_mgr_win.ui.notStartedListBox.row(item))
+				del tmp
+			sim_mgr_win.ui.startedListBox.addItem(simID)
 			#sim_mgr_win.ui.simListBox.setCurrentItem(simID)
 			#sim_mgr_win.ui.simListBox.currentItem().setTextColor(qColor.fromRgb(255,0,0,255))
 			os.chdir('..')
@@ -994,7 +1004,7 @@ def add_items_to_list():
 #		newList[iaa] = queueSimParamsList[iaa]['simID']
 #	for simID in newList:
 	for simID in [queueSimParams[iaa]['simID'] for iaa in range(len(queueSimParams))]:
-		sim_mgr_win.ui.notStartedListBox.insertItem(simID)
+		sim_mgr_win.ui.notStartedListBox.addItem(simID)
 		#qIndex = sim_mgr_win.simListBox.findItem(simID + ' (Not Started)')
 		#sim_mgr_win.simListBox.changeitem(simID + ' (Started)', qIndex)
 		#lineObject = sim_mgr_win.simListBox.row(rowIndex)
@@ -1022,7 +1032,7 @@ def launch_sim(simpassword):
 		if (len(currentlyRunning) == 0) and (len(queueSimParamsList) == 0):
 			print 'Sims have concluded.'
 			queueStatus = 'Done'
-		app.processEvents(0)
+		app.processEvents()
 		#counter += 1
 		#if counter == 150:
 			#print 'queueStatus is: {}'.format(queueStatus)
@@ -1633,15 +1643,17 @@ class SimInitWin (QtGui.QWidget):
 			#simcommandfinal = os.path.join(ExecutePath, 'ls')
 			simcommandfinal = 'ls'
 
-			cmd = 'ssh -f -l ' + str(simusername) + ' ' + str(simhostname) + ' \'cd ' + ExecutePath + '; ' + simcommandfinal + ' > sim_log &\''
+			cmd = 'ssh -f -l ' + str(simusername) + ' ' + str(simhostname) + ' \'cd ' + ExecutePath + '; ' + simcommandfinal + ' &\''
 			child = pexpect.spawn(cmd)
+			time.sleep(0.1)
 
 			# expect ssh to prompt for a user password
-			child.expect('Password:')
-			print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
+			#child.expect('Password:')
+			#print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
 			# send the password
-			child.sendline(str(simpassword))
-			child.read()
+			#child.sendline(str(simpassword))
+			print child.read()
+			
 			if child.isalive() == False:
 				self.ui.passwordEdit.setEnabled(False)
 				self.ui.logoutBtn.setEnabled(True)
@@ -1705,6 +1717,7 @@ class SimInitWin (QtGui.QWidget):
 		#self.ui.predictTrafficBox.setEnabled(True)
 		self.ui.pvtOffBtn.setEnabled(True)
 		self.ui.pvtOnBtn.setEnabled(True)
+		#self.ui.PredTypeEdit.setEnabled(True)
 		
 		self.ui.FRateLbl.setEnabled(True)
 		self.ui.frameRateEdit.setEnabled(True)
@@ -1719,7 +1732,7 @@ class SimInitWin (QtGui.QWidget):
 		sim_init_win.hide()
 		filename = "()"
 		while str(filename) == "()":
-			filename = tkFileDialog.askopenfilename(title = "Select a Video Trace File to be Used", initialdir = dir_epon_sims)
+			filename = tkFileDialog.askopenfilename(title = "Select a Video Trace File to be Used", initialdir = dir_projectRoot)
 		if str(filename) != "()":
 			self.ui.videoTraceEdit.setText(filename)
 		sim_init_win.show()
@@ -1885,7 +1898,7 @@ class MainSimMgrWin (QtGui.QWidget):
 				and (filename != 'sim_core')
 				and (string.find(filename,'.fig') == -1) 
 				and (string.find(filename,'.gp') == -1)):
-					sim_view_win.ui.simOutputListBox.insertItem(filename)
+					sim_view_win.ui.simOutputListBox.addItem(filename)
 				filename = filedir.readline()
 			os.chdir('..')
 			wait_win.ui.waitProgressBar.setValue(5)
@@ -1968,7 +1981,8 @@ class MainSimMgrWin (QtGui.QWidget):
 			selectedSimID = str(itemSelected.text())
 			print sims.keys()
 			#self.ui.simListBox.removeItemWidget(itemSelected)
-			self.ui.simListBox.takeItem(self.ui.simListBox.row(itemSelected))
+			tmp = self.ui.simListBox.takeItem(self.ui.simListBox.row(itemSelected))
+			del tmp
 			os.chdir(dir_epon_sims)
 			if self.ui.removeDirCheckBox.isChecked() == 1:
 				if os.path.exists(selectedSimID) == 1:
@@ -2012,7 +2026,8 @@ class MainSimMgrWin (QtGui.QWidget):
 			for iaa in range(self.ui.simListBox.count() - 1, -1, -1):
 				if str(self.ui.simListBox.item(iaa).text()) == selectedSimID:
 					#listofRowsToRemove.append(iaa)
-					self.ui.simListBox.takeItem(iaa)
+					tmp = self.ui.simListBox.takeItem(self.ui.simListBox.row(iaa))
+					del tmp
 					
 			#for iaa in listofRowsToRemove.reverse():
 				#self.ui.simListBox.takeItem(iaa)
@@ -2023,11 +2038,11 @@ class MainSimMgrWin (QtGui.QWidget):
 	
 	def haltSimBtn_pressed(self):
 		#self.haltSimBtn.setDown(0)
-		os.chdir('epon_sims')
-		for loopIdx in range(self.startedListBox.count()):
+		os.chdir(dir_epon_sims)
+		for loopIdx in range(self.ui.startedListBox.count()):
 			if self.ui.startedListBox.isSelected(loopIdx) == 1:
 				# Halt selected simulation
-				selectedSimID = self.ui.startedListBox.item(loopIdx).text()
+				selectedSimID = str(self.ui.startedListBox.item(loopIdx).text())
 				os.chdir(dir_epon_sims)
 				if os.path.exists(selectedSimID) == 1:
 					os.chdir(selectedSimID)
@@ -2048,9 +2063,9 @@ class MainSimMgrWin (QtGui.QWidget):
 							print selectedSimID + ' was Stopped'
 	
 	def openSimButton_pressed(self):
-		listSelected = self.ui.simListBox.findItems()
+		#listSelected = self.ui.simListBox.findItems()
 		os.chdir('epon_sims')
-		for listItem in listSelected:
+		for listItem in self.ui.simListBox:
 		#for loopIdx in range(self.ui.simListBox.count())[::-1]:
 			#if self.ui.simListBox.isSelected(loopIdx) == 1:
 			selectedSimID = str(listItem)

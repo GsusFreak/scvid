@@ -316,7 +316,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QListWidget" name="startedListBox_2">
+  <widget class="QListWidget" name="startedListBox">
    <property name="geometry">
     <rect>
      <x>360</x>

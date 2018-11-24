@@ -126,9 +126,9 @@ class Ui_SimMgr(object):
         self.notStartedListBox = QtGui.QListWidget(SimMgr)
         self.notStartedListBox.setGeometry(QtCore.QRect(360, 70, 320, 141))
         self.notStartedListBox.setObjectName(_fromUtf8("notStartedListBox"))
-        self.startedListBox_2 = QtGui.QListWidget(SimMgr)
-        self.startedListBox_2.setGeometry(QtCore.QRect(360, 240, 320, 141))
-        self.startedListBox_2.setObjectName(_fromUtf8("startedListBox_2"))
+        self.startedListBox = QtGui.QListWidget(SimMgr)
+        self.startedListBox.setGeometry(QtCore.QRect(360, 240, 320, 141))
+        self.startedListBox.setObjectName(_fromUtf8("startedListBox"))
 
         self.retranslateUi(SimMgr)
         QtCore.QObject.connect(self.quitButton, QtCore.SIGNAL(_fromUtf8("pressed()")), SimMgr.quitButton_pressed)
