@@ -17,7 +17,7 @@
 
 STREAM	propDelayStream;
 
-inline void onu_prop_delay_distr(int runNumber)
+void onu_prop_delay_distr(int runNumber)
 {
 	int loopIndex;
     /* For prop delay output to file */
@@ -141,7 +141,7 @@ inline void onu_prop_delay_distr(int runNumber)
 }
 
 #if 0
-inline void onu_prop_delay_distr()
+void onu_prop_delay_distr()
 {
 	int loopIndex;
     /* For prop delay output to file */

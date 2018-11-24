@@ -68,25 +68,36 @@ from plotnameform import Ui_plotNameForm
 # and create a form to input your simulation Parameters (siminitform.ui)
 #
 
-# Modify the dirRoot variable as necessary
+# Set up the working directories
+print 'used directories:'
+dir_sim_mgr = os.getcwd()
+print dir_sim_mgr
+dir_epon_sims = os.path.dirname(dir_sim_mgr)
+print dir_epon_sims
+dir_projectRoot = os.path.dirname(dir_epon_sims)
+print dir_projectRoot
+dir_eponsim = os.path.join(dir_projectRoot, 'eponsim')
+print dir_eponsim
+print 'end section -- used directories\n'
 
-dirRoot = '/home/admin1/scvid'
 
-dirLauncher = os.path.join(dirRoot, 'eponsim/eponsim')
+#dirRoot = '/home/admin1/scvid'
+
+dirLauncher = os.path.join(dir_eponsim, 'eponsim')
 
 st = os.stat(dirLauncher)
 os.chmod(dirLauncher, st.st_mode | stat.S_IEXEC | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 # print st.st_mode
 
-path, empty = os.path.split(os.getcwd())
-path_2, directory = os.path.split(path)
-home, Username = os.path.split(path_2)
+#path, empty = os.path.split(os.getcwd())
+#path_2, directory = os.path.split(path)
+#home, Username = os.path.split(path_2)
 
-simusername = str(Username)
+simusername = 'admin1'
 simpassword = ''
-simhomedir = str(path)
-simhomedir_2 = str(directory)
-simcommand = 'eponsim/eponsim'
+simhomedir = str(dir_epon_sims)
+#simhomedir_2 = str(directory)
+#simcommand = 'eponsim/eponsim'
 simhostname = 'localhost'
 simParamsList = []	# a list
 simParams = {}		# a dictionary
@@ -790,7 +801,7 @@ def initialize_data_structure():
 def load_sim_data():
 	simList = []
 	global sims
-	os.chdir(simhomedir)
+	os.chdir(dir_epon_sims)
 	if os.path.exists('sim_mgr_data'):
 		simpicklefile = open('sim_mgr_data', 'r')
 		unpickler = pickle.Unpickler(simpicklefile)
@@ -804,7 +815,7 @@ def load_sim_data():
 
 def load_plot_settings():
 	global plotSettings
-	os.chdir(simhomedir)
+	os.chdir(dir_epon_sims)
 	if os.path.exists('plot_settings_data'):
 		plotSettingsPicklefile = open('plot_settings_data', 'r')
 		unpickler = pickle.Unpickler(plotSettingsPicklefile)
@@ -817,7 +828,7 @@ def load_plot_settings():
 
 def load_test_num():
 	global testNum
-	os.chdir(simhomedir)
+	os.chdir(dir_epon_sims)
 	if os.path.exists('test_num'):
 		testNumPickleFile = open('test_num', 'r')
 		unpickler = pickle.Unpickler(testNumPickleFile)
@@ -882,7 +893,7 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	#print 'launch_additional_sim has been run'
 	
 	simID = queueSimParams[0]['simID']
-	os.chdir(os.path.join(os.path.join('/home',str(simusername)), str(simhomedir_2)))
+	os.chdir(dir_epon_sims)
 	if os.path.exists(simID) != 1:
 		os.mkdir(simID)
 	os.chdir(simID)
@@ -899,15 +910,18 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	# Launch simulation on host
 	
 	
-	ExecutePath = os.path.join(os.path.join('/home',str(simusername)), str(simhomedir_2))
-	os.chdir(os.path.join('/home',str(simusername)))
+	#ExecutePath = os.path.join(os.path.join('/home',str(simusername)), str(simhomedir_2))
+	ExecutePath = dir_epon_sims
+	SimPath = os.join(dir_epon_sims, simID)
+	#os.chdir(os.path.join('/home',str(simusername)))
+	os.chdir(dir_project)
 	#simcommandfinal = 'valgrind --leak-check=yes --log-file=valgrind_output ' + os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
 	#cmd = 'ssh -f -l'+simusername+' '+simhostname+' \'cd '+ExecutePath+'/'+simID+'; '+simcommandfinal+' > sim_log &\''
-	simcommandfinal = os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
-	cmd = 'ssh -f -l' + simusername + ' ' + simhostname + ' \'cd ' + ExecutePath + '/' + simID + '; ' + simcommandfinal + ' > sim_log &\''
+	#simcommandfinal = os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
+	cmd = 'ssh -f -l' + simusername + ' ' + simhostname + ' \'cd ' + SimPath + '; ' + dirLauncher + ' > sim_log &\''
 	child = pexpect.spawn(cmd)
 	# expect ssh to prompt for a user password
-	child.expect(str(simusername) + '@' + str(simhostname) + '\'s' + ' password:')
+	child.expect('Password:')
 	print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
 	# send the password
 	child.sendline(str(simpassword))
@@ -916,7 +930,7 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	if child.isalive() == False:
 		print 'Simulation Launched Successfully'
 
-		ResultPath = os.path.join(os.path.join(os.path.join(os.path.join('/home',str(simusername)), str(simhomedir_2)), simID), 'pid')
+		ResultPath = os.path.join(SimPath, 'pid')
 		
 #		retVal = os.system('ssh -f -l'+simusername+' '+simhostname+' \'cd '+simhomedir+'/'+simID+'; '+simcommandfinal+' >sim_log &\'')
 #		if retVal == 0:
@@ -1614,15 +1628,16 @@ class SimInitWin (QtGui.QWidget):
 			self.ui.usernameEdit.clear()
 			self.ui.passwordEdit.clear()
 		else:
-			ExecutePath = os.path.join('/home',str(simusername))
-			os.chdir(os.path.join('/home',str(simusername)))
-			simcommandfinal = os.path.join(os.path.join('/home',str(simusername)), 'ls')
+			ExecutePath = dir_projectRoot
+			os.chdir(ExecutePath)
+			#simcommandfinal = os.path.join(ExecutePath, 'ls')
+			simcommandfinal = 'ls'
 
-			cmd = 'ssh -f -l ' + str(simusername) + ' ' + str(simhostname) + ' \'cd ' + ExecutePath + '; ' + simcommandfinal + ' >sim_log &\''
+			cmd = 'ssh -f -l ' + str(simusername) + ' ' + str(simhostname) + ' \'cd ' + ExecutePath + '; ' + simcommandfinal + ' > sim_log &\''
 			child = pexpect.spawn(cmd)
 
 			# expect ssh to prompt for a user password
-			child.expect(str(simusername) + '@' + str(simhostname) + '\'s' + ' password:')
+			child.expect('Password:')
 			print str(simusername) + '@' + str(simhostname) + '\'s' + ' password:'
 			# send the password
 			child.sendline(str(simpassword))
@@ -1649,31 +1664,10 @@ class SimInitWin (QtGui.QWidget):
 		
 	def svOnBtn_checked(self):
 		#self.ui.svButtonGroup.setEnabled(True)
-		self.ui.svDropNone
-		self.ui.svDropThreshold
-		self.ui.svDropDynamic
-		self.ui.svDropStepThreshold
-		self.ui.svDropThresholdEdit
-		#self.ui.
-		#self.ui.
-		
-	def svOffBtn_checked(self):
-		self.ui.svButtonGroup.setEnabled(False)
-		
-	def vtOnBtn_checked(self):
-		global filename
-		self.ui.videoTraceEdit.setEnabled(True)
-		self.ui.changeTraceBtn.setEnabled(True)
-		self.ui.VideoDBABtnGroup.setEnabled(True)
-		self.ui.dbaGatedVideoBtn.setEnabled(True)
-		self.ui.dbaFixedVideoBtn.setEnabled(True)
-		self.ui.dbaLimitedVideoBtn.setEnabled(True)
-		self.ui.predictTrafficBox.setEnabled(True)
-		self.ui.FRateLbl.setEnabled(True)
-		self.ui.frameRateEdit.setEnabled(True)
-		self.ui.videoStartBox.setEnabled(True)
-		self.ui.ipactpsfBtn.setEnabled(True)
-		self.ui.scalableVideoBox.setEnabled(True)
+		self.ui.svDropNone.setEnabled(True)
+		self.ui.svDropThreshold.setEnabled(True)
+		self.ui.svDropDynamic.setEnabled(True)
+		self.ui.svDropStepThreshold.setEnabled(True)
 		self.ui.svDropThresholdEdit.setEnabled(True)
 		self.ui.svDropSensitivity.setEnabled(True)
 		self.ui.svDropStepMinBound.setEnabled(True)
@@ -1683,30 +1677,81 @@ class SimInitWin (QtGui.QWidget):
 		self.ui.svDropMaxBoundLabel.setEnabled(True)
 		
 		
+	def svOffBtn_checked(self):
+		#self.ui.svButtonGroup.setEnabled(False)
+		self.ui.svDropNone.setEnabled(False)
+		self.ui.svDropThreshold.setEnabled(False)
+		self.ui.svDropDynamic.setEnabled(False)
+		self.ui.svDropStepThreshold.setEnabled(False)
+		self.ui.svDropThresholdEdit.setEnabled(False)
+		self.ui.svDropSensitivity.setEnabled(False)
+		self.ui.svDropStepMinBound.setEnabled(False)
+		self.ui.svDropStepMaxBound.setEnabled(False)
+		self.ui.svDropStep_NumMAValues.setEnabled(False)
+		self.ui.svDropMinBoundLabel.setEnabled(False)
+		self.ui.svDropMaxBoundLabel.setEnabled(False)
+
+		
+	def vtOnBtn_checked(self):
+		global filename
+		self.ui.videoTraceEdit.setEnabled(True)
+		self.ui.changeTraceBtn.setEnabled(True)
+		
+		#self.ui.VideoDBABtnGroup.setEnabled(True)
+		self.ui.dbaGatedVideoBtn.setEnabled(True)
+		self.ui.dbaFixedVideoBtn.setEnabled(True)
+		self.ui.dbaLimitedVideoBtn.setEnabled(True)
+		
+		#self.ui.predictTrafficBox.setEnabled(True)
+		self.ui.pvtOffBtn.setEnabled(True)
+		self.ui.pvtOnBtn.setEnabled(True)
+		
+		self.ui.FRateLbl.setEnabled(True)
+		self.ui.frameRateEdit.setEnabled(True)
+		#self.ui.videoStartBox.setEnabled(True)		#I don't plan on replacing this line
+		self.ui.ipactpsfBtn.setEnabled(True)
+		
+		#self.ui.scalableVideoBox.setEnabled(True)
+		self.ui.svOffBtn.setEnabled(True)
+		self.ui.svOnBtn.setEnabled(True)
+				
+		
 		sim_init_win.hide()
 		filename = "()"
 		while str(filename) == "()":
-			filename = tkFileDialog.askopenfilename(title="Select a Video Trace File to be Used", initialdir=(os.path.join(path_2,"Video_Trace_Library")))
+			filename = tkFileDialog.askopenfilename(title = "Select a Video Trace File to be Used", initialdir = dir_epon_sims)
 		if str(filename) != "()":
 			self.ui.videoTraceEdit.setText(filename)
 		sim_init_win.show()
+		
+		self.ui.vtOnBtn.setChecked(1)		#For whatever reason, it doesn't seem to do this by default.
 		
 	def vtOffBtn_checked(self):
 		self.ui.videoTraceEdit.clear()
 		self.ui.videoTraceEdit.setEnabled(False)
 		self.ui.changeTraceBtn.setEnabled(False)
-		self.ui.VideoDBABtnGroup.setEnabled(False)
+		
+		#self.ui.VideoDBABtnGroup.setEnabled(False)
 		self.ui.dbaGatedVideoBtn.setEnabled(False)
 		self.ui.dbaFixedVideoBtn.setEnabled(False)
 		self.ui.dbaLimitedVideoBtn.setEnabled(False)
-		self.ui.predictTrafficBox.setEnabled(False)
+		
+		#self.ui.predictTrafficBox.setEnabled(False)
+		self.ui.pvtOffBtn.setEnabled(False)
+		self.ui.pvtOnBtn.setEnabled(False)
+		self.ui.PredTypeEdit.setEnabled(False)
+		
 		self.ui.FRateLbl.setEnabled(False)
 		self.ui.frameRateEdit.setEnabled(False)
-		self.ui.videoStartBox.setEnabled(False)
-		#if self.ui.ipactpsfBtn.isChecked() == 1:
-			#self.ui.nascBtn.setChecked(1)
+		#self.ui.videoStartBox.setEnabled(False)
+		if self.ui.ipactpsfBtn.isChecked() == 1:
+			self.ui.nascBtn.setChecked(1)
 		self.ui.ipactpsfBtn.setEnabled(False)
-		self.ui.scalableVideoBox.setEnabled(False)
+		
+		#self.ui.scalableVideoBox.setEnabled(False)
+		self.ui.svOffBtn.setEnabled(False)
+		self.ui.svOnBtn.setEnabled(False)
+		
 		self.ui.svDropThresholdEdit.setEnabled(False)
 		self.ui.svDropSensitivity.setEnabled(False)
 		self.ui.svDropStepMinBound.setEnabled(False)
@@ -1763,7 +1808,7 @@ class MainSimMgrWin (QtGui.QWidget):
 		self.ui.startedListBox.clear()
 		
 	def quitButton_pressed(self):
-		os.chdir(os.path.join(os.path.join('/home', 'admin1', 'scvid', str(simhomedir_2))))
+		os.chdir(dir_epon_sims)
 		simpicklefile = open('sim_mgr_data','w')
 		pickler = pickle.Pickler(simpicklefile)
 		pickler.dump(sims)
@@ -1811,7 +1856,7 @@ class MainSimMgrWin (QtGui.QWidget):
 			# Clear list box
 			sim_view_win.ui.simOutputListBox.clear()
 		
-			os.chdir(path)
+			os.chdir(dir_epon_sims)
 			if os.path.exists(simID) == 1:
 				os.chdir(simID)
 			wait_win.waitProgressBar.setProgress(1)
@@ -1893,7 +1938,7 @@ class MainSimMgrWin (QtGui.QWidget):
 		self.ui.addSimButton.setDown(0)
 		global simParams
 		simList = []
-		os.chdir(path)
+		os.chdir(dir_epon_sims)
 
 		# Add the simulation directory
 		if str(self.ui.consolidateNameEdit.text()) == '':
@@ -1924,7 +1969,7 @@ class MainSimMgrWin (QtGui.QWidget):
 			print sims.keys()
 			#self.ui.simListBox.removeItemWidget(itemSelected)
 			self.ui.simListBox.takeItem(self.ui.simListBox.row(itemSelected))
-			os.chdir(path)
+			os.chdir(dir_epon_sims)
 			if self.ui.removeDirCheckBox.isChecked() == 1:
 				if os.path.exists(selectedSimID) == 1:
 					os.chdir(selectedSimID)
@@ -1951,7 +1996,7 @@ class MainSimMgrWin (QtGui.QWidget):
 							#cmd = 'ssh ' + simData['host'] + ' kill ' + str(int(pidStr)) + ' &\''
 							#child = pexpect.spawn(cmd)
 							## expect ssh to prompt for a user password
-							#child.expect(str(simusername)+'@'+str(simData['host'])+'\'s' + ' password:')
+							#child.expect('Password:')
 							#print str(simusername)+'@'+str(simData['host'])+'\'s' + ' password:'
 							## send the password
 							#child.sendline(sim_init_win.passwordEdit.text().ascii())
@@ -1983,7 +2028,7 @@ class MainSimMgrWin (QtGui.QWidget):
 			if self.ui.startedListBox.isSelected(loopIdx) == 1:
 				# Halt selected simulation
 				selectedSimID = self.ui.startedListBox.item(loopIdx).text()
-				os.chdir(path)
+				os.chdir(dir_epon_sims)
 				if os.path.exists(selectedSimID) == 1:
 					os.chdir(selectedSimID)
 					
@@ -2009,7 +2054,7 @@ class MainSimMgrWin (QtGui.QWidget):
 		#for loopIdx in range(self.ui.simListBox.count())[::-1]:
 			#if self.ui.simListBox.isSelected(loopIdx) == 1:
 			selectedSimID = str(listItem)
-			os.chdir(path)
+			os.chdir(dir_epon_sims)
 			if os.path.exists(selectedSimID) == 1:
 				os.chdir(selectedSimID)
 				os.system('xdg-open ' + os.getcwd())
@@ -2017,6 +2062,8 @@ class MainSimMgrWin (QtGui.QWidget):
 	def simListBox_doubleClicked(self, selectedItem):
 		selectedSimID = str(selectedItem.text())
 		print selectedSimID
+
+
 
 
 # app = QApplication(sys.argv)

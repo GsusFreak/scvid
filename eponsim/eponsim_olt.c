@@ -1015,7 +1015,7 @@ void grant_sizing(int onuNum)
 
 
 
-inline void grant_excess()
+void grant_excess()
 {	
 	/* Divide the total excess by the number of overloaded ONUs (i.e., Equitable Division) */
 	excessShare = (int)((double)excessBW)/((double)numOverloaded);

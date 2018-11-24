@@ -8,4 +8,5 @@
 	
 */
 
-void onu_prop_delay_distr();
+//void onu_prop_delay_distr();
+void onu_prop_delay_distr(int);
