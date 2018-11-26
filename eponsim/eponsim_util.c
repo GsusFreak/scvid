@@ -11,6 +11,7 @@
 #include <values.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "hungarian.h"
 #include "eponsim.h"
 
@@ -958,6 +959,91 @@ void drop_scalable_video_packets(int onuNum, double video_grant, double lower_bo
 					currPktPtr = currPktPtr->next;
 				}
 			}		
+		}
+	}
+
+	if (select == 4) {
+		// Drop packets based on a Discrete Controls Algorithm (CFDL-MFAC)
+		if (simParams.SCALABLE_VIDEO_DROPPING_ALGORITHM == SCALABLE_VIDEO_DROPPING_CFDL_MFAC) {
+			// Use the lower bound as the desired reference signal so that it will try to minimize
+			// video queue delay just enough so as not to drop any packets
+			//double	referenceSignal = lower_bound;
+			double	referenceSignal = 1;
+			// Please note that the system output values are updated directly in eponsim_stats.c
+			// Calculate the input and output deltas
+			double	inputDelta = input_MFAC - inputPrev_MFAC;
+			double	outputDelta = output_MFAC - outputPrev_MFAC;
+			// Update the value of psi_MFAC
+			psi_MFAC = psi_MFAC + eta_MFAC*inputDelta*(outputDelta - psi_MFAC*inputDelta)/(mu_MFAC + inputDelta*inputDelta);
+			// Check to make sure the magnitude of psi_MFAC stays greater than epsilon (the minimum)
+			if (epsilon >= fabs(psi_MFAC)) {
+				psi_MFAC = psiInitial_MFAC;
+			}
+			// Check to make sure the sign of psi_MFAC is the same as the sign as psi_MFAC
+			if (((psi_MFAC > 0) && (psiInitial_MFAC < 0)) || ((psi_MFAC < 0) && (psiInitial_MFAC > 0))) {
+				psi_MFAC = psiInitial_MFAC;
+			}
+			inputPrev_MFAC = input_MFAC;
+			input_MFAC = input_MFAC + rho_MFAC*psi_MFAC*(referenceSignal - output_MFAC)/(lambda_MFAC + psi_MFAC*psi_MFAC);
+			TSprint("psi = %lf\n", psi_MFAC);
+			TSprint("input = %lf\n", input_MFAC);
+			TSprint("output = %lf\n", output_MFAC);
+			TSprint("-------------------------------\n");
+			
+			/* Start Borrowed Section */
+			// Borrow the linear threshold dropping code but use input_MFAC as the input instead of the moving average
+			double currentVideoQueueDelay = input_MFAC;
+			int base_layer_num = 1;
+			int threshold_layer = find_stair_step(currentVideoQueueDelay, simParams.SV_DROP_MIN_BOUND, simParams.SV_DROP_MAX_BOUND, base_layer_num, simParams.SCALABLE_VIDEO_NUM_LAYERS);
+			
+			currPktPtr = onuAttrs[onuNum].packetsVideoHead;
+			while (currPktPtr != NULL) {
+				if (currPktPtr->layer > threshold_layer) {
+					// Drop the offending packet
+					tempPktPtr = currPktPtr;
+					
+					// The current packet will be removed.
+					// That is, if the currPktPtr is the packetsVideoHead
+					if (currPktPtr != onuAttrs[onuNum].packetsVideoHead) {
+						prevPktPtr->next = currPktPtr->next;
+					}
+					else {
+						onuAttrs[onuNum].packetsVideoHead = currPktPtr->next;
+					}
+					currPktPtr = currPktPtr->next;
+					
+					if (onuNum == 0) fprintf(droppedScalPackets, "%d,%c,%d,%d,%.1f\n", 
+							(int)(tempPktPtr->frameTimeStamp - simParams.TIME_SHIFT/1000.0 * onuNum - onuAttrs[onuNum].startoffset*1000),
+							tempPktPtr->frameType,
+							tempPktPtr->size,
+							tempPktPtr->layer,
+							0.1*(test_vars.loadOrderCounter + 1));
+					
+					onuAttrs[onuNum].packetVideoQueueSize -= tempPktPtr->size;
+					if(onuAttrs[onuNum].packetVideoQueueNum == 0)
+					{
+						/* Some error has occurred */
+						printf("[%10.5e] FATAL ERROR: Stray Packet [ONU #%d]\n", simtime(), onuNum);
+						fatalErrorCode = FATAL_CAUSE_STRAY_PKT;
+						/* Fill out some context information */
+						dump_msg_buf[0] = '\0';
+						sprintf(dump_msg_buf,"on ONU #%d\n",onuNum);
+						dump_sim_core();
+					}
+					else
+					{
+						onuAttrs[onuNum].packetVideoQueueNum--;
+						test_vars.vid_pkt_destroyed[test_vars.runNum][test_vars.loadOrderCounter][onuNum]++;
+					}
+					free(tempPktPtr);
+				}
+				else {
+					// Increment the loop
+					prevPktPtr = currPktPtr;
+					currPktPtr = currPktPtr->next;
+				}
+			}		
+			/* End Borrowed Section */
 		}
 	}
 	

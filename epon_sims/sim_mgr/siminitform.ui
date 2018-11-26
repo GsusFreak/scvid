@@ -462,7 +462,7 @@
    <property name="geometry">
     <rect>
      <x>780</x>
-     <y>780</y>
+     <y>770</y>
      <width>40</width>
      <height>23</height>
     </rect>
@@ -483,7 +483,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>780</y>
+     <y>770</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -3618,6 +3618,61 @@ you're dropping everything except the base layer.</string>
    </property>
    <property name="text">
     <string>Grant Scheduling Parameters</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="svDrop_CFDL_MFAC">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>810</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>CFDL MFAC</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup_11</string>
+   </attribute>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>694</x>
+     <y>754</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>694</x>
+     <y>790</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
  </widget>

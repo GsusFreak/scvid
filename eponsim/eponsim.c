@@ -16,6 +16,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <csim.h>
+#include <float.h>
 #include "eponsim.h"
 #include "eponsim_util.h"
 #include "eponsim_stats.h"
@@ -136,6 +137,22 @@ double      overallQueueDelayTrace[MAX_TRACE_VALUES];
 double      overallCycleLengthTrace[MAX_TRACE_VALUES];
 double      overallGrantSizeTrace[MAX_TRACE_VALUES];
 double      simTimeTrace[MAX_TRACE_VALUES];
+
+// Global variables for the Controls-based Packet Dropping
+// Variables
+double		output_MFAC	=		0.005;
+double		outputPrev_MFAC =	0.05;
+double		input_MFAC =		0;
+double		inputPrev_MFAC =	0;
+double		psi_MFAC = 			1;
+//Constants
+double		epsilon =			DBL_MIN*10;
+double		psiInitial_MFAC = 	1;
+int			lambda_MFAC = 		1;
+int			eta_MFAC = 			1;
+int			mu_MFAC = 			1;
+int			rho_MFAC = 			1;
+// END - Global variables for the Controls-based Packet Dropping
 
 /* Parameters for self-similar traffic. */
 
@@ -1967,6 +1984,10 @@ void read_sim_cfg_file()
 				else if(strcmp(currToken, "SCALABLE_VIDEO_DROPPING_STEP_THRESHOLD") == 0)
 				{
 					simParams.SCALABLE_VIDEO_DROPPING_ALGORITHM = SCALABLE_VIDEO_DROPPING_LINEAR_THRESHOLD;
+				}
+				else if(strcmp(currToken, "SCALABLE_VIDEO_DROPPING_CFDL_MFAC") == 0)
+				{
+					simParams.SCALABLE_VIDEO_DROPPING_ALGORITHM = SCALABLE_VIDEO_DROPPING_CFDL_MFAC;
 				}
 			}
 			else if(strcmp(currToken, "VIDEO_TRACE_FILE") == 0)

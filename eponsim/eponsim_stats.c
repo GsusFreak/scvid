@@ -107,7 +107,9 @@ void record_video_packet_stats_dequeue(int onuNum)
 	/* Record packet queue time in overall queueing delay table */
 	record(onuAttrs[onuNum].packetsVideoHead->transmissionTime - onuAttrs[onuNum].packetsVideoHead->creationTime, overallVideoQueueDelay);
 	record(onuAttrs[onuNum].packetsVideoHead->transmissionTime - onuAttrs[onuNum].packetsVideoHead->creationTime, overallVideoQueueDelay_MovingAverage);
-	
+	/* Update the video queue delay values for the MFAC controls dropping algorithm */
+	outputPrev_MFAC = output_MFAC;
+	output_MFAC = onuAttrs[onuNum].packetsVideoHead->transmissionTime - onuAttrs[onuNum].packetsVideoHead->creationTime;
 }
 
 /* Record stats after packet is dequeued */
@@ -181,6 +183,8 @@ void record_video_packet_stats_dequeue_tx_time(int onuNum)
 	/* Record packet queue time in overall queueing delay table */
 	record(onuAttrs[onuNum].packetsVideoHead->transmissionTime - onuAttrs[onuNum].packetsVideoHead->creationTime, overallVideoQueueDelay);
 	record(onuAttrs[onuNum].packetsVideoHead->transmissionTime - onuAttrs[onuNum].packetsVideoHead->creationTime, overallVideoQueueDelay_MovingAverage);
+	outputPrev_MFAC = output_MFAC;
+	output_MFAC = onuAttrs[onuNum].packetsVideoHead->transmissionTime - onuAttrs[onuNum].packetsVideoHead->creationTime;
 	
 	
 	

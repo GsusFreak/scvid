@@ -9,6 +9,9 @@
 !/epon_sims/plot_settings_data
 !/epon_sims/sim_mgr_data
 !/epon_sims/test_num
+!/Traces/287_TestFile_30fps_MGS_6EL.txt
+!/Traces/1423_TestFile_30fps_MGS_6EL.txt
+!/Traces/7823_TestFile_30fps_MGS_6EL.txt
 
 # Specific file types to ignore
 *.pyc

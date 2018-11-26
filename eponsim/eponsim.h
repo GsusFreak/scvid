@@ -168,6 +168,7 @@ double			maximumGrantCycle;
 #define SCALABLE_VIDEO_DROPPING_THRESHOLD	1
 #define SCALABLE_VIDEO_DROPPING_DYNAMIC		2
 #define SCALABLE_VIDEO_DROPPING_LINEAR_THRESHOLD	3
+#define SCALABLE_VIDEO_DROPPING_CFDL_MFAC			4
 
 /* WDM Type definitions */
 #define	WDM_NONE	0
@@ -731,6 +732,22 @@ FILE	*droppedScalPackets;
 #define Length_overallVideoQueueDelay_MovingAverage		5
 #define LowerBound_scalableDropping		0.0005
 #define UpperBound_scalableDropping		0.003
+
+// Global variables for the Controls-based Packet Dropping
+// Variables
+extern double		output_MFAC;
+extern double		outputPrev_MFAC;
+extern double		input_MFAC;
+extern double		inputPrev_MFAC;
+extern double		psi_MFAC;
+//Constants
+extern double		epsilon;
+extern double		psiInitial_MFAC;
+extern int			lambda_MFAC;
+extern int			eta_MFAC;
+extern int			mu_MFAC;
+extern int			rho_MFAC;
+// END - Global variables for the Controls-based Packet Dropping
 
 // Declare Troubleshooting Function Prototypes
 void test_var_print(void);

@@ -135,6 +135,8 @@ def store_parameters(self):
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_DYNAMIC'
 	if self.ui.svDropStepThreshold.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_STEP_THRESHOLD'
+	if self.ui.svDrop_CFDL_MFAC.isChecked() == 1:
+		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_CFDL_MFAC'
 	if self.ui.ipactpsfBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_IPACT_PSF'
 	if self.ui.nascBtn.isChecked() == 1:
@@ -312,6 +314,8 @@ def restore_parameters(self):
 		self.ui.svDropDynamic.setChecked(1)
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_STEP_THRESHOLD':
 		self.ui.svDropStepThreshold.setChecked(1)
+	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_CFDL_MFAC':
+		self.ui.svDrop_CFDL_MFAC.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_IPACT_PSF':
 		self.ui.ipactpsfBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_NASC':
@@ -517,6 +521,8 @@ def restore_parameters(self):
 		self.ui.svDropStep_NumMAValues.setEnabled(True)
 		self.ui.svDropMinBoundLabel.setEnabled(True)
 		self.ui.svDropMaxBoundLabel.setEnabled(True)
+		self.ui.svDropStepThreshold.setEnabled(True)
+		self.ui.svDrop_CFDL_MFAC.setEnabled(True)
 	else:
 		self.ui.videoTraceEdit.clear()
 		self.ui.videoTraceEdit.setEnabled(False)
@@ -540,6 +546,8 @@ def restore_parameters(self):
 		self.ui.svDropStep_NumMAValues.setEnabled(False)
 		self.ui.svDropMinBoundLabel.setEnabled(False)
 		self.ui.svDropMaxBoundLabel.setEnabled(False)
+		self.ui.svDropStepThreshold.setEnabled(False)
+		self.ui.svDrop_CFDL_MFAC.setEnabled(False)
 	if self.ui.pvtOnBtn.isChecked():
 		self.ui.PredTypeLbl.setEnabled(True)
 		self.ui.PredTypeEdit.setEnabled(True)
@@ -922,8 +930,9 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	#simcommandfinal = os.path.join(os.path.join('/home',str(simusername)), str(simcommand))
 	cmd = 'ssh -f -l ' + simusername + ' ' + simhostname + ' \'cd ' + SimPath + '; ' + dirLauncher + ' > sim_log &\''
 	print cmd
-	child = pexpect.spawn(cmd)
-	time.sleep(0.1)
+	os.system(cmd)
+	#child = pexpect.spawn(cmd)
+	#time.sleep(0.1)
 	# expect ssh to prompt for a user password
 	#child.expect('Password:')
 	#time.sleep(0.1)
@@ -931,69 +940,69 @@ def launch_additional_sim(currentlyRunning, simpassword):
 	# send the password
 	#child.sendline(str(simpassword))
 	#time.sleep(0.1)
-	print child.isalive()
-	print child.read()
-	print child.isalive()
+	#print child.isalive()
+	#print child.read()
+	#print child.isalive()
 	
-	if child.isalive() == False:
-		print 'Simulation Launched Successfully'
+	#if child.isalive() == False:
+	print 'Simulation Launched Successfully'
 
-		ResultPath = os.path.join(SimPath, 'pid')
-		
+	ResultPath = os.path.join(SimPath, 'pid')
+	
 #		retVal = os.system('ssh -f -l'+simusername+' '+simhostname+' \'cd '+simhomedir+'/'+simID+'; '+simcommandfinal+' >sim_log &\'')
 #		if retVal == 0:
-		# Get it's process ID
-		
+	# Get it's process ID
+	
 #			while not os.path.exists(ResultPath):
 #				time.sleep(1) # wait 1 second, then check again
-		
+	
+	pidFile = open(ResultPath,'r')
+	pidStr = pidFile.readline()
+	pidFile.close()
+	while pidStr == "":
+		time.sleep(0.1)
 		pidFile = open(ResultPath,'r')
 		pidStr = pidFile.readline()
 		pidFile.close()
-		while pidStr == "":
-			time.sleep(0.1)
-			pidFile = open(ResultPath,'r')
-			pidStr = pidFile.readline()
-			pidFile.close()
-		
-		
-		if ((pidStr == 'Done\n') or (pidStr == 'Failed\n')):
-			simpid = 0
-		else:
-			simpid = int(pidStr)
-			currentlyRunning.append((simpid,simID))
-		if pidStr == 'Failed\n':
-			os.system('mv sim_core ..')
-			time.sleep(1)
-			os.system('rm *')
-			time.sleep(5)
-			os.chdir('..')
-			os.system('rm -rf ' + simID)
-			print "Launch Failed!!!!"
-		else:
-			# Record simulation data and place an entry in simulation list box
-			simData['host'] = simhostname
-			simData['pid'] = simpid
-			simData['params'] = copy.deepcopy(queueSimParams[0])
-			sims[simID] = copy.deepcopy(simData)
-			#simListBoxItem = sim_mgr_win.simListBox.findItem(simID + '_(Not_Started)')
-			#indexOfItem = sim_mgr_win.simListBox.index(simListBoxItem)
-			#sim_mgr_win.ui.simListBox.changeItem(simID + '_(Started)', indexOfItem)
-			list_simListBoxItem = sim_mgr_win.ui.notStartedListBox.findItems(simID, Qt.MatchExactly)
-			for item in list_simListBoxItem:
-				tmp = sim_mgr_win.ui.notStartedListBox.takeItem(sim_mgr_win.ui.notStartedListBox.row(item))
-				del tmp
-			sim_mgr_win.ui.startedListBox.addItem(simID)
-			#sim_mgr_win.ui.simListBox.setCurrentItem(simID)
-			#sim_mgr_win.ui.simListBox.currentItem().setTextColor(qColor.fromRgb(255,0,0,255))
-			os.chdir('..')
-			print 'Sim ID: ' + simID + '   Sim Host: ' + simhostname + '   Simulation ID: ' + str(simpid)
-	else:	
+	
+	
+	if ((pidStr == 'Done\n') or (pidStr == 'Failed\n')):
+		simpid = 0
+	else:
+		simpid = int(pidStr)
+		currentlyRunning.append((simpid,simID))
+	if pidStr == 'Failed\n':
+		os.system('mv sim_core ..')
+		time.sleep(1)
 		os.system('rm *')
 		time.sleep(5)
 		os.chdir('..')
 		os.system('rm -rf ' + simID)
 		print "Launch Failed!!!!"
+	else:
+		# Record simulation data and place an entry in simulation list box
+		simData['host'] = simhostname
+		simData['pid'] = simpid
+		simData['params'] = copy.deepcopy(queueSimParams[0])
+		sims[simID] = copy.deepcopy(simData)
+		#simListBoxItem = sim_mgr_win.simListBox.findItem(simID + '_(Not_Started)')
+		#indexOfItem = sim_mgr_win.simListBox.index(simListBoxItem)
+		#sim_mgr_win.ui.simListBox.changeItem(simID + '_(Started)', indexOfItem)
+		list_simListBoxItem = sim_mgr_win.ui.notStartedListBox.findItems(simID, Qt.MatchExactly)
+		for item in list_simListBoxItem:
+			tmp = sim_mgr_win.ui.notStartedListBox.takeItem(sim_mgr_win.ui.notStartedListBox.row(item))
+			del tmp
+		sim_mgr_win.ui.startedListBox.addItem(simID)
+		#sim_mgr_win.ui.simListBox.setCurrentItem(simID)
+		#sim_mgr_win.ui.simListBox.currentItem().setTextColor(qColor.fromRgb(255,0,0,255))
+		os.chdir('..')
+		print 'Sim ID: ' + simID + '   Sim Host: ' + simhostname + '   Simulation ID: ' + str(simpid)
+	#else:	
+		#os.system('rm *')
+		#time.sleep(5)
+		#os.chdir('..')
+		#os.system('rm -rf ' + simID)
+		#print "Launch Failed!!!!"
 		
 	queueSimParamsList.remove(queueSimParamsList[0])
 	queueSimParams.remove(queueSimParams[0])
@@ -1680,6 +1689,8 @@ class SimInitWin (QtGui.QWidget):
 		self.ui.svDropThreshold.setEnabled(True)
 		self.ui.svDropDynamic.setEnabled(True)
 		self.ui.svDropStepThreshold.setEnabled(True)
+		self.ui.svDrop_CFDL_MFAC.setEnabled(True)
+		
 		self.ui.svDropThresholdEdit.setEnabled(True)
 		self.ui.svDropSensitivity.setEnabled(True)
 		self.ui.svDropStepMinBound.setEnabled(True)
@@ -1695,6 +1706,8 @@ class SimInitWin (QtGui.QWidget):
 		self.ui.svDropThreshold.setEnabled(False)
 		self.ui.svDropDynamic.setEnabled(False)
 		self.ui.svDropStepThreshold.setEnabled(False)
+		self.ui.svDrop_CFDL_MFAC.setEnabled(False)
+
 		self.ui.svDropThresholdEdit.setEnabled(False)
 		self.ui.svDropSensitivity.setEnabled(False)
 		self.ui.svDropStepMinBound.setEnabled(False)
