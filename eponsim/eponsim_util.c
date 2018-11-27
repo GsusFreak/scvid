@@ -968,7 +968,15 @@ void drop_scalable_video_packets(int onuNum, double video_grant, double lower_bo
 			// Use the lower bound as the desired reference signal so that it will try to minimize
 			// video queue delay just enough so as not to drop any packets
 			//double	referenceSignal = lower_bound;
-			double	referenceSignal = 1;
+			
+			// Set the initial values for the inputs to be the middle of the stairstep
+			if (flag_firstRun_MFAC == 0) {
+				input_MFAC = (simParams.SV_DROP_MIN_BOUND + simParams.SV_DROP_MAX_BOUND)/2.0;
+				inputPrev_MFAC = (simParams.SV_DROP_MIN_BOUND + simParams.SV_DROP_MAX_BOUND)/2.0;
+				flag_firstRun_MFAC = 1;
+			}
+			
+			double	referenceSignal = (simParams.SV_DROP_MIN_BOUND + simParams.SV_DROP_MAX_BOUND)/2.0;
 			// Please note that the system output values are updated directly in eponsim_stats.c
 			// Calculate the input and output deltas
 			double	inputDelta = input_MFAC - inputPrev_MFAC;
@@ -978,17 +986,36 @@ void drop_scalable_video_packets(int onuNum, double video_grant, double lower_bo
 			// Check to make sure the magnitude of psi_MFAC stays greater than epsilon (the minimum)
 			if (epsilon >= fabs(psi_MFAC)) {
 				psi_MFAC = psiInitial_MFAC;
+				TSprint("psi mag reset\n");
 			}
 			// Check to make sure the sign of psi_MFAC is the same as the sign as psi_MFAC
 			if (((psi_MFAC > 0) && (psiInitial_MFAC < 0)) || ((psi_MFAC < 0) && (psiInitial_MFAC > 0))) {
 				psi_MFAC = psiInitial_MFAC;
+				TSprint("psi sign reset\n");
 			}
 			inputPrev_MFAC = input_MFAC;
 			input_MFAC = input_MFAC + rho_MFAC*psi_MFAC*(referenceSignal - output_MFAC)/(lambda_MFAC + psi_MFAC*psi_MFAC);
+			
+			// If the input goes too far away from the stairstep, force it back. 
+			if (input_MFAC > simParams.SV_DROP_MAX_BOUND * simParams.SCALABLE_VIDEO_NUM_LAYERS/(simParams.SCALABLE_VIDEO_NUM_LAYERS - 1.0)) {
+				input_MFAC = simParams.SV_DROP_MAX_BOUND * simParams.SCALABLE_VIDEO_NUM_LAYERS/(simParams.SCALABLE_VIDEO_NUM_LAYERS - 1.0);
+				//TSprint("max bound passed\n");
+			}
+			if (input_MFAC < simParams.SV_DROP_MIN_BOUND * (simParams.SCALABLE_VIDEO_NUM_LAYERS - 1.0)/simParams.SCALABLE_VIDEO_NUM_LAYERS) {
+				input_MFAC = simParams.SV_DROP_MIN_BOUND * (simParams.SCALABLE_VIDEO_NUM_LAYERS - 1.0)/simParams.SCALABLE_VIDEO_NUM_LAYERS;
+				//TSprint("min bound passed\n");
+			}
+			//if ((output_MFAC - referenceSignal) > 0) {
+				//TSprint("Should upswing\n");
+			//}
+			/*
 			TSprint("psi = %lf\n", psi_MFAC);
-			TSprint("input = %lf\n", input_MFAC);
-			TSprint("output = %lf\n", output_MFAC);
+			TSprint("input = %e\n", input_MFAC);
+			TSprint("output = %e\n", output_MFAC);
+			//TSprint("%e\n", output_MFAC);
 			TSprint("-------------------------------\n");
+			*/
+			
 			
 			/* Start Borrowed Section */
 			// Borrow the linear threshold dropping code but use input_MFAC as the input instead of the moving average

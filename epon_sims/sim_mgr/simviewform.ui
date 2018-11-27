@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
+    <width>897</width>
     <height>639</height>
    </rect>
   </property>
@@ -739,7 +739,7 @@
     <string>Plot Type</string>
    </property>
   </widget>
-  <widget class="QListView" name="SimViewForm_2">
+  <widget class="QListWidget" name="simViewListBox">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -748,53 +748,10 @@
      <height>261</height>
     </rect>
    </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::ExtendedSelection</enum>
+   </property>
   </widget>
-  <zorder>SimViewForm_2</zorder>
-  <zorder>maxXEdit</zorder>
-  <zorder>minXEdit</zorder>
-  <zorder>maxXLbl</zorder>
-  <zorder>hostEdit</zorder>
-  <zorder>plotCaptionEdit</zorder>
-  <zorder>maxYLbl</zorder>
-  <zorder>maxYEdit</zorder>
-  <zorder>minYEdit</zorder>
-  <zorder>minYLbl</zorder>
-  <zorder>exportOutputBtn</zorder>
-  <zorder>viewParamsBtn</zorder>
-  <zorder>exitBtn</zorder>
-  <zorder>viewOutputBtn</zorder>
-  <zorder>stopSimBtn</zorder>
-  <zorder>confIntvlChkBox</zorder>
-  <zorder>minXLbl</zorder>
-  <zorder>plotRefreshChkBox</zorder>
-  <zorder>simOutputLbl</zorder>
-  <zorder>simIDLbl</zorder>
-  <zorder>simIDEdit</zorder>
-  <zorder>plotNameLbl</zorder>
-  <zorder>hostLbl</zorder>
-  <zorder>plotCaptionLbl</zorder>
-  <zorder>simStatusLbl</zorder>
-  <zorder>simStatusTitleLbl</zorder>
-  <zorder>plotNameEdit</zorder>
-  <zorder>pushButtonAutoName</zorder>
-  <zorder>grantsizePVsLoadBtn</zorder>
-  <zorder>utilVsLoadBtn</zorder>
-  <zorder>delayVsONUBtn</zorder>
-  <zorder>histBtn</zorder>
-  <zorder>grantsizeVsLoadBtn</zorder>
-  <zorder>timeHistBtn</zorder>
-  <zorder>byteHistBtn</zorder>
-  <zorder>delayVsLoadBtn</zorder>
-  <zorder>tputVsLoadBtn</zorder>
-  <zorder>nzrVsLoadBtn</zorder>
-  <zorder>reportsizeVsLoadBtn</zorder>
-  <zorder>cyclelenVsONUBtn</zorder>
-  <zorder>cyclelenVsLoadBtn</zorder>
-  <zorder>jitterVsLoadBtn</zorder>
-  <zorder>nosVsLoadBtn</zorder>
-  <zorder>delayVsTimeBtn</zorder>
-  <zorder>granttimeVsLoadBtn</zorder>
-  <zorder>label</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>

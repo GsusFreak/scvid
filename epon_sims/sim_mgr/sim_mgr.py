@@ -1441,7 +1441,7 @@ class SimViewWin (QtGui.QWidget):
 		global fileList
 		del fileList
 		fileList = []
-		generate_file_list(fileList, self.simOutputListBox)
+		generate_file_list(fileList, self.ui.simViewListBox)
 		if fileList[0] != '':
 			plot_name_win.file1Lbl.setText(fileList[0])
 		if len(fileList) > 1:
@@ -1494,7 +1494,7 @@ class SimViewWin (QtGui.QWidget):
 		global plotType
 		del fileList
 		fileList = []
-		generate_file_list(fileList,self.simOutputListBox)
+		generate_file_list(fileList, self.ui.simViewListBox)
 		if fileList[0] != '':
 			plot_name_win.file1Lbl.setText(fileList[0])
 		if len(fileList) > 1:
@@ -1527,7 +1527,7 @@ class SimViewWin (QtGui.QWidget):
 		global plotType
 		del fileList
 		fileList = []
-		generate_file_list(fileList,self.simOutputListBox)
+		generate_file_list(fileList, self.ui.simViewListBox)
 		if fileList[0] != '':
 			plot_name_win.file1Lbl.setText(fileList[0])
 		if len(fileList) > 1:
@@ -1873,19 +1873,20 @@ class MainSimMgrWin (QtGui.QWidget):
 		self.hide()
 		self.ui.viewSimButton.setDown(0)
 		Selection = False
-		for loopIdx in range(self.ui.simListBox.count()):
-			if self.ui.simListBox.isSelected(loopIdx) == 1:
-				simIdx = loopIdx
-				Selection = True
-		if Selection:
-			simID = self.ui.simListBox.item(simIdx).text()
+		#for loopIdx in range(self.ui.simListBox.count()):
+			#if self.ui.simListBox.isSelected(loopIdx) == 1:
+				#simIdx = loopIdx
+				#Selection = True
+		#if Selection:
+		for selectedItem in self.ui.simListBox.selectedItems():
+			simID = str(selectedItem.text())
 			# Clear list box
-			sim_view_win.ui.simOutputListBox.clear()
+			sim_view_win.ui.simViewListBox.clear()
 		
 			os.chdir(dir_epon_sims)
 			if os.path.exists(simID) == 1:
 				os.chdir(simID)
-			wait_win.waitProgressBar.setProgress(1)
+			wait_win.ui.waitProgressBar.setValue(1)
 			# Check process ID file
 			if os.path.exists('pid') == 1:
 				pidFile = open('pid','r')
@@ -1900,7 +1901,7 @@ class MainSimMgrWin (QtGui.QWidget):
 			simData = sims[simID]
 			sim_view_win.ui.simIDEdit.setText(simID)
 			sim_view_win.ui.hostEdit.setText(simData['host'])
-			wait_win.ui.waitProgressBar.setProgress(3)
+			wait_win.ui.waitProgressBar.setValue(3)
 			# Fill list box with output files
 			#
 			filedir = os.popen('ls','r')
@@ -1911,7 +1912,7 @@ class MainSimMgrWin (QtGui.QWidget):
 				and (filename != 'sim_core')
 				and (string.find(filename,'.fig') == -1) 
 				and (string.find(filename,'.gp') == -1)):
-					sim_view_win.ui.simOutputListBox.addItem(filename)
+					sim_view_win.ui.simViewListBox.addItem(filename)
 				filename = filedir.readline()
 			os.chdir('..')
 			wait_win.ui.waitProgressBar.setValue(5)
@@ -2077,7 +2078,7 @@ class MainSimMgrWin (QtGui.QWidget):
 	
 	def openSimButton_pressed(self):
 		#listSelected = self.ui.simListBox.findItems()
-		os.chdir('epon_sims')
+		os.chdir(dir_epon_sims)
 		for listItem in self.ui.simListBox:
 		#for loopIdx in range(self.ui.simListBox.count())[::-1]:
 			#if self.ui.simListBox.isSelected(loopIdx) == 1:

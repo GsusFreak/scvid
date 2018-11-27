@@ -140,18 +140,20 @@ double      simTimeTrace[MAX_TRACE_VALUES];
 
 // Global variables for the Controls-based Packet Dropping
 // Variables
-double		output_MFAC	=		0.005;
-double		outputPrev_MFAC =	0.05;
+double		output_MFAC	=		0;
+double		outputPrev_MFAC =	0;
 double		input_MFAC =		0;
 double		inputPrev_MFAC =	0;
-double		psi_MFAC = 			1;
+double		psi_MFAC = 			-1;
 //Constants
-double		epsilon =			DBL_MIN*10;
-double		psiInitial_MFAC = 	1;
-int			lambda_MFAC = 		1;
-int			eta_MFAC = 			1;
-int			mu_MFAC = 			1;
-int			rho_MFAC = 			1;
+//double		epsilon =			DBL_MIN*10;
+double		epsilon =			0.001;
+double		psiInitial_MFAC = 	-1;
+double		lambda_MFAC = 		1;
+double		eta_MFAC = 			100000;
+double		mu_MFAC = 			1;
+double		rho_MFAC = 			0.1;
+int		flag_firstRun_MFAC =	0;
 // END - Global variables for the Controls-based Packet Dropping
 
 /* Parameters for self-similar traffic. */

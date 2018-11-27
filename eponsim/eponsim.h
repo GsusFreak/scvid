@@ -743,10 +743,11 @@ extern double		psi_MFAC;
 //Constants
 extern double		epsilon;
 extern double		psiInitial_MFAC;
-extern int			lambda_MFAC;
-extern int			eta_MFAC;
-extern int			mu_MFAC;
-extern int			rho_MFAC;
+extern double		lambda_MFAC;
+extern double		eta_MFAC;
+extern double		mu_MFAC;
+extern double		rho_MFAC;
+extern int		flag_firstRun_MFAC;
 // END - Global variables for the Controls-based Packet Dropping
 
 // Declare Troubleshooting Function Prototypes
