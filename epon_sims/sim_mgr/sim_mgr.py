@@ -137,6 +137,8 @@ def store_parameters(self):
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_STEP_THRESHOLD'
 	if self.ui.svDrop_CFDL_MFAC.isChecked() == 1:
 		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_CFDL_MFAC'
+	if self.ui.svDrop_EXP_THRESHOLD.isChecked() == 1:
+		setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] = 'SCALABLE_VIDEO_DROPPING_EXP_THRESHOLD'
 	if self.ui.ipactpsfBtn.isChecked() == 1:
 		setupSimParams[queueIndex]['OLT_TYPE'] = 'OLT_IPACT_PSF'
 	if self.ui.nascBtn.isChecked() == 1:
@@ -316,6 +318,8 @@ def restore_parameters(self):
 		self.ui.svDropStepThreshold.setChecked(1)
 	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_CFDL_MFAC':
 		self.ui.svDrop_CFDL_MFAC.setChecked(1)
+	if setupSimParams[queueIndex]['SCALABLE_VIDEO_DROPPING_ALGORITHM'] == 'SCALABLE_VIDEO_DROPPING_EXP_THRESHOLD':
+		self.ui.svDrop_EXP_THRESHOLD.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_IPACT_PSF':
 		self.ui.ipactpsfBtn.setChecked(1)
 	if setupSimParams[queueIndex]['OLT_TYPE'] == 'OLT_ONLINE_NASC':
@@ -523,6 +527,7 @@ def restore_parameters(self):
 		self.ui.svDropMaxBoundLabel.setEnabled(True)
 		self.ui.svDropStepThreshold.setEnabled(True)
 		self.ui.svDrop_CFDL_MFAC.setEnabled(True)
+		self.ui.svDrop_EXP_THRESHOLD.setEnabled(True)
 	else:
 		self.ui.videoTraceEdit.clear()
 		self.ui.videoTraceEdit.setEnabled(False)
@@ -548,6 +553,7 @@ def restore_parameters(self):
 		self.ui.svDropMaxBoundLabel.setEnabled(False)
 		self.ui.svDropStepThreshold.setEnabled(False)
 		self.ui.svDrop_CFDL_MFAC.setEnabled(False)
+		self.ui.svDrop_EXP_THRESHOLD.setEnabled(False)
 	if self.ui.pvtOnBtn.isChecked():
 		self.ui.PredTypeLbl.setEnabled(True)
 		self.ui.PredTypeEdit.setEnabled(True)
@@ -1690,6 +1696,8 @@ class SimInitWin (QtGui.QWidget):
 		self.ui.svDropDynamic.setEnabled(True)
 		self.ui.svDropStepThreshold.setEnabled(True)
 		self.ui.svDrop_CFDL_MFAC.setEnabled(True)
+		self.ui.svDrop_EXP_THRESHOLD.setEnabled(True)
+		
 		
 		self.ui.svDropThresholdEdit.setEnabled(True)
 		self.ui.svDropSensitivity.setEnabled(True)
@@ -1707,6 +1715,7 @@ class SimInitWin (QtGui.QWidget):
 		self.ui.svDropDynamic.setEnabled(False)
 		self.ui.svDropStepThreshold.setEnabled(False)
 		self.ui.svDrop_CFDL_MFAC.setEnabled(False)
+		self.ui.svDrop_EXP_THRESHOLD.setEnabled(False)
 
 		self.ui.svDropThresholdEdit.setEnabled(False)
 		self.ui.svDropSensitivity.setEnabled(False)

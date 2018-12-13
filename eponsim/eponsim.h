@@ -169,6 +169,7 @@ double			maximumGrantCycle;
 #define SCALABLE_VIDEO_DROPPING_DYNAMIC		2
 #define SCALABLE_VIDEO_DROPPING_LINEAR_THRESHOLD	3
 #define SCALABLE_VIDEO_DROPPING_CFDL_MFAC			4
+#define SCALABLE_VIDEO_DROPPING_EXP_THRESHOLD		5
 
 /* WDM Type definitions */
 #define	WDM_NONE	0
@@ -286,6 +287,7 @@ typedef struct
 	int		SV_DROP_NUM_VALUES_FOR_MA;
 	double	SV_DROP_MIN_BOUND;
 	double	SV_DROP_MAX_BOUND;
+	double	SV_DROP_EXP_ADJUST;
 	
 	//double	LINK_SPEED_PER_SS_STREAM;
 	double		AVG_BURST_SIZE;

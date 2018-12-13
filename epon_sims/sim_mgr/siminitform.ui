@@ -3675,6 +3675,35 @@ you're dropping everything except the base layer.</string>
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
+  <widget class="QRadioButton" name="svDrop_EXP_THRESHOLD">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>830</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Exponential</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup_11</string>
+   </attribute>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>

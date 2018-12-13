@@ -120,6 +120,7 @@ void mpcp_video_report(int onuNum)
 	drop_scalable_video_packets(onuNum, 0, 0, 0, 1);
 	drop_scalable_video_packets(onuNum, 0, LowerBound_scalableDropping, UpperBound_scalableDropping, 3);
 	drop_scalable_video_packets(onuNum, 0, LowerBound_scalableDropping, UpperBound_scalableDropping, 4);
+	drop_scalable_video_packets(onuNum, 0, LowerBound_scalableDropping, UpperBound_scalableDropping, 5);
 
 
     onuAttrs[onuNum].rptVideoQueueSize = onuAttrs[onuNum].packetVideoQueueSize + onuAttrs[onuNum].packetVideoQueueNum * PREAMBLE_IPG_BYTES;

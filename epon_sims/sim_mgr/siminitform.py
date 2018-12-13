@@ -1341,6 +1341,17 @@ class Ui_SimInitForm(object):
         self.line_2.setFrameShape(QtGui.QFrame.HLine)
         self.line_2.setFrameShadow(QtGui.QFrame.Sunken)
         self.line_2.setObjectName(_fromUtf8("line_2"))
+        self.svDrop_EXP_THRESHOLD = QtGui.QRadioButton(SimInitForm)
+        self.svDrop_EXP_THRESHOLD.setEnabled(False)
+        self.svDrop_EXP_THRESHOLD.setGeometry(QtCore.QRect(680, 830, 121, 22))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.svDrop_EXP_THRESHOLD.setFont(font)
+        self.svDrop_EXP_THRESHOLD.setChecked(False)
+        self.svDrop_EXP_THRESHOLD.setObjectName(_fromUtf8("svDrop_EXP_THRESHOLD"))
+        self.buttonGroup_11.addButton(self.svDrop_EXP_THRESHOLD)
 
         self.retranslateUi(SimInitForm)
         QtCore.QObject.connect(self.cancelBtn, QtCore.SIGNAL(_fromUtf8("pressed()")), SimInitForm.cancelBtn_pressed)
@@ -1516,6 +1527,7 @@ class Ui_SimInitForm(object):
         self.npoLbl.setText(_translate("SimInitForm", "NUM_PREFERRED_ONU", None))
         self.label_20.setText(_translate("SimInitForm", "Grant Scheduling Parameters", None))
         self.svDrop_CFDL_MFAC.setText(_translate("SimInitForm", "CFDL MFAC", None))
+        self.svDrop_EXP_THRESHOLD.setText(_translate("SimInitForm", "Exponential", None))
 
 
 if __name__ == "__main__":

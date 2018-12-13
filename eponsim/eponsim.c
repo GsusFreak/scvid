@@ -156,6 +156,7 @@ double		rho_MFAC = 			0.1;
 int		flag_firstRun_MFAC =	0;
 // END - Global variables for the Controls-based Packet Dropping
 
+
 /* Parameters for self-similar traffic. */
 
 int i, j;			/* global loop variables */
@@ -358,6 +359,9 @@ void test_var_init()
 	// trace_on();
 	
 #endif
+
+// Quick sloppy init for a SV dropping algorithm adjustment variable
+simParams.SV_DROP_EXP_ADJUST = 10.0;
 	return;
 }
 
@@ -1990,6 +1994,10 @@ void read_sim_cfg_file()
 				else if(strcmp(currToken, "SCALABLE_VIDEO_DROPPING_CFDL_MFAC") == 0)
 				{
 					simParams.SCALABLE_VIDEO_DROPPING_ALGORITHM = SCALABLE_VIDEO_DROPPING_CFDL_MFAC;
+				}
+				else if(strcmp(currToken, "SCALABLE_VIDEO_DROPPING_EXP_THRESHOLD") == 0)
+				{
+					simParams.SCALABLE_VIDEO_DROPPING_ALGORITHM = SCALABLE_VIDEO_DROPPING_EXP_THRESHOLD;
 				}
 			}
 			else if(strcmp(currToken, "VIDEO_TRACE_FILE") == 0)

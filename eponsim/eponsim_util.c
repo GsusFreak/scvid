@@ -729,6 +729,23 @@ int find_stair_step(double value, double lowerBound, double upperBound, int bott
 }
 
 
+int find_stair_step_exp(double value, double lowerBound, double upperBound, int bottomStep, int topStep, double expAdjust) {
+	// This function finds the discrete step that a value falls on given the values for the
+	// gound floor (lowerBound) which is at zero and the top floor (upperBound) which is at
+	// numSteps. 
+	
+	int numSteps = topStep - bottomStep,
+		step;
+	double threshold;
+	for (step = 0; step < numSteps; step++) {
+		//threshold = (upperBound - lowerBound)*step/(numSteps - 1) + lowerBound;
+		threshold = (upperBound - lowerBound)*log(expAdjust*step/(numSteps - 1) + 1)/log(expAdjust + 1) + lowerBound;
+		if (value <= threshold) return (numSteps - step + bottomStep);
+	}
+	
+	return bottomStep;
+}
+
 void drop_scalable_video_packets(int onuNum, double video_grant, double lower_bound, double upper_bound, int select) {
 	sENTITY_PKT		*prevPktPtr = NULL,
 					*currPktPtr = NULL,
@@ -1074,6 +1091,78 @@ void drop_scalable_video_packets(int onuNum, double video_grant, double lower_bo
 		}
 	}
 	
+	if (select == 5) {
+		// Dropping packets when they cross an exponential threshold based on a moving average of the video delay
+		if (simParams.SCALABLE_VIDEO_DROPPING_ALGORITHM == SCALABLE_VIDEO_DROPPING_EXP_THRESHOLD) {
+			//TSprint("I think it made it in.\n");
+			double currentVideoQueueDelay = table_mean(overallVideoQueueDelay_MovingAverage);
+			//TSprint("The current Video Queue Delay is: %lf\n", currentVideoQueueDelay);
+			int base_layer_num = 1;
+			int threshold_layer = find_stair_step_exp(currentVideoQueueDelay, simParams.SV_DROP_MIN_BOUND, simParams.SV_DROP_MAX_BOUND, base_layer_num, simParams.SCALABLE_VIDEO_NUM_LAYERS, simParams.SV_DROP_EXP_ADJUST);
+			//TSprint("The current threshold layer is: %d\n", threshold_layer);
+			
+			currPktPtr = onuAttrs[onuNum].packetsVideoHead;
+			while (currPktPtr != NULL) {
+				if (currPktPtr->layer > threshold_layer) {
+					// Drop the offending packet
+					tempPktPtr = currPktPtr;
+					
+					// The current packet will be removed.
+					// That is, if the currPktPtr is the packetsVideoHead
+					if (currPktPtr != onuAttrs[onuNum].packetsVideoHead) {
+						prevPktPtr->next = currPktPtr->next;
+					}
+					else {
+						onuAttrs[onuNum].packetsVideoHead = currPktPtr->next;
+					}
+					currPktPtr = currPktPtr->next;
+					
+					if (onuNum == 0) fprintf(droppedScalPackets, "%d,%c,%d,%d,%.1f\n", 
+							(int)(tempPktPtr->frameTimeStamp - simParams.TIME_SHIFT/1000.0 * onuNum - onuAttrs[onuNum].startoffset*1000),
+							tempPktPtr->frameType,
+							tempPktPtr->size,
+							tempPktPtr->layer,
+							0.1*(test_vars.loadOrderCounter + 1));
+					
+					//if (onuNum == 0) fprintf(droppedScalPackets, "__\t\t%d\t\t%c\t\t%d\t\t58\t\t??\t\t%d\n", 
+							//(int)(tempPktPtr->frameTimeStamp - simParams.TIME_SHIFT/1000.0 * onuNum - onuAttrs[onuNum].startoffset*1000),
+							//tempPktPtr->frameType,
+							//tempPktPtr->size - 58,
+							//tempPktPtr->layer);
+
+					//if (onuNum == 0) TSprint("__\t\t%d\t\t%c\t\t%d\t\t58\t\t??\t\t%d\n", 
+							//(int)(tempPktPtr->frameTimeStamp - simParams.TIME_SHIFT/1000.0 * onuNum - onuAttrs[onuNum].startoffset*1000),
+							//tempPktPtr->frameType,
+							//tempPktPtr->size - 58,
+							//tempPktPtr->layer);
+					
+					onuAttrs[onuNum].packetVideoQueueSize -= tempPktPtr->size;
+					if(onuAttrs[onuNum].packetVideoQueueNum == 0)
+					{
+						/* Some error has occurred */
+						printf("[%10.5e] FATAL ERROR: Stray Packet [ONU #%d]\n", simtime(), onuNum);
+						fatalErrorCode = FATAL_CAUSE_STRAY_PKT;
+						/* Fill out some context information */
+						dump_msg_buf[0] = '\0';
+						sprintf(dump_msg_buf,"on ONU #%d\n",onuNum);
+						dump_sim_core();
+					}
+					else
+					{
+						onuAttrs[onuNum].packetVideoQueueNum--;
+						test_vars.vid_pkt_destroyed[test_vars.runNum][test_vars.loadOrderCounter][onuNum]++;
+					}
+					free(tempPktPtr);
+				}
+				else {
+					// Increment the loop
+					prevPktPtr = currPktPtr;
+					currPktPtr = currPktPtr->next;
+				}
+			}		
+		}
+	}
+
 	return;
 }
 
