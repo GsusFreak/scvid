@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>897</width>
+    <width>713</width>
     <height>639</height>
    </rect>
   </property>
@@ -23,7 +23,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLineEdit" name="minXEdit">
@@ -36,7 +38,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="maxXLbl">
@@ -49,7 +53,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Max X value</string>
@@ -67,6 +73,11 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLineEdit" name="plotCaptionEdit">
    <property name="geometry">
@@ -76,6 +87,11 @@
      <width>290</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="maxYLbl">
@@ -88,7 +104,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Max Y value</string>
@@ -107,7 +125,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLineEdit" name="minYEdit">
@@ -120,7 +140,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="minYLbl">
@@ -133,7 +155,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Min Y value</string>
@@ -152,7 +176,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Export Selected Output</string>
@@ -168,7 +194,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>View Sim Params</string>
@@ -184,7 +212,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Exit</string>
@@ -200,7 +230,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>View Selected Output</string>
@@ -216,7 +248,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Stop Sim</string>
@@ -232,7 +266,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Confidence Intervals</string>
@@ -248,7 +284,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Min X value</string>
@@ -267,7 +305,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Plot Refresh</string>
@@ -284,6 +324,7 @@
    </property>
    <property name="font">
     <font>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -305,7 +346,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="frameShape">
     <enum>QFrame::NoFrame</enum>
@@ -329,6 +372,11 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLabel" name="plotNameLbl">
    <property name="geometry">
@@ -340,7 +388,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Plot Name</string>
@@ -359,7 +409,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Host</string>
@@ -378,7 +430,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Plot Caption</string>
@@ -397,7 +451,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Status</string>
@@ -416,7 +472,9 @@
     </rect>
    </property>
    <property name="font">
-    <font/>
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Simulation Status:</string>
@@ -434,6 +492,11 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButtonAutoName">
    <property name="geometry">
@@ -443,6 +506,11 @@
      <width>21</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string/>
@@ -456,6 +524,11 @@
      <width>150</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Grnt Sz Pkt vs. Ld</string>
@@ -473,6 +546,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Utilization vs. Load</string>
    </property>
@@ -488,6 +566,11 @@
      <width>120</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Delay vs. ONU</string>
@@ -505,6 +588,11 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Histogram</string>
    </property>
@@ -520,6 +608,11 @@
      <width>150</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Grant Size vs. Load</string>
@@ -537,6 +630,11 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Time Histogram</string>
    </property>
@@ -552,6 +650,11 @@
      <width>130</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Byte Histogram</string>
@@ -569,6 +672,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Delay vs. Load</string>
    </property>
@@ -584,6 +692,11 @@
      <width>160</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Throughput vs. Load</string>
@@ -601,6 +714,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>NZR vs. Load</string>
    </property>
@@ -616,6 +734,11 @@
      <width>150</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Report Size vs. Load</string>
@@ -633,6 +756,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Cycle Len vs. ONU</string>
    </property>
@@ -648,6 +776,11 @@
      <width>150</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Cycle Len vs. Load</string>
@@ -665,6 +798,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Jitter vs. Load</string>
    </property>
@@ -680,6 +818,11 @@
      <width>160</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>ONU Sched vs. Load</string>
@@ -697,6 +840,11 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Delay vs. Time</string>
    </property>
@@ -712,6 +860,11 @@
      <width>150</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Grant Time vs. Load</string>
@@ -731,6 +884,7 @@
    </property>
    <property name="font">
     <font>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -747,6 +901,11 @@
      <width>651</width>
      <height>261</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="selectionMode">
     <enum>QAbstractItemView::ExtendedSelection</enum>

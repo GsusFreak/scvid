@@ -1474,11 +1474,11 @@ class SimViewWin (QtGui.QWidget):
 		pieces = fileList[0].split('_')
 		piecesLast = fileList[len(fileList)-1].split('_')
 		if 'od' == pieces[0]:
-			self.delayVsLoadBtn.setChecked(True)
+			self.ui.delayVsLoadBtn.setChecked(True)
 		elif 'vod' == pieces[0]:
-			self.delayVsLoadBtn.setChecked(True)
+			self.ui.delayVsLoadBtn.setChecked(True)
 		elif 'vods' == pieces[0]:
-			self.jitterVsLoadBtn.setChecked(True)
+			self.ui.jitterVsLoadBtn.setChecked(True)
 #		if 'Q20' in pieces[4]:
 #			newLegend = pieces[0]+'_'+pieces[3]+'_Q20-Q30'
 #		elif 'Q35' in pieces[4]:
@@ -1486,16 +1486,16 @@ class SimViewWin (QtGui.QWidget):
 #		else:
 #			newLegend = pieces[0]+'_'+pieces[3]
 		newLegend = pieces[0]+'_'+pieces[3]+'_'+pieces[4]+'-'+piecesLast[4]
-		self.plotNameEdit.setText(newLegend)
+		self.ui.plotNameEdit.setText(newLegend)
 		
 	
 	def exitBtn_pressed(self):
-		self.exitBtn.setDown(0)
+		self.ui.exitBtn.setDown(0)
 		sim_view_win.hide()
 		sim_mgr_win.show()
 	def viewOutputBtn_pressed(self):
 		plot_name_win.show()
-		self.viewOutputBtn.setDown(0)
+		self.ui.viewOutputBtn.setDown(0)
 		global fileList
 		global plotType
 		del fileList
@@ -1528,7 +1528,7 @@ class SimViewWin (QtGui.QWidget):
 		# restoreSettingsBtn_pressed2(plot_name_win)
 	def exportOutputBtn_pressed(self):
 		plot_name_win.show()
-		self.exportOutputBtn.setDown(0)
+		self.ui.exportOutputBtn.setDown(0)
 		global fileList
 		global plotType
 		del fileList
@@ -1567,7 +1567,7 @@ class SimViewWin (QtGui.QWidget):
 		
 	#Redefining the close even to give a message box to confirm	
 	def closeEvent(self, event):
-		self.exitBtn.setDown(0)
+		self.ui.exitBtn.setDown(0)
 		sim_view_win.hide()
 		sim_mgr_win.show()
 
@@ -1875,6 +1875,7 @@ class MainSimMgrWin (QtGui.QWidget):
 		sim_init_win.show()
 		
 	def viewSimButton_pressed(self):
+		#os.chdir(dir_epon_sims)
 		# wait_win.ui.waitProgressBar.setPercentageVisible(1)
 		wait_win.ui.waitProgressBar.setMaximum(5)
 		wait_win.ui.waitProgressBar.setValue(0)
