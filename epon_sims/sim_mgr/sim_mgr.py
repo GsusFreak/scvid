@@ -859,10 +859,10 @@ def write_sim_param_file():
 	sim_cfg.close()
 
     
-def generate_file_list(file_list,list_box):
-	for loopIdx in range(list_box.count()):
-		if list_box.isSelected(loopIdx) == 1:
-			file_list.append(list_box.item(loopIdx).text())
+#def generate_file_list(file_list,list_box):
+	#for loopIdx in range(list_box.count()):
+		#if list_box.isSelected(loopIdx) == 1:
+			#file_list.append(list_box.item(loopIdx).text())
 
 def check_pids(currentlyRunning):
 	global finished_pids
@@ -1171,6 +1171,8 @@ class PlotNameWin (QtGui.QWidget):
 		global fileList
 		global plotType
 		simID = sim_view_win.ui.simIDEdit.text()
+		print os.getcwd()
+		os.chdir(dir_epon_sims)
 		os.chdir(simID)
 		# Set files to be plotted, in proper order
 		newFileList = []
@@ -1192,10 +1194,10 @@ class PlotNameWin (QtGui.QWidget):
 				plotIdx = int(self.ui.plotOrder1.text())-1
 				newFileList[plotIdx] = fileList[0]
 				newFileListText[plotIdx] = self.ui.file1Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox1.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox1.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox1.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox1.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox1.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox1.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1
 				
@@ -1203,85 +1205,85 @@ class PlotNameWin (QtGui.QWidget):
 				plotIdx = int(self.ui.plotOrder2.text())-1
 				newFileList[plotIdx] = fileList[1]
 				newFileListText[plotIdx] = self.ui.file2Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox2.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox2.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox2.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox2.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox2.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox2.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1								
 			elif loopIdx == 2:
 				plotIdx = int(self.ui.plotOrder3.text())-1
 				newFileList[plotIdx] = fileList[2]
 				newFileListText[plotIdx] = self.ui.file3Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox3.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox3.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox3.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox3.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox3.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox3.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1			
 			elif loopIdx == 3:
 				plotIdx = int(self.ui.plotOrder4.text())-1
 				newFileList[plotIdx] = fileList[3]
 				newFileListText[plotIdx] = self.ui.file4Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox4.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox4.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox4.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox4.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox4.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox4.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1			
 			elif loopIdx == 4:
 				plotIdx = int(self.ui.plotOrder5.text())-1
 				newFileList[plotIdx] = fileList[4]
 				newFileListText[plotIdx] = self.ui.file5Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox5.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox5.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox5.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox5.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox5.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox5.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1			
 			elif loopIdx == 5:
 				plotIdx = int(self.ui.plotOrder6.text())-1
 				newFileList[plotIdx] = fileList[5]
 				newFileListText[plotIdx] = self.ui.file6Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox6.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox6.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox6.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox6.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox6.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox6.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1
 			elif loopIdx == 6:
 				plotIdx = int(self.ui.plotOrder7.text())-1
 				newFileList[plotIdx] = fileList[6]
 				newFileListText[plotIdx] = self.ui.file7Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox7.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox7.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox7.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox7.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox7.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox7.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1
 			elif loopIdx == 7:
 				plotIdx = int(self.ui.plotOrder8.text())-1
 				newFileList[plotIdx] = fileList[7]
 				newFileListText[plotIdx] = self.ui.file8Edit.text()
-				newPointTypeList[plotIdx] = self.ui.pointsCBox8.currentItem()
+				newPointTypeList[plotIdx] = self.ui.pointsCBox8.currentIndex()
 				newPointSizeList[plotIdx] = self.ui.pointSizeCBox8.currentText()
 				newLineWidthList[plotIdx] = self.ui.lineWidthCBox8.currentText()
-				newLineColorList[plotIdx] = self.ui.lineColorCBox8.currentItem()
+				newLineColorList[plotIdx] = self.ui.lineColorCBox8.currentIndex()
 				if newLineColorList[plotIdx] == 'black':
 					newLineColorList[plotIdx] = -1
 		#
 		# Setup gnuplot script
 		#
-		if sim_view_win.ui.plotNameEdit.text() == '':
+		if str(sim_view_win.ui.plotNameEdit.text()) == '':
 			sim_view_win.ui.plotNameEdit.setText('selected_plot')
-		gplot_file = open(sim_view_win.ui.plotNameEdit.text()+'.gp','w')
+		gplot_file = open(str(sim_view_win.ui.plotNameEdit.text())+'.gp','w')
 		if sim_view_win.ui.histBtn.isChecked() == 1 or sim_view_win.ui.timeHistBtn.isChecked() == 1 or sim_view_win.ui.byteHistBtn.isChecked() == 1:
 			gplot_file.write('set style data hist\n')
 			gplot_file.write('set key right top Right\n')
 		else:
 			if self.ui.legendCBox.currentText() == 'Customized Position':		
-					gplot_file.write('set key ' + self.ui.x_axisEdit.text() + ',' + self.ui.y_axisEdit.text() + '\n')
-			elif self.legendCBox.currentText() == 'Remove Legend':
+					gplot_file.write('set key ' + str(self.ui.x_axisEdit.text()) + ',' + str(self.ui.y_axisEdit.text()) + '\n')
+			elif self.ui.legendCBox.currentText() == 'Remove Legend':
 					gplot_file.write('unset key\n')
 			else:
 				gplot_file.write('set key left top Left\n')
@@ -1312,7 +1314,7 @@ class PlotNameWin (QtGui.QWidget):
 			gplot_file.write('set xlabel \'simulation time (in 1 second intervals)\'\n')
 #   		gplot_file.write('set xtics 0.0,1\n')
 			gplot_file.write('set format y \"%.1s %csec\"\n')
-		if sim_view_win.ui.ui.delayVsONUBtn.isChecked() == 1:
+		if sim_view_win.ui.delayVsONUBtn.isChecked() == 1:
 			gplot_file.write('set ylabel \'delay (in seconds)\'\n')
 			gplot_file.write('set xlabel \'# of ONUs\'\n')
 			gplot_file.write('set format y \"%.1s %csec\"\n')
@@ -1352,24 +1354,24 @@ class PlotNameWin (QtGui.QWidget):
 			gplot_file.write('set ylabel \'Probability\'\n')
 			gplot_file.write('set xlabel \'(in bytes)\'\n')
 			gplot_file.write('set format x \"%.1s%cB\"\n')
-		if ((sim_view_win.ui.maxYEdit.text() != '') and (sim_view_win.ui.minYEdit.text() != '')):
-			gplot_file.write('set yrange ['+sim_view_win.ui.minYEdit.text()+':'+sim_view_win.ui.maxYEdit.text()+']\n')
-		if ((sim_view_win.ui.maxYEdit.text() != '') and (sim_view_win.ui.minYEdit.text() == '')):
-			gplot_file.write('set yrange [:'+sim_view_win.ui.maxYEdit.text()+']\n')
-		if ((sim_view_win.ui.maxYEdit.text() == '') and (sim_view_win.ui.minYEdit.text() != '')):
-			gplot_file.write('set yrange ['+sim_view_win.ui.minYEdit.text()+':]\n')
-		if ((sim_view_win.ui.maxXEdit.text() != '') and (sim_view_win.ui.minXEdit.text() != '')):
-			gplot_file.write('set xrange ['+sim_view_win.ui.minXEdit.text()+':'+sim_view_win.ui.maxXEdit.text()+']\n')
-		if ((sim_view_win.ui.maxXEdit.text() != '') and (sim_view_win.ui.minXEdit.text() == '')):
-			gplot_file.write('set xrange [:'+sim_view_win.ui.maxXEdit.text()+']\n')
-		if ((sim_view_win.ui.maxXEdit.text() == '') and (sim_view_win.ui.minXEdit.text() != '')):
-			gplot_file.write('set xrange ['+sim_view_win.ui.minXEdit.text()+':]\n')
+		if ((str(sim_view_win.ui.maxYEdit.text()) != '') and (str(sim_view_win.ui.minYEdit.text()) != '')):
+			gplot_file.write('set yrange ['+str(sim_view_win.ui.minYEdit.text())+':'+str(sim_view_win.ui.maxYEdit.text())+']\n')
+		if ((str(sim_view_win.ui.maxYEdit.text()) != '') and (str(sim_view_win.ui.minYEdit.text()) == '')):
+			gplot_file.write('set yrange [:'+str(sim_view_win.ui.maxYEdit.text())+']\n')
+		if ((str(sim_view_win.ui.maxYEdit.text()) == '') and (str(sim_view_win.ui.minYEdit.text()) != '')):
+			gplot_file.write('set yrange ['+str(sim_view_win.ui.minYEdit.text())+':]\n')
+		if ((str(sim_view_win.ui.maxXEdit.text()) != '') and (str(sim_view_win.ui.minXEdit.text()) != '')):
+			gplot_file.write('set xrange ['+str(sim_view_win.ui.minXEdit.text())+':'+str(sim_view_win.ui.maxXEdit.text())+']\n')
+		if ((str(sim_view_win.ui.maxXEdit.text()) != '') and (str(sim_view_win.ui.minXEdit.text()) == '')):
+			gplot_file.write('set xrange [:'+str(sim_view_win.ui.maxXEdit.text())+']\n')
+		if ((str(sim_view_win.ui.maxXEdit.text()) == '') and (str(sim_view_win.ui.minXEdit.text()) != '')):
+			gplot_file.write('set xrange ['+str(sim_view_win.ui.minXEdit.text())+':]\n')
 		gplot_file.write('set grid\n')
 		if plotType == 0:
 			gplot_file.write('set terminal x11 font \"times,14\" enhanced \n')
 		else:
 			gplot_file.write('set terminal fig fontsize 12 \n')
-			gplot_file.write('set output "'+sim_view_win.ui.plotNameEdit.text()+'.fig"\n')
+			gplot_file.write('set output "'+str(sim_view_win.ui.plotNameEdit.text())+'.fig"\n')
 		plotStr = 'plot '
 		count = 1
 		
@@ -1377,13 +1379,13 @@ class PlotNameWin (QtGui.QWidget):
 			for loopIdx in range(len(fileList)):
 				if loopIdx > 0:
 					plotStr = plotStr + ','
-				plotStr = plotStr + '"' + newFileList[loopIdx] + '"'
+				plotStr = plotStr + '"' + str(newFileList[loopIdx].text()) + '"'
 				plotStr = plotStr + ' title \'' + newFileListText[loopIdx] + '\''
 		else:
 			for loopIdx in range(len(fileList)):
 				if loopIdx > 0:
 					plotStr = plotStr + ','
-				plotStr = plotStr + '"' + newFileList[loopIdx] + '"'
+				plotStr = plotStr + '"' + str(newFileList[loopIdx].text()) + '"'
 				plotStr = plotStr + ' title \'' + newFileListText[loopIdx] + '\'' + ' with linespoints linestyle ' + str(loopIdx+1)
 			
 		plotStr = plotStr + '\n'
@@ -1400,16 +1402,16 @@ class PlotNameWin (QtGui.QWidget):
 			loop_file.close()
 		gplot_file.close()
 		if plotType == 0:
-			os.system('gnuplot -persist '+sim_view_win.ui.plotNameEdit.text()+'.gp')
+			os.system('gnuplot -persist '+str(sim_view_win.ui.plotNameEdit.text())+'.gp')
 		else:
-			os.system('gnuplot '+sim_view_win.ui.plotNameEdit.text()+'.gp')
-			os.system('fig2dev -L pdf '+sim_view_win.ui.plotNameEdit.text()+'.fig '+sim_view_win.ui.plotNameEdit.text()+'.pdf')
-			os.system('fig2dev -L eps '+sim_view_win.ui.plotNameEdit.text()+'.fig '+sim_view_win.ui.plotNameEdit.text()+'.eps')
-			tex_file = open(sim_view_win.ui.plotNameEdit.text()+'.tex','w')
+			os.system('gnuplot '+str(sim_view_win.ui.plotNameEdit.text())+'.gp')
+			os.system('fig2dev -L pdf '+str(sim_view_win.ui.plotNameEdit.text())+'.fig '+str(sim_view_win.ui.plotNameEdit.text())+'.pdf')
+			os.system('fig2dev -L eps '+str(sim_view_win.ui.plotNameEdit.text())+'.fig '+str(sim_view_win.ui.plotNameEdit.text())+'.eps')
+			tex_file = open(str(sim_view_win.ui.plotNameEdit.text())+'.tex','w')
 			tex_file.write('\\begin{figure}[tb]\n')
-			tex_file.write('\\includegraphics[scale=0.75,angle=270]{'+sim_view_win.ui.plotNameEdit.text()+'.pdf}\n')
-			tex_file.write('\\caption{'+sim_view_win.ui.plotCaptionEdit.text()+'}\n')
-			tex_file.write('\\label{fig:'+sim_view_win.ui.plotNameEdit.text()+'}\n')
+			tex_file.write('\\includegraphics[scale=0.75,angle=270]{'+str(sim_view_win.ui.plotNameEdit.text())+'.pdf}\n')
+			tex_file.write('\\caption{'+str(sim_view_win.ui.plotCaptionEdit.text())+'}\n')
+			tex_file.write('\\label{fig:'+str(sim_view_win.ui.plotNameEdit.text())+'}\n')
 			tex_file.write('\\end{figure}\n')
 			tex_file.close()
 		
@@ -1420,13 +1422,13 @@ class PlotNameWin (QtGui.QWidget):
 			os.mkdir('A_Results')
 		if not os.path.isdir(pdfDir):
 			os.mkdir('A_Results/pdf_files')
-		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.gp', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.gp')
-		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.fig', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.fig')
-		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf')
-		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.eps', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.eps')
-		os.rename(cwdDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.tex', resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.tex')
+		os.rename(cwdDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.gp', resultsDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.gp')
+		os.rename(cwdDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.fig', resultsDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.fig')
+		os.rename(cwdDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.pdf', resultsDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.pdf')
+		os.rename(cwdDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.eps', resultsDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.eps')
+		os.rename(cwdDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.tex', resultsDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.tex')
 
-		shutil.copy2(resultsDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf', pdfDir + '/' + sim_view_win.ui.plotNameEdit.text() + '.pdf')
+		shutil.copy2(resultsDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.pdf', pdfDir + '/' + str(sim_view_win.ui.plotNameEdit.text()) + '.pdf')
 		
 		os.chdir('..')
 		self.hide()
@@ -1533,30 +1535,31 @@ class SimViewWin (QtGui.QWidget):
 		global plotType
 		del fileList
 		fileList = []
-		generate_file_list(fileList, self.ui.simViewListBox)
+		#generate_file_list(fileList, self.ui.simViewListBox)
+		fileList = self.ui.simViewListBox.selectedItems()
 		if fileList[0] != '':
-			plot_name_win.file1Lbl.setText(fileList[0])
+			plot_name_win.ui.file1Lbl.setText(str(fileList[0].text()))
 		if len(fileList) > 1:
 			if fileList[1] != '':
-				plot_name_win.file2Lbl.setText(fileList[1])
+				plot_name_win.ui.file2Lbl.setText(str(fileList[1].text()))
 		if len(fileList) > 2:
 			if fileList[2] != '':
-				plot_name_win.file3Lbl.setText(fileList[2])
+				plot_name_win.ui.file3Lbl.setText(str(fileList[2].text()))
 		if len(fileList) > 3:
 			if fileList[3] != '':
-				plot_name_win.file4Lbl.setText(fileList[3])
+				plot_name_win.ui.file4Lbl.setText(str(fileList[3].text()))
 		if len(fileList) > 4:
 			if fileList[4] != '':
-				plot_name_win.file5Lbl.setText(fileList[4])
+				plot_name_win.ui.file5Lbl.setText(str(fileList[4].text()))
 		if len(fileList) > 5:
 			if fileList[5] != '':
-				plot_name_win.file6Lbl.setText(fileList[5])
+				plot_name_win.ui.file6Lbl.setText(str(fileList[5].text()))
 		if len(fileList) > 6:
 			if fileList[6] != '':
-				plot_name_win.file7Lbl.setText(fileList[6])
+				plot_name_win.ui.file7Lbl.setText(str(fileList[6].text()))
 		if len(fileList) > 7:
 			if fileList[7] != '':
-				plot_name_win.file8Lbl.setText(fileList[7])
+				plot_name_win.ui.file8Lbl.setText(str(fileList[7].text()))
 		plotType = 1
 		# restoreSettingsBtn_pressed2(plot_name_win)
 
